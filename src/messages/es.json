@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "siteTitle": "Pinho Law — Abogados de Inmigración y Derecho Empresarial en Orlando, FL",
+    "siteDescription": "Firma de abogados en Orlando especializada en inmigración y derecho empresarial. Atención en inglés, portugués y español."
+  },
+  "nav": {
+    "immigration": "Inmigración",
+    "business": "Derecho Empresarial",
+    "about": "Acerca de",
+    "resources": "Recursos",
+    "reviews": "Reseñas",
+    "contact": "Contacto",
+    "consultation": "Agendar Consulta",
+    "attorney": "Abogada",
+    "firm": "Nuestra Firma",
+    "faq": "Preguntas Frecuentes"
+  },
+  "hero": {
+    "headline": "Su Sueño Americano Merece Un Equipo Legal Que Lo Entienda",
+    "subheadline": "Pinho Law ofrece asesoría legal confiable en inmigración y derecho empresarial para individuos y familias en toda Florida — con la claridad, dedicación y apoyo multilingüe que usted merece.",
+    "cta": "Agendar una Consulta",
+    "ctaSecondary": "Llamar {phone}",
+    "trustBar": "Miembro del Florida Bar · Reseñas 5 Estrellas · Servicio en 3 Idiomas"
+  },
+  "practiceAreas": {
+    "headline": "Cómo Ayudamos",
+    "immigration": {
+      "title": "Derecho Migratorio",
+      "description": "Desde peticiones familiares y green cards hasta visas de trabajo y ciudadanía — lo guiamos en cada paso con claridad y dedicación. Su caso es personal para nosotros.",
+      "cta": "Conozca Nuestros Servicios de Inmigración"
+    },
+    "business": {
+      "title": "Derecho Empresarial",
+      "description": "Iniciar un negocio en los EE.UU. es un acto de valentía. Nos encargamos de la constitución, contratos, disputas y cumplimiento para que usted pueda enfocarse en construir su visión.",
+      "cta": "Conozca Nuestros Servicios Empresariales"
+    }
+  },
+  "whyPinho": {
+    "headline": "Por Qué Nuestros Clientes Eligen Pinho Law",
+    "items": [
+      {
+        "title": "Asesoría Trilingüe",
+        "description": "Trabajamos con fluidez en inglés, portugués y español — para que nada se pierda en la traducción y usted siempre se sienta comprendido."
+      },
+      {
+        "title": "Proceso Transparente",
+        "description": "Le explicamos cada paso antes de que lo tome. Sin cargos ocultos. Sin jerga legal. Solo orientación honesta y clara."
+      },
+      {
+        "title": "Comunicación Ágil",
+        "description": "Respondemos llamadas y mensajes en un día hábil. Nunca se quedará preguntándose qué está pasando con su caso."
+      },
+      {
+        "title": "Estrategia a Medida",
+        "description": "Cada caso recibe atención individual. Diseñamos una estrategia legal pensada en sus objetivos y circunstancias únicas."
+      }
+    ]
+  },
+  "firmVideo": {
+    "headline": "Conozca Nuestra Firma",
+    "description": "Descubra nuestra misión, nuestro enfoque y por qué nuestros clientes confían en Pinho Law para sus asuntos legales más importantes.",
+    "videoTitle": "Conozca a Pinho Law — El Camino para Realizar sus Sueños Comienza Aquí"
+  },
+  "howItWorks": {
+    "headline": "Cómo Funciona",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Agende Su Consulta",
+        "description": "Reserve en línea, por teléfono o WhatsApp. Cuéntenos sobre su situación — estamos listos para escuchar."
+      },
+      {
+        "number": "02",
+        "title": "Reciba un Plan Claro",
+        "description": "Evaluamos su caso y le presentamos sus opciones, plazos realistas y una estrategia diseñada para sus objetivos."
+      },
+      {
+        "number": "03",
+        "title": "Avance Con Confianza",
+        "description": "Nos encargamos del trabajo legal manteniéndolo informado en cada hito importante. Usted se enfoca en su futuro."
+      }
+    ]
+  },
+  "testimonials": {
+    "headline": "Lo Que Dicen Nuestros Clientes",
+    "cta": "Ver Más Reseñas",
+    "items": [
+      {
+        "quote": "La abogada Pinho hizo que todo el proceso migratorio fuera manejable. Explicó todo claramente y siempre estuvo disponible para responder nuestras preguntas.",
+        "author": "María S.",
+        "service": "Inmigración Familiar",
+        "rating": 5
+      },
+      {
+        "quote": "Profesional, atenta y genuinamente dedicada. Pinho Law nos ayudó con nuestra solicitud de green card y no podríamos estar más satisfechos con el resultado.",
+        "author": "Carlos R.",
+        "service": "Green Card",
+        "rating": 5
+      },
+      {
+        "quote": "Necesité ayuda para establecer mi negocio como emprendedor inmigrante. Pinho Law entendió perfectamente tanto el lado migratorio como el empresarial.",
+        "author": "Ana L.",
+        "service": "Constitución de Empresa",
+        "rating": 5
+      }
+    ]
+  },
+  "attorney": {
+    "headline": "Conozca a la Abogada Pinho",
+    "name": "Izi Pinho, Esq.",
+    "title": "Fundadora y Abogada Principal",
+    "bio": "Izi Pinho fundó Pinho Law con una misión clara: ofrecer asesoría legal accesible y de alta calidad a individuos y familias que navegan el sistema migratorio de los EE.UU. y construyen negocios en Florida. Con profundas raíces en la comunidad brasileño-americana y fluidez en tres idiomas, aporta tanto experiencia profesional como comprensión personal a cada caso.",
+    "cta": "Más Sobre la Abogada Pinho"
+  },
+  "multilingual": {
+    "headline": "Hablamos Su Idioma",
+    "description": "Cada consulta, cada documento, cada conversación — disponible en inglés, portugués y español. Porque entender sus derechos no debería depender de una traducción."
+  },
+  "faq": {
+    "headline": "Preguntas Frecuentes",
+    "cta": "Ver Todas las Preguntas",
+    "items": [
+      {
+        "question": "¿Cuánto cuesta una consulta?",
+        "answer": "Ofrecemos una consulta inicial para discutir su caso y evaluar sus opciones. Contáctenos para conocer nuestras tarifas de consulta y qué esperar durante su primera reunión."
+      },
+      {
+        "question": "¿Cuánto tiempo toma el proceso de inmigración?",
+        "answer": "Los plazos varían según el tipo de caso, sus circunstancias individuales y los tiempos de procesamiento actuales del USCIS. Durante su consulta, proporcionamos estimaciones realistas basadas en su situación específica."
+      },
+      {
+        "question": "¿Manejan derecho empresarial para inmigrantes?",
+        "answer": "Por supuesto. Ayudamos a emprendedores y empresarios inmigrantes con constitución de empresas, contratos, estructuración y apoyo legal continuo — combinando nuestra experiencia en inmigración y derecho empresarial para una experiencia integral."
+      },
+      {
+        "question": "¿Qué documentos debo llevar a mi primera reunión?",
+        "answer": "Traiga cualquier documento de inmigración relevante, identificación y papeles relacionados con su caso. Después de reservar su consulta, le enviaremos una lista de preparación detallada para que llegue completamente preparado."
+      }
+    ]
+  },
+  "ctaSection": {
+    "headline": "¿Listo Para Dar el Siguiente Paso?",
+    "description": "Agende una consulta hoy. Escucharemos, evaluaremos su situación y le daremos un camino claro a seguir — en el idioma en que se sienta más cómodo.",
+    "cta": "Agendar una Consulta",
+    "ctaWhatsApp": "Escríbanos por WhatsApp"
+  },
+  "footer": {
+    "description": "Asesoría legal confiable en inmigración y derecho empresarial en Florida.",
+    "immigrationLinks": "Inmigración",
+    "businessLinks": "Derecho Empresarial",
+    "contact": "Contacto",
+    "hours": "Horario",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "disclaimer": "Aviso Legal",
+    "copyright": "© {year} Pinho Law, PLLC. Todos los derechos reservados.",
+    "disclaimerText": "La información en este sitio web es solo para fines informativos generales y no constituye asesoría legal. Contactar a Pinho Law no crea una relación abogado-cliente."
+  },
+  "immigrationPage": {
+    "headline": "Servicios de Derecho Migratorio",
+    "description": "Guiamos a individuos y familias en cada paso de su viaje migratorio en los EE.UU. — desde peticiones familiares y green cards hasta visas de trabajo y ciudadanía. Con profundo conocimiento de los procesos del USCIS y un compromiso personal con cada cliente, convertimos la complejidad en claridad.",
+    "servicesHeadline": "Nuestros Servicios de Inmigración",
+    "services": {
+      "family-based": "Inmigración Familiar",
+      "marriage-based": "Inmigración por Matrimonio",
+      "green-cards": "Green Cards",
+      "adjustment-of-status": "Ajuste de Estatus",
+      "citizenship": "Ciudadanía y Naturalización",
+      "work-visas": "Visas de Trabajo",
+      "investor-visas": "Visas de Inversionista y Emprendedor",
+      "eb-visas": "Categorías de Visa EB",
+      "change-of-status": "Cambio de Estatus",
+      "visa-extensions": "Extensión de Visa",
+      "family-petitions": "Peticiones Familiares"
+    }
+  },
+  "businessPage": {
+    "headline": "Servicios de Derecho Empresarial",
+    "description": "Ya sea que esté lanzando su primera LLC o enfrentando una disputa contractual compleja, proporcionamos la base legal que su negocio necesita para prosperar en Florida. Nuestro diferencial: entendemos la intersección entre inmigración y emprendimiento como nadie.",
+    "servicesHeadline": "Nuestros Servicios Empresariales",
+    "services": {
+      "formation": "Constitución de Empresa",
+      "contracts": "Contratos y Acuerdos",
+      "disputes": "Disputas Empresariales",
+      "immigrant-entrepreneurs": "Emprendedores Inmigrantes"
+    }
+  },
+  "aboutPage": {
+    "headline": "Acerca de Pinho Law",
+    "description": "Pinho Law fue fundado con una convicción: que la representación legal de calidad debe ser accesible para todos — sin importar el idioma, el origen o la complejidad de su situación. Con sede en Orlando, atendemos a clientes en toda Florida con la atención personal de una firma boutique y la experiencia de abogados especializados.",
+    "approachTitle": "Nuestro Enfoque",
+    "approachDescription": "Combinamos profunda experiencia legal con un estilo genuino y accesible. Cada caso que aceptamos recibe atención individualizada, una estrategia a medida para sus objetivos y comunicación transparente en cada etapa. No solo manejamos casos — guiamos a personas a través de algunas de las decisiones más importantes de sus vidas.",
+    "differenceTitle": "Lo Que Nos Distingue",
+    "difference1": "Servicio trilingüe en inglés, portugués y español — para que nada se pierda en la traducción",
+    "difference2": "Experiencia combinada en inmigración y derecho empresarial — especialmente valiosa para emprendedores inmigrantes",
+    "difference3": "Comunicación ágil y procesos transparentes — usted siempre sabe dónde está su caso",
+    "difference4": "Raíces profundas en las comunidades brasileño-americana y latinoamericana de Florida"
+  },
+  "attorneyPage": {
+    "extendedBio": "Al presenciar de primera mano los desafíos que los inmigrantes y sus familias enfrentan al navegar el sistema legal de los EE.UU., Izi dedicó su carrera a cerrar la brecha entre procesos legales complejos y las personas reales detrás de cada caso. Fundó Pinho Law para crear una firma donde los clientes se sientan verdaderamente escuchados — donde cada pregunta es respondida, cada preocupación es atendida y cada estrategia se construye pensando en el individuo.",
+    "credentialsTitle": "Credenciales y Membresías",
+    "credential1": "Miembro de The Florida Bar",
+    "credential2": "Miembro de la American Immigration Lawyers Association (AILA)",
+    "languagesTitle": "Idiomas",
+    "educationTitle": "Formación y Trayectoria",
+    "educationDescription": "Con una trayectoria enraizada en la experiencia brasileño-americana y una profunda comprensión de los desafíos que enfrentan los inmigrantes, Izi aporta tanto excelencia profesional como empatía personal a cada caso que maneja."
+  },
+  "consultationPage": {
+    "headline": "Dé el Primer Paso Hacia la Claridad",
+    "description": "Todo viaje comienza con una conversación. Agende una consulta y permítanos entender su situación — le brindaremos orientación honesta y un camino claro, en el idioma en que se sienta más cómodo.",
+    "expectTitle": "Qué Esperar",
+    "step1Title": "Agende",
+    "step1Description": "Elija un horario conveniente — en línea, por teléfono o WhatsApp.",
+    "step2Title": "Prepárese",
+    "step2Description": "Le enviaremos una lista detallada para que llegue preparado e informado.",
+    "step3Title": "Reúnase",
+    "step3Description": "Discutimos su caso, respondemos cada pregunta y presentamos sus opciones juntos.",
+    "contactTitle": "Contáctenos",
+    "contactDescription": "¿Listo para conversar? Comuníquese con nosotros de la forma más fácil para usted.",
+    "callButton": "Llamar {phone}",
+    "address": "{street}, {suite}, {city}, {state} {zip}"
+  },
+  "reviewsPage": {
+    "headline": "Lo Que Dicen Nuestros Clientes",
+    "description": "Las experiencias de nuestros clientes hablan por sí mismas. Lea sus historias sobre trabajar con Pinho Law en asuntos de inmigración y derecho empresarial."
+  },
+  "resourcesPage": {
+    "headline": "Recursos y Guías",
+    "description": "El conocimiento es poder. Explore nuestros recursos de inmigración y derecho empresarial para entender mejor sus opciones y derechos.",
+    "faqTitle": "Preguntas Frecuentes",
+    "faqDescription": "Respuestas claras a las preguntas que más escuchamos — sobre plazos de inmigración, constitución de empresas, consultas y más.",
+    "faqCta": "Ver Todas las Preguntas",
+    "blogTitle": "Blog e Insights",
+    "blogDescription": "Próximamente — artículos prácticos y guías sobre temas de inmigración y negocios relevantes para usted."
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "contactUs": "Contáctenos",
+    "callNow": "Llamar Ahora",
+    "whatsApp": "WhatsApp",
+    "scheduleConsultation": "Agendar Consulta",
+    "readMore": "Leer Más",
+    "backToHome": "Volver al Inicio",
+    "language": "Idioma"
+  }
+}
