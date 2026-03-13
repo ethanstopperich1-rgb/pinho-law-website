@@ -4,6 +4,8 @@
 export const FIRM = {
   name: "Pinho Law",
   legalName: "Pinho Law, PLLC",
+  founder: "Dra. Izi Pinho, Esq.",
+  barNumber: "126610",
   phone: "(407) 385-4144",
   phoneRaw: "+14073854144",
   email: "info@pinholaw.com",
@@ -32,7 +34,14 @@ export const FIRM = {
     saturday: "By Appointment",
     sunday: "Closed",
   },
+  googleMapsLink: "https://maps.app.goo.gl/pinho-law-orlando",
   youtubeVideoId: "oh_qDA_gDhw",
+} as const;
+
+export const REVIEWS = {
+  googleRating: "4.6",
+  totalReviews: "450+",
+  badge: "Best Lawyers Ones to Watch 2021–2024",
 } as const;
 
 export const SITE = {
