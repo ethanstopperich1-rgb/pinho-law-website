@@ -119,3 +119,55 @@ export function webPageSchema(opts: {
     },
   };
 }
+
+export function reviewSchema(
+  reviews: { author: string; body: string; rating: number }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": `${SITE.url}/#organization`,
+    name: FIRM.name,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.6",
+      reviewCount: String(reviews.length),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: r.author,
+      },
+      reviewBody: r.body,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(r.rating),
+        bestRating: "5",
+      },
+    })),
+  };
+}
+
+export function serviceSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    provider: {
+      "@id": `${SITE.url}/#organization`,
+    },
+    areaServed: {
+      "@type": "State",
+      name: "Florida",
+    },
+  };
+}

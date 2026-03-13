@@ -154,7 +154,20 @@
     "terms": "Termos de Uso",
     "disclaimer": "Aviso Legal",
     "copyright": "© {year} Pinho Law, PLLC. Todos os direitos reservados.",
-    "disclaimerText": "As informações neste site são apenas para fins informativos gerais e não constituem aconselhamento jurídico. Entrar em contato com o Pinho Law não cria uma relação advogado-cliente."
+    "disclaimerText": "As informações neste site são apenas para fins informativos gerais e não constituem aconselhamento jurídico. Entrar em contato com o Pinho Law não cria uma relação advogado-cliente.",
+    "immigrationServices": {
+      "family-based": "Imigração Familiar",
+      "green-cards": "Green Cards",
+      "citizenship": "Cidadania",
+      "work-visas": "Vistos de Trabalho",
+      "investor-visas": "Vistos de Investidor"
+    },
+    "businessServices": {
+      "formation": "Abertura de Empresa",
+      "contracts": "Contratos",
+      "disputes": "Disputas Empresariais",
+      "immigrant-entrepreneurs": "Empreendedores Imigrantes"
+    }
   },
   "immigrationPage": {
     "headline": "Serviços de Direito Imigratório",
@@ -232,6 +245,137 @@
     "faqCta": "Ver Todas as Perguntas",
     "blogTitle": "Blog e Insights",
     "blogDescription": "Em breve — artigos práticos e guias sobre temas de imigração e negócios relevantes para você."
+  },
+  "intake": {
+    "back": "Voltar",
+    "continue": "Continuar",
+    "confidentialityNote": "Suas informações são protegidas pelo sigilo profissional advogado-cliente. Nunca compartilharemos seus dados sem sua autorização.",
+    "welcome": {
+      "heading": "Vamos Começar",
+      "subtitle": "Conte-nos sobre sua situação e nós direcionaremos você para a orientação adequada — no idioma de sua preferência.",
+      "cta": "Começar",
+      "timeEstimate": "Leva cerca de 2 minutos"
+    },
+    "service": {
+      "heading": "Como Podemos Ajudar?",
+      "subtitle": "Selecione a área do direito que melhor descreve sua necessidade.",
+      "options": {
+        "immigration": {
+          "label": "Direito Imigratório",
+          "description": "Vistos, green cards, cidadania, petições familiares e mais"
+        },
+        "business": {
+          "label": "Direito Empresarial",
+          "description": "Abertura de empresa, contratos, compliance e resolução de disputas"
+        },
+        "both": {
+          "label": "Imigração e Empresarial",
+          "description": "Ideal para empreendedores imigrantes e casos com dupla necessidade"
+        }
+      }
+    },
+    "immigration": {
+      "heading": "Que Tipo de Ajuda Imigratória?",
+      "subtitle": "Isso nos ajuda a preparar sua consulta.",
+      "options": {
+        "family": {
+          "label": "Imigração Familiar",
+          "description": "Petições de cônjuge, pais, filhos ou irmãos"
+        },
+        "employment": {
+          "label": "Imigração por Trabalho",
+          "description": "Vistos de trabalho, H-1B, L-1, O-1, categorias EB"
+        },
+        "humanitarian": {
+          "label": "Proteção Humanitária",
+          "description": "Asilo, TPS, U-visa, VAWA ou proteções similares"
+        },
+        "citizenship": {
+          "label": "Cidadania e Naturalização",
+          "description": "Pedidos de naturalização e processo de cidadania"
+        },
+        "other": {
+          "label": "Outro / Não Tenho Certeza",
+          "description": "Vamos identificar o melhor caminho durante sua consulta"
+        }
+      }
+    },
+    "business": {
+      "heading": "Que Tipo de Ajuda Empresarial?",
+      "subtitle": "Isso nos ajuda a preparar sua consulta.",
+      "options": {
+        "formation": {
+          "label": "Abertura de Empresa",
+          "description": "LLC, corporation, partnership ou outra estrutura societária"
+        },
+        "contracts": {
+          "label": "Contratos e Acordos",
+          "description": "Elaboração, revisão ou negociação de contratos comerciais"
+        },
+        "compliance": {
+          "label": "Compliance e Regulamentação",
+          "description": "Licenças, alvarás, conformidade regulatória e registros"
+        },
+        "disputes": {
+          "label": "Disputas Comerciais",
+          "description": "Disputas contratuais, conflitos societários ou suporte em litígios"
+        },
+        "other": {
+          "label": "Outro / Não Tenho Certeza",
+          "description": "Vamos identificar suas necessidades durante a consulta"
+        }
+      }
+    },
+    "contact": {
+      "heading": "Como Podemos Entrar em Contato?",
+      "subtitle": "Usaremos estas informações para agendar sua consulta.",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "preferredMethod": "Forma de contato preferida",
+      "methods": {
+        "phone": "Telefone",
+        "whatsapp": "WhatsApp",
+        "email": "E-mail"
+      },
+      "errors": {
+        "firstName": "Por favor, insira seu nome",
+        "email": "Por favor, insira seu e-mail",
+        "emailInvalid": "Por favor, insira um endereço de e-mail válido",
+        "phone": "Por favor, insira seu telefone"
+      }
+    },
+    "message": {
+      "heading": "Mais Alguma Coisa que Devemos Saber?",
+      "subtitle": "Uma breve descrição nos ajuda a preparar sua consulta. Este campo é opcional.",
+      "label": "Sua Situação",
+      "placeholder": "Compartilhe detalhes sobre seu caso, prazos ou perguntas que gostaria que abordássemos...",
+      "submit": "Enviar e Ver Próximos Passos",
+      "skip": "Pular e Ver Próximos Passos"
+    },
+    "complete": {
+      "heading": "Tudo Pronto",
+      "subtitle": "Nossa equipe analisará suas informações e entrará em contato em até um dia útil. Enquanto isso, você pode nos contatar diretamente.",
+      "summaryLabel": "Suas Informações",
+      "whatsapp": "Continuar no WhatsApp",
+      "call": "Ligar para {phone}",
+      "email": "Enviar um E-mail",
+      "emailSubject": "Pedido de Consulta",
+      "emailGreeting": "Olá, gostaria de agendar uma consulta.",
+      "emailService": "Área de Atuação",
+      "startOver": "Recomeçar",
+      "waGreeting": "Olá, gostaria de agendar uma consulta.",
+      "waName": "Nome",
+      "waEmail": "E-mail",
+      "waPhone": "Telefone",
+      "waService": "Serviço",
+      "waCategory": "Categoria",
+      "waDetails": "Detalhes",
+      "waServiceImmigration": "Imigração",
+      "waServiceBusiness": "Direito Empresarial",
+      "waServiceBoth": "Imigração e Direito Empresarial"
+    }
   },
   "common": {
     "learnMore": "Saiba Mais",

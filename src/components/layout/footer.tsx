@@ -10,6 +10,21 @@ export function Footer() {
 
   const currentYear = new Date().getFullYear();
 
+  const immigrationLinks = [
+    { href: "/immigration/family-based", key: "family-based" },
+    { href: "/immigration/green-cards", key: "green-cards" },
+    { href: "/immigration/citizenship", key: "citizenship" },
+    { href: "/immigration/work-visas", key: "work-visas" },
+    { href: "/immigration/investor-visas", key: "investor-visas" },
+  ] as const;
+
+  const businessLinks = [
+    { href: "/business/formation", key: "formation" },
+    { href: "/business/contracts", key: "contracts" },
+    { href: "/business/disputes", key: "disputes" },
+    { href: "/business/immigrant-entrepreneurs", key: "immigrant-entrepreneurs" },
+  ] as const;
+
   return (
     <footer className="bg-navy">
       {/* Gold accent line */}
@@ -49,21 +64,11 @@ export function Footer() {
               {t("immigrationLinks")}
             </h3>
             <nav className="flex flex-col gap-2.5">
-              <FooterLink href="/immigration/family-based">
-                Family-Based Immigration
-              </FooterLink>
-              <FooterLink href="/immigration/green-cards">
-                Green Cards
-              </FooterLink>
-              <FooterLink href="/immigration/citizenship">
-                Citizenship
-              </FooterLink>
-              <FooterLink href="/immigration/work-visas">
-                Work Visas
-              </FooterLink>
-              <FooterLink href="/immigration/investor-visas">
-                Investor Visas
-              </FooterLink>
+              {immigrationLinks.map(({ href, key }) => (
+                <FooterLink key={key} href={href}>
+                  {t(`immigrationServices.${key}`)}
+                </FooterLink>
+              ))}
             </nav>
           </div>
 
@@ -73,16 +78,11 @@ export function Footer() {
               {t("businessLinks")}
             </h3>
             <nav className="flex flex-col gap-2.5">
-              <FooterLink href="/business/formation">
-                Business Formation
-              </FooterLink>
-              <FooterLink href="/business/contracts">Contracts</FooterLink>
-              <FooterLink href="/business/disputes">
-                Business Disputes
-              </FooterLink>
-              <FooterLink href="/business/immigrant-entrepreneurs">
-                Immigrant Entrepreneurs
-              </FooterLink>
+              {businessLinks.map(({ href, key }) => (
+                <FooterLink key={key} href={href}>
+                  {t(`businessServices.${key}`)}
+                </FooterLink>
+              ))}
               <FooterLink href="/resources/faq">{tNav("faq")}</FooterLink>
             </nav>
           </div>

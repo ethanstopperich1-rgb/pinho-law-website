@@ -154,7 +154,20 @@
     "terms": "Terms of Service",
     "disclaimer": "Disclaimer",
     "copyright": "© {year} Pinho Law, PLLC. All rights reserved.",
-    "disclaimerText": "The information on this website is for general informational purposes only and does not constitute legal advice. Contacting Pinho Law does not create an attorney-client relationship."
+    "disclaimerText": "The information on this website is for general informational purposes only and does not constitute legal advice. Contacting Pinho Law does not create an attorney-client relationship.",
+    "immigrationServices": {
+      "family-based": "Family-Based Immigration",
+      "green-cards": "Green Cards",
+      "citizenship": "Citizenship",
+      "work-visas": "Work Visas",
+      "investor-visas": "Investor Visas"
+    },
+    "businessServices": {
+      "formation": "Business Formation",
+      "contracts": "Contracts",
+      "disputes": "Business Disputes",
+      "immigrant-entrepreneurs": "Immigrant Entrepreneurs"
+    }
   },
   "immigrationPage": {
     "headline": "Immigration Law Services",
@@ -232,6 +245,137 @@
     "faqCta": "View All FAQs",
     "blogTitle": "Blog & Insights",
     "blogDescription": "Coming soon — practical articles and guides on immigration and business topics that matter to you."
+  },
+  "intake": {
+    "back": "Back",
+    "continue": "Continue",
+    "confidentialityNote": "Your information is protected by attorney-client privilege. We will never share your details without your consent.",
+    "welcome": {
+      "heading": "Let's Get You Started",
+      "subtitle": "Tell us about your situation and we'll connect you with the right guidance — in your preferred language.",
+      "cta": "Begin",
+      "timeEstimate": "Takes about 2 minutes"
+    },
+    "service": {
+      "heading": "What Can We Help With?",
+      "subtitle": "Select the area of law that best describes your needs.",
+      "options": {
+        "immigration": {
+          "label": "Immigration Law",
+          "description": "Visas, green cards, citizenship, family petitions, and more"
+        },
+        "business": {
+          "label": "Business Law",
+          "description": "Formation, contracts, compliance, and dispute resolution"
+        },
+        "both": {
+          "label": "Both Immigration & Business",
+          "description": "Ideal for immigrant entrepreneurs and dual-need cases"
+        }
+      }
+    },
+    "immigration": {
+      "heading": "What Type of Immigration Help?",
+      "subtitle": "This helps us prepare for your consultation.",
+      "options": {
+        "family": {
+          "label": "Family-Based Immigration",
+          "description": "Spouse, parent, child, or sibling petitions"
+        },
+        "employment": {
+          "label": "Employment-Based Immigration",
+          "description": "Work visas, H-1B, L-1, O-1, EB categories"
+        },
+        "humanitarian": {
+          "label": "Humanitarian Relief",
+          "description": "Asylum, TPS, U-visa, VAWA, or similar protections"
+        },
+        "citizenship": {
+          "label": "Citizenship & Naturalization",
+          "description": "Naturalization applications and the citizenship process"
+        },
+        "other": {
+          "label": "Other / Not Sure",
+          "description": "We'll help determine the best path during your consultation"
+        }
+      }
+    },
+    "business": {
+      "heading": "What Type of Business Help?",
+      "subtitle": "This helps us prepare for your consultation.",
+      "options": {
+        "formation": {
+          "label": "Business Formation",
+          "description": "LLC, corporation, partnership, or other entity setup"
+        },
+        "contracts": {
+          "label": "Contracts & Agreements",
+          "description": "Drafting, reviewing, or negotiating business contracts"
+        },
+        "compliance": {
+          "label": "Compliance & Regulations",
+          "description": "Licensing, permits, regulatory compliance, and filings"
+        },
+        "disputes": {
+          "label": "Business Disputes",
+          "description": "Contract disputes, partner conflicts, or litigation support"
+        },
+        "other": {
+          "label": "Other / Not Sure",
+          "description": "We'll help identify your needs during the consultation"
+        }
+      }
+    },
+    "contact": {
+      "heading": "How Can We Reach You?",
+      "subtitle": "We'll use this information to schedule your consultation.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "preferredMethod": "Preferred contact method",
+      "methods": {
+        "phone": "Phone",
+        "whatsapp": "WhatsApp",
+        "email": "Email"
+      },
+      "errors": {
+        "firstName": "Please enter your first name",
+        "email": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "phone": "Please enter your phone number"
+      }
+    },
+    "message": {
+      "heading": "Anything Else We Should Know?",
+      "subtitle": "A brief description helps us prepare for your consultation. This is optional.",
+      "label": "Your Situation",
+      "placeholder": "Share any details about your case, timeline, or questions you'd like us to address...",
+      "submit": "Submit & See Next Steps",
+      "skip": "Skip & See Next Steps"
+    },
+    "complete": {
+      "heading": "You're All Set",
+      "subtitle": "Our team will review your information and reach out within one business day. In the meantime, you can contact us directly.",
+      "summaryLabel": "Your Information",
+      "whatsapp": "Continue on WhatsApp",
+      "call": "Call {phone}",
+      "email": "Send Us an Email",
+      "emailSubject": "Consultation Request",
+      "emailGreeting": "Hello, I would like to schedule a consultation.",
+      "emailService": "Service Area",
+      "startOver": "Start Over",
+      "waGreeting": "Hello, I'd like to schedule a consultation.",
+      "waName": "Name",
+      "waEmail": "Email",
+      "waPhone": "Phone",
+      "waService": "Service",
+      "waCategory": "Category",
+      "waDetails": "Details",
+      "waServiceImmigration": "Immigration",
+      "waServiceBusiness": "Business Law",
+      "waServiceBoth": "Immigration & Business Law"
+    }
   },
   "common": {
     "learnMore": "Learn More",
