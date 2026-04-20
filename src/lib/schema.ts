@@ -1,19 +1,22 @@
-import { FIRM, SITE } from "./constants";
+import { FIRM, IZI, REVIEWS, SITE } from "./constants";
 
 // JSON-LD schema generators for SEO/AEO
 
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LegalService",
+    "@type": ["LegalService", "LocalBusiness"],
     "@id": `${SITE.url}/#organization`,
     name: FIRM.name,
+    alternateName: ["Pinho Law", "Escritório de Advocacia Pinho Law"],
     legalName: FIRM.legalName,
     url: SITE.url,
     logo: `${SITE.url}/images/logo.png`,
     image: `${SITE.url}/images/og/default.jpg`,
     telephone: FIRM.phone,
     email: FIRM.email,
+    foundingDate: "2017-08",
+    founder: { "@id": `${SITE.url}/#izi-pinho` },
     address: {
       "@type": "PostalAddress",
       streetAddress: `${FIRM.address.street}, ${FIRM.address.suite}`,
@@ -41,13 +44,34 @@ export function organizationSchema() {
         closes: "17:00",
       },
     ],
-    sameAs: Object.values(FIRM.social),
-    areaServed: {
-      "@type": "State",
-      name: "Florida",
+    // Merge firm social URLs with Izi's authoritative directory presence
+    // so the org entity graph connects to her verified profiles.
+    sameAs: Array.from(
+      new Set([...Object.values(FIRM.social), ...IZI.sameAs]),
+    ),
+    areaServed: [
+      { "@type": "State", name: "Florida" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "Brazil" },
+    ],
+    knowsLanguage: ["pt-BR", "en-US", "es"],
+    priceRange: "$$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: REVIEWS.googleRating,
+      reviewCount: REVIEWS.totalReviews,
+      bestRating: "5",
+      worstRating: "1",
     },
-    knowsLanguage: ["en", "pt-BR", "es"],
-    priceRange: "$$",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços Jurídicos",
+      itemListElement: [
+        { "@type": "OfferCatalog", name: "Imigração" },
+        { "@type": "OfferCatalog", name: "Direito Empresarial" },
+        { "@type": "OfferCatalog", name: "Direito Imobiliário" },
+      ],
+    },
   };
 }
 
@@ -147,6 +171,126 @@ export function reviewSchema(
         ratingValue: String(r.rating),
         bestRating: "5",
       },
+    })),
+  };
+}
+
+export function podcastSeriesSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "@id": `${SITE.url}/#canal-perguntas-sonho-americano`,
+    name: "Sonho Americano — Canal Perguntas",
+    description:
+      "Podcast de Paulo Paternes sobre a vida, negócios e imigração de brasileiros nos EUA. Dra. Izi Pinho é convidada recorrente.",
+    url: "https://canalperguntas.com",
+    inLanguage: "pt-BR",
+  };
+}
+
+export function podcastEpisodeSchema(opts: {
+  name: string;
+  datePublished: string;
+  url: string;
+  embedUrl?: string;
+  duration?: string;
+  description: string;
+  transcript?: string;
+  locale: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    name: opts.name,
+    datePublished: opts.datePublished,
+    url: opts.url,
+    ...(opts.embedUrl ? { embedUrl: opts.embedUrl } : {}),
+    ...(opts.duration ? { duration: opts.duration } : {}),
+    description: opts.description,
+    inLanguage: opts.locale,
+    partOfSeries: { "@id": `${SITE.url}/#canal-perguntas-sonho-americano` },
+    actor: { "@id": `${SITE.url}/#izi-pinho` },
+    ...(opts.transcript ? { transcript: opts.transcript } : {}),
+  };
+}
+
+export function iziPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "@id": `${SITE.url}/#izi-pinho`,
+    name: IZI.name,
+    givenName: IZI.givenName,
+    familyName: IZI.familyName,
+    honorificPrefix: IZI.honorificPrefix,
+    honorificSuffix: IZI.honorificSuffix,
+    jobTitle: IZI.jobTitle,
+    email: IZI.email,
+    image: `${SITE.url}/images/team/izi-pinho.jpg`,
+    url: `${SITE.url}/pt/attorney-izi-pinho`,
+    nationality: { "@type": "Country", name: "Brazil" },
+    knowsLanguage: IZI.knowsLanguage,
+    worksFor: { "@id": `${SITE.url}/#organization` },
+    alumniOf: IZI.education.map((e) => ({
+      "@type": "CollegeOrUniversity",
+      name: e.institution,
+      url: e.url,
+    })),
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Florida Bar Admission",
+        identifier: IZI.barNumber,
+        recognizedBy: {
+          "@type": "Organization",
+          name: "The Florida Bar",
+          url: "https://www.floridabar.org",
+        },
+      },
+      ...IZI.education.map((e) => ({
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: `${e.degree}${e.honors ? `, ${e.honors}` : ""}`,
+        recognizedBy: { "@type": "Organization", name: e.institution },
+        dateCreated: String(e.year),
+      })),
+    ],
+    memberOf: IZI.memberships.map((m) => ({
+      "@type": "Organization",
+      name: m.name,
+      ...("url" in m && m.url ? { url: m.url } : {}),
+    })),
+    award: IZI.awards.map((a) => `${a.name} (${a.year})`),
+    sameAs: IZI.sameAs,
+  };
+}
+
+export function iziScholarlyArticleSchema() {
+  const a = IZI.scholarlyArticle;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "@id": `${SITE.url}/#scholarly-benefit-corporations`,
+    headline: a.name,
+    name: a.name,
+    author: { "@id": `${SITE.url}/#izi-pinho` },
+    datePublished: String(a.year),
+    isPartOf: {
+      "@type": "Periodical",
+      name: "Stetson Law Review",
+      issn: "0739-9731",
+    },
+    citation: a.citation,
+    url: a.url,
+    publisher: {
+      "@type": "Organization",
+      name: "Stetson University College of Law",
+    },
+    isBasedOn: a.citedBy.map((c) => ({
+      "@type": "CreativeWork",
+      name: c.name,
+      url: c.url,
     })),
   };
 }

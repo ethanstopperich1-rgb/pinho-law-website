@@ -3,7 +3,11 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { dmSans, cormorantGaramond } from "@/lib/fonts";
-import { organizationSchema, webSiteSchema } from "@/lib/schema";
+import {
+  iziPersonSchema,
+  organizationSchema,
+  webSiteSchema,
+} from "@/lib/schema";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -38,6 +42,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <JsonLd data={organizationSchema()} />
           <JsonLd data={webSiteSchema()} />
+          <JsonLd data={iziPersonSchema()} />
           <Header />
           <main id="main-content">{children}</main>
           <Footer />

@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
 
   return createPageMetadata({
-    title: locale === "pt-br" ? "Perguntas Frequentes" : locale === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions",
+    title: locale === "pt" ? "Perguntas Frequentes" : locale === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions",
     description: "Find answers to common questions about immigration law, business law, consultations, and working with Pinho Law.",
     path: "/resources/faq",
     locale: locale as Locale,

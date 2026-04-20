@@ -8,8 +8,8 @@ import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const localeLabels: Record<Locale, string> = {
+  pt: "Português",
   en: "English",
-  "pt-br": "Português",
   es: "Español",
 };
 

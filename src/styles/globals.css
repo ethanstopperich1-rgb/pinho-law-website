@@ -20,8 +20,11 @@
   --color-error: #C1292E;
 
   /* Font families */
-  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
+  /* Newsreader — Production Type variable serif w/ optical sizes.
+     Single family for the whole site; weight/size/italic handle
+     differentiation where we once reached for a second family. */
+  --font-heading: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
 
   /* Radius */
   --radius-sm: 4px;
@@ -97,4 +100,14 @@ body::after {
     var(--color-border) 80%,
     transparent 100%
   );
+}
+
+
+/* --- Hero-pill entrance (from 21st.dev/hero-pill) --- */
+@keyframes slide-up-fade {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.4s ease-out;
 }

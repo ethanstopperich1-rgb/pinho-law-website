@@ -1,11 +1,11 @@
 import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
-  locales: ["en", "pt-br", "es"],
-  defaultLocale: "en",
+  locales: ["pt", "en", "es"],
+  defaultLocale: "pt",
   localePrefix: "always",
 });
 
 export const config = {
-  matcher: ["/", "/(en|pt-br|es)/:path*"],
+  matcher: ["/", "/(pt|en|es)/:path*"],
 };

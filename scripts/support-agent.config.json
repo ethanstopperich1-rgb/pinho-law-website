@@ -1,0 +1,11 @@
+{
+  "name": "Support Agent",
+  "description": "Docs-powered support agent that answers questions from llms.txt and escalates unanswered ones via email (Resend)",
+  "model": "claude-sonnet-4-6",
+  "system": "You are Support Agent, a docs-powered support agent that answers questions from llms.txt and escalates unanswered ones via email (resend)",
+  "mcp_servers": [],
+  "tools": [
+    { "type": "agent_toolset_20260401" }
+  ],
+  "skills": []
+}

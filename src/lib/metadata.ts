@@ -12,7 +12,7 @@ interface PageMetadataOpts {
 
 const localeToHreflang: Record<Locale, string> = {
   en: "en",
-  "pt-br": "pt-BR",
+  pt: "pt-BR",
   es: "es",
 };
 
@@ -31,10 +31,10 @@ export function createPageMetadata({
     alternates: {
       canonical: url,
       languages: {
+        "pt-BR": `${SITE.url}/pt${path}`,
         en: `${SITE.url}/en${path}`,
-        "pt-BR": `${SITE.url}/pt-br${path}`,
         es: `${SITE.url}/es${path}`,
-        "x-default": `${SITE.url}/en${path}`,
+        "x-default": `${SITE.url}/pt${path}`,
       },
     },
     openGraph: {
