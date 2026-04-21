@@ -12,19 +12,27 @@ export function AttorneySpotlight() {
     <section className="py-24 md:py-32">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Attorney Photo */}
+          {/* Attorney Photo — navy gradient frame + radial vignette
+              so the studio white in the source photo blends into the
+              page instead of sitting as a hard edge. */}
           <FadeIn>
             <div className="relative">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-lg)] lg:aspect-[4/5]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-lg)] bg-gradient-to-br from-navy via-navy-light to-navy shadow-2xl lg:aspect-[4/5]">
                 <Image
                   src="/images/izi-pinho.jpg"
                   alt="Izi Pinho, Esq."
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top mix-blend-luminosity"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
+                {/* Navy wash to unify photo background with page */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-navy/40 mix-blend-multiply" />
+                {/* Gold-tinted edge vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.75)_100%)]" />
+                {/* Soft gold grain on top */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)]" />
               </div>
-              <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/20 lg:aspect-[4/5]" />
+              <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/30 lg:aspect-[4/5]" />
             </div>
           </FadeIn>
 

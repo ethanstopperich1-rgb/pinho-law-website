@@ -57,20 +57,24 @@ export default async function AttorneyPage({
       <section className="bg-cream py-20 md:py-28">
         <Container>
           <div className="grid items-start gap-12 lg:grid-cols-5 lg:gap-16">
-            {/* Photo */}
+            {/* Photo — navy-toned frame with radial vignette so the
+                studio white blends into the cream page surface. */}
             <FadeIn className="lg:col-span-2">
               <div className="relative">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-lg)]">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--radius-lg)] bg-gradient-to-br from-navy via-navy-light to-navy shadow-2xl">
                   <Image
                     src="/images/izi-pinho.jpg"
                     alt={t("name")}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-top mix-blend-luminosity"
                     sizes="(min-width: 1024px) 40vw, 100vw"
                     priority
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-navy/40 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.75)_100%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)]" />
                 </div>
-                <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/20" />
+                <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/30" />
               </div>
             </FadeIn>
 

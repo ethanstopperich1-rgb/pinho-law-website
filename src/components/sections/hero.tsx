@@ -138,17 +138,21 @@ export function Hero() {
           {/* --- RIGHT: Portrait + floating glass credential cards --- */}
           <FadeIn delay={0.2} className="hidden lg:col-span-5 lg:block">
             <div className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] bg-gradient-to-br from-navy via-navy-light to-navy">
                 <Image
                   src="/images/izi-pinho.jpg"
                   alt="Dra. Izi Pinho, Esq. — Founder of Pinho Law"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top mix-blend-luminosity"
                   sizes="(min-width: 1024px) 40vw, 0vw"
                   priority
                 />
-                {/* Tone overlay to ensure glass cards read */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+                {/* Multi-layer tone so the photo's studio white blends
+                    into the navy hero instead of popping out as a
+                    bright rectangle. */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-navy/40 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.85)_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.18)_0%,_transparent_60%)]" />
               </div>
 
               {/* Outline shadow for the "premium" floated frame */}

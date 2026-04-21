@@ -176,7 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Group 6 — blog articles
+  // Group 6 — blog articles (pulled from programmatic registry)
   for (const a of ARTICLES) {
     const slug = `blog/${a.slug}`;
     push(slug, 0.7, "monthly");

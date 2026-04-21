@@ -5,9 +5,13 @@ import { abrirEmpresaEuaSendoBrasileiro } from "./abrir-empresa-eua-sendo-brasil
 import { eb5Brasileiros2026SemFila } from "./eb5-brasileiros-2026-sem-fila";
 import { naturalizacaoAmericanaQuandoComo } from "./naturalizacao-americana-quando-como";
 import { l1aExecutivosBrasileirosGuia } from "./l-1a-executivos-brasileiros-guia";
+import { h1b2026Taxa100milSelecaoPonderada } from "./h-1b-2026-taxa-100mil-selecao-ponderada";
+import { greenCardCasamentoGuia2026 } from "./green-card-casamento-guia-2026";
 
 // Ordered by datePublished DESC — most recent first.
 export const ARTICLES: readonly Article[] = [
+  greenCardCasamentoGuia2026,
+  h1b2026Taxa100milSelecaoPonderada,
   l1aExecutivosBrasileirosGuia,
   naturalizacaoAmericanaQuandoComo,
   eb5Brasileiros2026SemFila,

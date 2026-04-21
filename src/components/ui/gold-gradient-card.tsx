@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 // Premium hover-gradient card in Pinho's cream/gold palette.
 // Inspiration: 21st.dev's hover-border-gradient concept, rebuilt
@@ -15,14 +16,23 @@ export function GoldGradientCard({
   className,
   as: Element = "div",
   href,
+  beam = true,
+  beamDuration = 22,
 }: {
   children: React.ReactNode;
   className?: string;
   as?: React.ElementType;
   href?: string;
+  /** Show the animated BorderBeam (21st.dev) traveling edge. Default true. */
+  beam?: boolean;
+  /** BorderBeam traversal duration in seconds. Default 22 (slow, calm). */
+  beamDuration?: number;
 }) {
   const [pos, setPos] = useState({ x: 50, y: 50 });
   const [hovered, setHovered] = useState(false);
+  // Stagger the beam across multiple cards so they don't all tick in
+  // lockstep. Random delay per instance, pinned on first render.
+  const [beamDelay] = useState(() => Math.random() * beamDuration);
 
   const handleMove = (e: React.MouseEvent) => {
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
@@ -66,6 +76,16 @@ export function GoldGradientCard({
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       />
+      {/* 21st.dev BorderBeam — traveling gold→cream edge, default on */}
+      {beam && (
+        <BorderBeam
+          size={180}
+          duration={beamDuration}
+          delay={beamDelay}
+          colorFrom="#C9A961"
+          colorTo="#F5F1E8"
+        />
+      )}
       <div className="relative z-10">{children}</div>
     </Element>
   );
