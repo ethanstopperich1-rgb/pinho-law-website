@@ -35,6 +35,8 @@ const topPages = [
   "immigration-live",
   "blog",
   "blog/trump-gold-card-vs-eb2-niw-2026",
+  "blog/comprar-imovel-eua-via-llc-guia",
+  "blog/abrir-empresa-eua-sendo-brasileiro",
   "disclaimer",
   "privacy",
   "terms",
