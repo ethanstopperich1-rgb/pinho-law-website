@@ -42,7 +42,7 @@ export const FIRM = {
 } as const;
 
 export const REVIEWS = {
-  googleRating: "5.0",
+  googleRating: "4.6",
   totalReviews: "111",
   badge: "Best Lawyers Ones to Watch 2021–2024",
 } as const;

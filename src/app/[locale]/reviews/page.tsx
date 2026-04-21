@@ -13,15 +13,15 @@ import type { Locale } from "@/i18n/routing";
 type L = "pt" | "en" | "es";
 
 const TITLES = {
-  pt: "Avaliações — 5.0 de 111 no Google | Pinho Law",
-  en: "Reviews — 5.0 from 111 on Google | Pinho Law",
-  es: "Reseñas — 5.0 de 111 en Google | Pinho Law",
+  pt: "Avaliações — 4.6 de 111 no Google | Pinho Law",
+  en: "Reviews — 4.6 from 111 on Google | Pinho Law",
+  es: "Reseñas — 4.6 de 111 en Google | Pinho Law",
 } as const;
 
 const DESCRIPTIONS = {
-  pt: "Depoimentos reais de clientes Pinho Law no Google — 5.0 estrelas em 111 avaliações. Casos de imigração, naturalização, empresarial e imobiliário em Orlando.",
-  en: "Real client testimonials for Pinho Law on Google — 5.0 stars across 111 reviews. Immigration, naturalization, business, and real estate cases in Orlando.",
-  es: "Testimonios reales de clientes en Google — 5.0 estrellas en 111 reseñas.",
+  pt: "Depoimentos reais de clientes Pinho Law no Google — 4.6 estrelas em 111 avaliações. Casos de imigração, naturalização, empresarial e imobiliário em Orlando.",
+  en: "Real client testimonials for Pinho Law on Google — 4.6 stars across 111 reviews. Immigration, naturalization, business, and real estate cases in Orlando.",
+  es: "Testimonios reales de clientes en Google — 4.6 estrellas en 111 reseñas.",
 } as const;
 
 const HEADINGS = {
@@ -167,7 +167,15 @@ export default async function ReviewsPage({
       <section className="bg-cream py-16">
         <Container>
           <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {REVIEWS.map((r, i) => (
+            {REVIEWS.map((r, i) => {
+              const displayBody =
+                key === "pt"
+                  ? r.bodyPt ?? r.body
+                  : key === "es"
+                    ? r.bodyEs ?? r.body
+                    : r.body;
+              const translated = key !== r.lang && !!(key === "pt" ? r.bodyPt : r.bodyEs);
+              return (
               <FadeIn key={`${r.author}-${i}`} delay={Math.min(i * 0.03, 0.4)}>
                 <GoldGradientCard className="h-full">
                   <div className="flex h-full flex-col">
@@ -184,7 +192,7 @@ export default async function ReviewsPage({
                       )}
                     </div>
                     <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
-                      &ldquo;{r.body}&rdquo;
+                      &ldquo;{displayBody}&rdquo;
                     </blockquote>
                     <div className="mt-5 flex items-center justify-between border-t border-border pt-3">
                       <div>
@@ -196,13 +204,14 @@ export default async function ReviewsPage({
                         </p>
                       </div>
                       <span className="text-[10px] font-medium uppercase tracking-wider text-ink-muted/60">
-                        {r.lang.toUpperCase()}
+                        {translated ? `${r.lang.toUpperCase()} → ${key.toUpperCase()}` : r.lang.toUpperCase()}
                       </span>
                     </div>
                   </div>
                 </GoldGradientCard>
               </FadeIn>
-            ))}
+              );
+            })}
           </div>
         </Container>
       </section>
