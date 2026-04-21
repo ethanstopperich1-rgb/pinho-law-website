@@ -24,6 +24,7 @@ const topPages = [
   "resources/faq",
   "consultation",
   "contact",
+  "tools",
   "tools/visa-decision-engine",
   "tools/firpta-calculator",
   "tools/eb5-calculator",
