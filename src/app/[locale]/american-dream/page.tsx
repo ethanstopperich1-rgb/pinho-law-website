@@ -8,6 +8,7 @@ import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Link } from "@/i18n/navigation";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import type { Locale } from "@/i18n/routing";
 import { ArrowRight, AlertCircle } from "lucide-react";
 
@@ -475,12 +476,14 @@ export default async function AmericanDreamPage({
           </div>
           <FadeIn delay={0.3}>
             <div className="mt-14 text-center">
+              <MagneticButton distance={0.3}>
               <Link
                 href="/consultation"
                 className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-gold px-6 py-3 text-sm font-medium text-white hover:bg-gold/90"
               >
                 {c.ctaFooter}
               </Link>
+            </MagneticButton>
               <p className="mt-3 text-xs text-ink-muted/70">
                 WhatsApp {FIRM.phone} · {FIRM.email}
               </p>

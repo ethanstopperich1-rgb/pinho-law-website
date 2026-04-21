@@ -7,6 +7,7 @@ import { FIRM, SITE } from "@/lib/constants";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Link } from "@/i18n/navigation";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import type { Locale } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
 
@@ -334,12 +335,14 @@ export default async function Page({
           </div>
           <FadeIn delay={0.3}>
             <div className="mt-14 text-center">
+              <MagneticButton distance={0.3}>
               <Link
                 href="/consultation"
                 className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-gold px-6 py-3 text-sm font-medium text-white hover:bg-gold/90"
               >
                 {c.cta} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
+            </MagneticButton>
               <p className="mt-3 text-xs text-ink-muted/70">
                 WhatsApp {FIRM.phone} · {FIRM.email}
               </p>

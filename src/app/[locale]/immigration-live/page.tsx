@@ -4,6 +4,7 @@ import { BeamsBackground } from "@/components/ui/beams-background";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Link } from "@/i18n/navigation";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { FIRM } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
 
@@ -109,12 +110,14 @@ export default async function ImmigrationLivePage({
             </div>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/consultation"
-                className="inline-flex w-full items-center justify-center rounded-[var(--radius-md)] bg-[#C9A961] px-6 py-3 text-sm font-semibold text-[#0E1B2E] transition-colors hover:bg-[#C9A961]/90 sm:w-auto md:text-base"
-              >
-                {h.cta}
-              </Link>
+              <MagneticButton distance={0.3}>
+                <Link
+                  href="/consultation"
+                  className="inline-flex w-full items-center justify-center rounded-[var(--radius-md)] bg-[#C9A961] px-6 py-3 text-sm font-semibold text-[#0E1B2E] transition-colors hover:bg-[#C9A961]/90 sm:w-auto md:text-base"
+                >
+                  {h.cta}
+                </Link>
+              </MagneticButton>
               <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"

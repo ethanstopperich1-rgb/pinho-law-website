@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileNav } from "./mobile-nav";
 import { FIRM } from "@/lib/constants";
@@ -41,9 +42,11 @@ export function Header() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-5 lg:flex">
           <LanguageSwitcher />
-          <Link href="/consultation">
-            <Button size="sm">{t("consultation")}</Button>
-          </Link>
+          <MagneticButton distance={0.3}>
+            <Link href="/consultation">
+              <Button size="sm">{t("consultation")}</Button>
+            </Link>
+          </MagneticButton>
         </div>
 
         {/* Mobile Actions */}

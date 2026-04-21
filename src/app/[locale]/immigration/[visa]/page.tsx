@@ -8,6 +8,7 @@ import { VisaCostsTable } from "@/components/sections/VisaCostsTable";
 import { VisaTimeline } from "@/components/sections/VisaTimeline";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { AlternativesGrid } from "@/components/sections/AlternativesGrid";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { createPageMetadata } from "@/lib/metadata";
@@ -196,12 +197,14 @@ export default async function VisaHubPage({
               </div>
             )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/consultation"
-                className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-[#C9A961] px-6 py-3 font-semibold text-[#0E1B2E] hover:bg-[#C9A961]/90"
-              >
-                {h.bookCta}
-              </Link>
+              <MagneticButton distance={0.3}>
+                <Link
+                  href="/consultation"
+                  className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-[#C9A961] px-6 py-3 font-semibold text-[#0E1B2E] hover:bg-[#C9A961]/90"
+                >
+                  {h.bookCta}
+                </Link>
+              </MagneticButton>
               <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"

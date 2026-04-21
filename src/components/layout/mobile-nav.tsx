@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { LanguageSwitcher } from "./language-switcher";
 import { FIRM } from "@/lib/constants";
 
@@ -58,9 +59,11 @@ export function MobileNav() {
             <div className="my-4 h-px bg-border" />
 
             <div className="flex flex-col gap-3">
-              <Link href="/consultation" onClick={() => setOpen(false)}>
-                <Button className="w-full">{t("consultation")}</Button>
-              </Link>
+              <MagneticButton distance={0.25}>
+                <Link href="/consultation" onClick={() => setOpen(false)}>
+                  <Button className="w-full">{t("consultation")}</Button>
+                </Link>
+              </MagneticButton>
               <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"

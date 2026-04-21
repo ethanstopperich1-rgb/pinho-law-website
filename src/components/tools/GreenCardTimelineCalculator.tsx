@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import {
   computeGcTimeline,
   formatMonths,
@@ -263,12 +264,14 @@ export function GreenCardTimelineCalculator({ locale }: { locale: L }) {
               </h3>
               <p className="mt-1.5 text-sm text-ink-muted">{copy.ctaBody}</p>
               <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-                <a
+                <MagneticButton distance={0.3}>
+                  <a
                   href={`/${locale}/consultation`}
                   className="inline-flex items-center justify-center rounded-[var(--radius-md)] bg-gold px-5 py-2.5 text-sm font-medium text-white hover:bg-gold/90"
                 >
                   {copy.consultCta}
                 </a>
+                </MagneticButton>
                 <a
                   href={`https://wa.me/${FIRM.whatsapp}`}
                   target="_blank"
