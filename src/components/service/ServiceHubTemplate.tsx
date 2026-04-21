@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { CtaSection } from "@/components/sections/cta-section";
+import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
@@ -120,21 +121,22 @@ export function ServiceHubTemplate({
               <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
                 {group.cards.map((card, i) => (
                   <FadeIn key={card.title} delay={i * 0.04}>
-                    <Link
-                      href={card.href}
-                      className={`group flex h-full flex-col rounded-[var(--radius-lg)] border bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md md:p-8 ${
-                        card.featured
-                          ? "border-gold bg-gold/5"
-                          : "border-border hover:border-gold/40"
-                      }`}
-                    >
-                      <h3 className="flex items-start justify-between gap-3 font-heading text-lg font-semibold text-ink">
-                        {card.title}
-                        <ArrowRight className="h-4 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5" />
-                      </h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
-                        {card.body}
-                      </p>
+                    <Link href={card.href} className="block h-full focus:outline-none">
+                      <GoldGradientCard
+                        className={`h-full ${
+                          card.featured ? "border-gold bg-gold/5" : ""
+                        }`}
+                      >
+                        <div className="flex h-full flex-col">
+                          <h3 className="flex items-start justify-between gap-3 font-heading text-lg font-semibold text-ink">
+                            {card.title}
+                            <ArrowRight className="h-4 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5" />
+                          </h3>
+                          <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
+                            {card.body}
+                          </p>
+                        </div>
+                      </GoldGradientCard>
                     </Link>
                   </FadeIn>
                 ))}
