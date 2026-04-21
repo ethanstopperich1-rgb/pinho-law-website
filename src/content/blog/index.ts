@@ -3,9 +3,11 @@ import { trumpGoldCardVsEb2Niw2026 } from "./trump-gold-card-vs-eb2-niw-2026";
 import { comprarImovelEuaViaLlcGuia } from "./comprar-imovel-eua-via-llc-guia";
 import { abrirEmpresaEuaSendoBrasileiro } from "./abrir-empresa-eua-sendo-brasileiro";
 import { eb5Brasileiros2026SemFila } from "./eb5-brasileiros-2026-sem-fila";
+import { naturalizacaoAmericanaQuandoComo } from "./naturalizacao-americana-quando-como";
 
 // Ordered by datePublished DESC — most recent first.
 export const ARTICLES: readonly Article[] = [
+  naturalizacaoAmericanaQuandoComo,
   eb5Brasileiros2026SemFila,
   abrirEmpresaEuaSendoBrasileiro,
   comprarImovelEuaViaLlcGuia,

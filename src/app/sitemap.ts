@@ -39,6 +39,7 @@ const topPages = [
   "blog/comprar-imovel-eua-via-llc-guia",
   "blog/abrir-empresa-eua-sendo-brasileiro",
   "blog/eb-5-brasileiros-2026-sem-fila",
+  "blog/naturalizacao-americana-quando-como",
   "disclaimer",
   "privacy",
   "terms",
