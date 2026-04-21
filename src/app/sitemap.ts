@@ -30,6 +30,7 @@ const topPages = [
   "tools/priority-date-tracker",
   "tools/visa-cost-estimator",
   "tools/green-card-timeline",
+  "tools/llc-vs-corp",
   "immigration-live",
   "blog",
   "disclaimer",
