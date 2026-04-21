@@ -8,6 +8,8 @@ interface PageMetadataOpts {
   path: string;
   locale: Locale;
   noIndex?: boolean;
+  /** Optional absolute OG image URL. Defaults to /images/og/default.jpg. */
+  ogImage?: string;
 }
 
 const localeToHreflang: Record<Locale, string> = {
@@ -15,6 +17,21 @@ const localeToHreflang: Record<Locale, string> = {
   pt: "pt-BR",
   es: "es",
 };
+
+const DEFAULT_OG_IMAGE = `${SITE.url}/images/og/default.jpg`;
+
+/** Standard OG image array — 1200×630 branded image. */
+function ogImages(imageUrl?: string) {
+  return [
+    {
+      url: imageUrl ?? DEFAULT_OG_IMAGE,
+      width: 1200,
+      height: 630,
+      alt: "Pinho Law — Immigration & Business Attorneys in Orlando, FL",
+      type: "image/jpeg",
+    },
+  ];
+}
 
 export function createArticleMetadata(opts: {
   title: string;
@@ -53,11 +70,13 @@ export function createArticleMetadata(opts: {
       authors: [`${SITE.url}/${opts.locale}/attorney-izi-pinho`],
       section: opts.section,
       tags: opts.keywords,
+      images: ogImages(),
     },
     twitter: {
       card: "summary_large_image",
       title: opts.title,
       description: opts.description,
+      images: ogImages().map((i) => i.url),
     },
     robots: { index: true, follow: true },
   };
@@ -69,6 +88,7 @@ export function createPageMetadata({
   path,
   locale,
   noIndex = false,
+  ogImage,
 }: PageMetadataOpts): Metadata {
   const url = `${SITE.url}/${locale}${path}`;
 
@@ -91,11 +111,13 @@ export function createPageMetadata({
       siteName: SITE.name,
       locale: localeToHreflang[locale],
       type: "website",
+      images: ogImages(ogImage),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ogImages(ogImage).map((i) => i.url),
     },
     robots: noIndex
       ? { index: false, follow: false }
