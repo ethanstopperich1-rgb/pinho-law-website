@@ -38,6 +38,7 @@ const topPages = [
   "blog/trump-gold-card-vs-eb2-niw-2026",
   "blog/comprar-imovel-eua-via-llc-guia",
   "blog/abrir-empresa-eua-sendo-brasileiro",
+  "blog/eb-5-brasileiros-2026-sem-fila",
   "disclaimer",
   "privacy",
   "terms",
