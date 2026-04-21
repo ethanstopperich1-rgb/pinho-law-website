@@ -16,6 +16,53 @@ const localeToHreflang: Record<Locale, string> = {
   es: "es",
 };
 
+export function createArticleMetadata(opts: {
+  title: string;
+  description: string;
+  path: string;
+  locale: Locale;
+  datePublished: string;
+  dateModified?: string;
+  keywords?: string[];
+  section?: string;
+}): Metadata {
+  const url = `${SITE.url}/${opts.locale}${opts.path}`;
+  return {
+    title: opts.title,
+    description: opts.description,
+    keywords: opts.keywords,
+    authors: [{ name: "Dra. Izi Pinho", url: `${SITE.url}/${opts.locale}/attorney-izi-pinho` }],
+    alternates: {
+      canonical: url,
+      languages: {
+        "pt-BR": `${SITE.url}/pt${opts.path}`,
+        en: `${SITE.url}/en${opts.path}`,
+        es: `${SITE.url}/es${opts.path}`,
+        "x-default": `${SITE.url}/pt${opts.path}`,
+      },
+    },
+    openGraph: {
+      type: "article",
+      title: opts.title,
+      description: opts.description,
+      url,
+      siteName: SITE.name,
+      locale: localeToHreflang[opts.locale],
+      publishedTime: opts.datePublished,
+      modifiedTime: opts.dateModified ?? opts.datePublished,
+      authors: [`${SITE.url}/${opts.locale}/attorney-izi-pinho`],
+      section: opts.section,
+      tags: opts.keywords,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: opts.title,
+      description: opts.description,
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
 export function createPageMetadata({
   title,
   description,

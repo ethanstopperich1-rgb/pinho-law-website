@@ -110,6 +110,10 @@ export function faqSchema(
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["dt", "dd"],
+    },
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -304,6 +308,8 @@ export function articleSchema(opts: {
   locale: string;
   image?: string;
   keywords?: string[];
+  wordCount?: number;
+  articleSection?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -316,10 +322,46 @@ export function articleSchema(opts: {
     inLanguage: opts.locale,
     image: opts.image ?? `${SITE.url}/images/og/default.jpg`,
     keywords: opts.keywords?.join(", "),
+    wordCount: opts.wordCount,
+    articleSection: opts.articleSection,
     author: { "@id": `${SITE.url}/#izi-pinho` },
     reviewedBy: { "@id": `${SITE.url}/#izi-pinho` },
     publisher: { "@id": `${SITE.url}/#organization` },
     mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
+    // Speakable for voice assistants (Google Assistant et al.)
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "p:first-of-type", "h2"],
+    },
+  };
+}
+
+// Collection page schema for /blog, /tools index listings.
+export function collectionPageSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  locale: string;
+  items: Array<{ name: string; url: string; description?: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    inLanguage: opts.locale,
+    isPartOf: { "@id": `${SITE.url}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: opts.items.map((it, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: it.url,
+        name: it.name,
+        description: it.description,
+      })),
+    },
   };
 }
 

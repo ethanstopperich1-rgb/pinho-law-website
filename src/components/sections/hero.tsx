@@ -117,19 +117,19 @@ export function Hero() {
               <div className="flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-cream/10 pt-6">
                 <InlineStat
                   value={CASE_STATS.casesApproved}
-                  label="casos aprovados"
+                  label={t("stats.casesApproved")}
                 />
                 <span className="h-8 w-px bg-cream/10" />
-                <InlineStat value={CASE_STATS.successRate} label="aprovação" />
+                <InlineStat value={CASE_STATS.successRate} label={t("stats.successRate")} />
                 <span className="h-8 w-px bg-cream/10" />
                 <InlineStat
                   value={CASE_STATS.clientsServed}
-                  label="clientes atendidos"
+                  label={t("stats.clientsServed")}
                 />
                 <span className="h-8 w-px bg-cream/10" />
                 <InlineStat
                   value={`${REVIEWS.googleRating}★`}
-                  label={`${REVIEWS.totalReviews} Google reviews`}
+                  label={`${REVIEWS.totalReviews} ${t("stats.googleReviews")}`}
                 />
               </div>
             </FadeIn>
@@ -154,13 +154,13 @@ export function Hero() {
               {/* Outline shadow for the "premium" floated frame */}
               <div className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-[var(--radius-lg)] border border-gold/20" />
 
-              {/* Floating credential glass card — pushed OUTSIDE the portrait
-                  frame at top-right so it never covers Dra. Izi's face. */}
-              <div className="absolute -right-10 -top-6 w-60 rounded-[var(--radius-md)] border border-cream/15 bg-navy/80 p-4 backdrop-blur-xl shadow-2xl xl:-right-16">
+              {/* Floating credential glass card — sits ABOVE the portrait
+                  entirely so it never crosses Dra. Izi's face/head. */}
+              <div className="absolute bottom-full right-0 mb-3 w-60 rounded-[var(--radius-md)] border border-cream/15 bg-navy/80 p-4 backdrop-blur-xl shadow-2xl xl:-right-12">
                 <div className="mb-2 flex items-center gap-2">
                   <Scale className="h-4 w-4 text-gold" />
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
-                    Credenciais
+                    {t("credentials.label")}
                   </span>
                 </div>
                 <div className="space-y-2 text-xs leading-relaxed text-cream/80">
@@ -168,11 +168,11 @@ export function Hero() {
                     Florida Bar <span className="text-cream">#126610</span>
                   </div>
                   <div>
-                    AILA <span className="text-cream">since 2019</span>
+                    AILA <span className="text-cream">{t("credentials.ailaSince")}</span>
                   </div>
                   <div>
                     Stetson Law Review{" "}
-                    <span className="text-cream">Editor, 2016</span>
+                    <span className="text-cream">{t("credentials.stetsonEditor")}</span>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export function Hero() {
                 <div className="mb-1.5 flex items-center gap-2">
                   <Award className="h-4 w-4 text-gold" />
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
-                    Citada por
+                    {t("credentials.citedBy")}
                   </span>
                 </div>
                 <p className="text-sm leading-snug text-cream">

@@ -20,7 +20,19 @@
     "subheadline": "O Pinho Law oferece assessoria jurídica confiável em imigração e direito empresarial para indivíduos e famílias em toda a Flórida — com a clareza, dedicação e suporte multilíngue que você merece.",
     "cta": "Agendar uma Consulta",
     "ctaSecondary": "WhatsApp",
-    "trustBar": "Membro da Florida Bar · Avaliações 5 Estrelas · Atendimento em 3 Idiomas"
+    "trustBar": "Membro da Florida Bar · Avaliações 5 Estrelas · Atendimento em 3 Idiomas",
+    "stats": {
+      "casesApproved": "casos aprovados",
+      "successRate": "aprovação",
+      "clientsServed": "clientes atendidos",
+      "googleReviews": "avaliações Google"
+    },
+    "credentials": {
+      "label": "Credenciais",
+      "citedBy": "Citada por",
+      "ailaSince": "desde 2019",
+      "stetsonEditor": "Editor, 2016"
+    }
   },
   "practiceAreas": {
     "headline": "Como Podemos Ajudar",

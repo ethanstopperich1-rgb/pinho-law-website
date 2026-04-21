@@ -2,10 +2,15 @@ import { setRequestLocale } from "next-intl/server";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbSchema, collectionPageSchema } from "@/lib/schema";
+import { SITE } from "@/lib/constants";
 import { Link } from "@/i18n/navigation";
 import { ARTICLES } from "@/content/blog";
 import type { Locale } from "@/i18n/routing";
 import type { L } from "@/content/blog/types";
+
+const LOCALE_MAP = { pt: "pt-BR", en: "en-US", es: "es-419" } as const;
 
 const TITLES = {
   pt: "Blog — Imigração, Empresarial e Imobiliário | Pinho Law",
@@ -61,9 +66,29 @@ export default async function BlogIndexPage({
   setRequestLocale(locale);
   const key = locale as L;
   const h = HEADINGS[key];
+  const blogUrl = `${SITE.url}/${key}/blog`;
 
   return (
     <>
+      <JsonLd
+        data={collectionPageSchema({
+          name: TITLES[key],
+          description: DESCRIPTIONS[key],
+          url: blogUrl,
+          locale: LOCALE_MAP[key],
+          items: ARTICLES.map((a) => ({
+            name: a.content[key].title,
+            url: `${SITE.url}/${key}/blog/${a.slug}`,
+            description: a.content[key].description,
+          })),
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Pinho Law", url: `${SITE.url}/${key}` },
+          { name: "Blog", url: blogUrl },
+        ])}
+      />
       <section className="bg-cream pt-20 pb-12 md:pt-28 md:pb-16">
         <Container>
           <FadeIn className="mx-auto max-w-2xl text-center">

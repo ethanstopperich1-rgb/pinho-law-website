@@ -20,7 +20,19 @@
     "subheadline": "Pinho Law provides trusted immigration and business counsel for individuals and families across Florida — with the clarity, dedication, and multilingual support you deserve.",
     "cta": "Schedule a Consultation",
     "ctaSecondary": "Call {phone}",
-    "trustBar": "Florida Bar Member · 5-Star Reviews · Serving Clients in 3 Languages"
+    "trustBar": "Florida Bar Member · 5-Star Reviews · Serving Clients in 3 Languages",
+    "stats": {
+      "casesApproved": "cases approved",
+      "successRate": "approval rate",
+      "clientsServed": "clients served",
+      "googleReviews": "Google reviews"
+    },
+    "credentials": {
+      "label": "Credentials",
+      "citedBy": "Cited by",
+      "ailaSince": "since 2019",
+      "stetsonEditor": "Editor, 2016"
+    }
   },
   "practiceAreas": {
     "headline": "How We Help",

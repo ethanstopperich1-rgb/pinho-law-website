@@ -76,6 +76,11 @@ export function ArticleTemplate({ article, locale }: Props) {
           dateModified: article.dateModified,
           locale: LOCALE_MAP[locale],
           keywords: article.keywords,
+          wordCount: content.body
+            .map((b) => ("text" in b ? b.text : "items" in b ? b.items.join(" ") : ""))
+            .join(" ")
+            .split(/\s+/).length,
+          articleSection: article.category[locale],
         })}
       />
       <JsonLd

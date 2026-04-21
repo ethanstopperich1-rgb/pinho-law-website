@@ -20,7 +20,19 @@
     "subheadline": "Pinho Law ofrece asesoría legal confiable en inmigración y derecho empresarial para individuos y familias en toda Florida — con la claridad, dedicación y apoyo multilingüe que usted merece.",
     "cta": "Agendar una Consulta",
     "ctaSecondary": "Llamar {phone}",
-    "trustBar": "Miembro del Florida Bar · Reseñas 5 Estrellas · Servicio en 3 Idiomas"
+    "trustBar": "Miembro del Florida Bar · Reseñas 5 Estrellas · Servicio en 3 Idiomas",
+    "stats": {
+      "casesApproved": "casos aprobados",
+      "successRate": "aprobación",
+      "clientsServed": "clientes atendidos",
+      "googleReviews": "reseñas de Google"
+    },
+    "credentials": {
+      "label": "Credenciales",
+      "citedBy": "Citada por",
+      "ailaSince": "desde 2019",
+      "stetsonEditor": "Editor, 2016"
+    }
   },
   "practiceAreas": {
     "headline": "Cómo Ayudamos",
