@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 import { FIRM } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -35,11 +36,13 @@ export function CtaSection() {
               {t("description")}
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Link href="/consultation" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto">
-                  {t("cta")}
-                </Button>
-              </Link>
+              <MagneticButton distance={0.35}>
+                <Link href="/consultation" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    {t("cta")}
+                  </Button>
+                </Link>
+              </MagneticButton>
               <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"

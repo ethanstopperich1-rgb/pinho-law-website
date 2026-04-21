@@ -2,11 +2,14 @@ import { setRequestLocale } from "next-intl/server";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
-import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Star } from "lucide-react";
+import {
+  TestimonialsColumn,
+  type TestimonialItem,
+} from "@/components/ui/testimonials-columns-1";
 import { CtaSection } from "@/components/sections/cta-section";
-import { REVIEWS, REVIEW_STATS } from "@/content/reviews";
+import { REVIEWS, REVIEW_STATS, type PinhoReview } from "@/content/reviews";
 import { SITE } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
 
@@ -33,13 +36,16 @@ const HEADINGS = {
     reviewsLabel: "avaliações",
     sourceLabel: "Fonte",
     agoLabel: (m: number) =>
-      m < 12 ? `${m} ${m === 1 ? "mês" : "meses"} atrás` : `${Math.round(m / 12)} ${m < 24 ? "ano" : "anos"} atrás`,
+      m < 12
+        ? `${m} ${m === 1 ? "mês" : "meses"} atrás`
+        : `${Math.round(m / 12)} ${m < 24 ? "ano" : "anos"} atrás`,
     tagLabels: {
-      immigration: "Imigração",
-      business: "Empresarial",
-      citizenship: "Cidadania",
-      family: "Família",
+      immigration: "Cliente de Imigração",
+      business: "Cliente Empresarial",
+      citizenship: "Cliente de Cidadania",
+      family: "Cliente Familiar",
     },
+    defaultRole: "Cliente Pinho Law",
   },
   en: {
     eyebrow: "Testimonials",
@@ -49,13 +55,16 @@ const HEADINGS = {
     reviewsLabel: "reviews",
     sourceLabel: "Source",
     agoLabel: (m: number) =>
-      m < 12 ? `${m} ${m === 1 ? "month" : "months"} ago` : `${Math.round(m / 12)} ${m < 24 ? "year" : "years"} ago`,
+      m < 12
+        ? `${m} ${m === 1 ? "month" : "months"} ago`
+        : `${Math.round(m / 12)} ${m < 24 ? "year" : "years"} ago`,
     tagLabels: {
-      immigration: "Immigration",
-      business: "Business",
-      citizenship: "Citizenship",
-      family: "Family",
+      immigration: "Immigration Client",
+      business: "Business Client",
+      citizenship: "Citizenship Client",
+      family: "Family Client",
     },
+    defaultRole: "Pinho Law Client",
   },
   es: {
     eyebrow: "Testimonios",
@@ -65,13 +74,16 @@ const HEADINGS = {
     reviewsLabel: "reseñas",
     sourceLabel: "Fuente",
     agoLabel: (m: number) =>
-      m < 12 ? `${m} ${m === 1 ? "mes" : "meses"} atrás` : `${Math.round(m / 12)} ${m < 24 ? "año" : "años"} atrás`,
+      m < 12
+        ? `${m} ${m === 1 ? "mes" : "meses"} atrás`
+        : `${Math.round(m / 12)} ${m < 24 ? "año" : "años"} atrás`,
     tagLabels: {
-      immigration: "Inmigración",
-      business: "Empresarial",
-      citizenship: "Ciudadanía",
-      family: "Familia",
+      immigration: "Cliente de Inmigración",
+      business: "Cliente Empresarial",
+      citizenship: "Cliente de Ciudadanía",
+      family: "Cliente Familiar",
     },
+    defaultRole: "Cliente Pinho Law",
   },
 } as const;
 
@@ -90,6 +102,17 @@ export async function generateMetadata({
   });
 }
 
+type Heading = (typeof HEADINGS)[L];
+function toItem(r: PinhoReview, l: L, h: Heading): TestimonialItem {
+  const body = l === "pt" ? (r.bodyPt ?? r.body) : l === "es" ? (r.bodyEs ?? r.body) : r.body;
+  const role = r.tag ? h.tagLabels[r.tag] : h.defaultRole;
+  return {
+    text: body,
+    name: r.author,
+    role: `${role} · ${h.agoLabel(r.monthsAgo)}`,
+  };
+}
+
 export default async function ReviewsPage({
   params,
 }: {
@@ -100,7 +123,12 @@ export default async function ReviewsPage({
   const key = locale as L;
   const h = HEADINGS[key];
 
-  // JSON-LD aggregate rating — Google Places-backed, per schema.org.
+  const items = REVIEWS.map((r) => toItem(r, key, h));
+  const third = Math.ceil(items.length / 3);
+  const col1 = items.slice(0, third);
+  const col2 = items.slice(third, third * 2);
+  const col3 = items.slice(third * 2);
+
   const aggregateRatingSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
@@ -142,11 +170,14 @@ export default async function ReviewsPage({
               {h.sub}
             </p>
 
-            <div className="mt-8 inline-flex flex-col items-center gap-2 rounded-[var(--radius-lg)] border border-gold/30 bg-white px-8 py-6 shadow-sm">
+            <div className="mt-8 inline-flex flex-col items-center gap-2 rounded-[var(--radius-lg)] border border-gold/30 bg-white px-6 py-5 shadow-sm md:px-8 md:py-6">
               <div className="flex items-center gap-3">
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-6 w-6 fill-gold text-gold" />
+                    <Star
+                      key={i}
+                      className={`h-6 w-6 ${i < Math.floor(REVIEW_STATS.average) ? "fill-gold text-gold" : "fill-none text-gold"}`}
+                    />
                   ))}
                 </div>
                 <div className="font-heading text-3xl font-semibold text-ink md:text-4xl">
@@ -157,63 +188,32 @@ export default async function ReviewsPage({
                 {h.statsLabel}{" "}
                 <span className="font-semibold text-ink">{REVIEW_STATS.count}</span>{" "}
                 {h.reviewsLabel} ·{" "}
-                <span className="text-ink-muted/70">{h.sourceLabel}: {REVIEW_STATS.source}</span>
+                <span className="text-ink-muted/70">
+                  {h.sourceLabel}: {REVIEW_STATS.source}
+                </span>
               </div>
             </div>
           </FadeIn>
         </Container>
       </section>
 
-      <section className="bg-cream py-16">
-        <Container>
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {REVIEWS.map((r, i) => {
-              const displayBody =
-                key === "pt"
-                  ? r.bodyPt ?? r.body
-                  : key === "es"
-                    ? r.bodyEs ?? r.body
-                    : r.body;
-              const translated = key !== r.lang && !!(key === "pt" ? r.bodyPt : r.bodyEs);
-              return (
-              <FadeIn key={`${r.author}-${i}`} delay={Math.min(i * 0.03, 0.4)}>
-                <GoldGradientCard className="h-full">
-                  <div className="flex h-full flex-col">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: r.rating }).map((_, j) => (
-                          <Star key={j} className="h-4 w-4 fill-gold text-gold" />
-                        ))}
-                      </div>
-                      {r.tag && (
-                        <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-gold">
-                          {h.tagLabels[r.tag]}
-                        </span>
-                      )}
-                    </div>
-                    <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
-                      &ldquo;{displayBody}&rdquo;
-                    </blockquote>
-                    <div className="mt-5 flex items-center justify-between border-t border-border pt-3">
-                      <div>
-                        <p className="font-heading text-sm font-semibold text-ink">
-                          {r.author}
-                        </p>
-                        <p className="text-xs text-ink-muted/80">
-                          {h.agoLabel(r.monthsAgo)}
-                        </p>
-                      </div>
-                      <span className="text-[10px] font-medium uppercase tracking-wider text-ink-muted/60">
-                        {translated ? `${r.lang.toUpperCase()} → ${key.toUpperCase()}` : r.lang.toUpperCase()}
-                      </span>
-                    </div>
-                  </div>
-                </GoldGradientCard>
-              </FadeIn>
-              );
-            })}
+      {/* Scrolling testimonial columns — 21st.dev/testimonials-columns-1 */}
+      <section className="bg-cream pb-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+            <TestimonialsColumn testimonials={col1} duration={26} />
+            <TestimonialsColumn
+              testimonials={col2}
+              className="hidden md:block"
+              duration={32}
+            />
+            <TestimonialsColumn
+              testimonials={col3}
+              className="hidden lg:block"
+              duration={28}
+            />
           </div>
-        </Container>
+        </div>
       </section>
 
       <CtaSection />
