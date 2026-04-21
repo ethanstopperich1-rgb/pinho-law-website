@@ -29,6 +29,7 @@ const topPages = [
   "tools/eb5-calculator",
   "tools/priority-date-tracker",
   "tools/visa-cost-estimator",
+  "tools/green-card-timeline",
   "immigration-live",
   "blog",
   "disclaimer",
