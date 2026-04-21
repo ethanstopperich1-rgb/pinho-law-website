@@ -14,7 +14,7 @@ import { Award, Scale, Globe2 } from "lucide-react";
 // Brand colors: navy/ink for depth, gold for accents, cream for text.
 const CREDIBILITY_ITEMS = [
   "Cited by Harvard Law Forum on Corporate Governance",
-  "Best Lawyers®: Ones to Watch® (2021–2024)",
+  "Best Lawyers®: Ones to Watch® (2021–2026)",
   "AILA Member since 2019",
   "Florida Bar #126610",
   "Stetson Law Review — Notes & Comments Editor",
@@ -71,7 +71,7 @@ export function Hero() {
             <div className="animate-slide-up-fade">
               <p className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-gold/90 backdrop-blur-md sm:text-xs">
                 <StarIcon />
-                Best Lawyers® · Ones to Watch® · 2021–2024
+                Best Lawyers® · Ones to Watch® · 2021–2026
               </p>
             </div>
 
