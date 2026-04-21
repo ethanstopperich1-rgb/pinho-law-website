@@ -11,6 +11,7 @@ import {
 } from "@/lib/schema";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/ui/footer-section";
+import { AssistantWidget } from "@/components/ai/AssistantWidget";
 import { JsonLd } from "@/components/seo/json-ld";
 import "@/styles/globals.css";
 
@@ -47,6 +48,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
+          <AssistantWidget />
         </NextIntlClientProvider>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
