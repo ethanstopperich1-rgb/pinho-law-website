@@ -31,6 +31,7 @@ const topPages = [
   "tools/visa-cost-estimator",
   "tools/green-card-timeline",
   "tools/llc-vs-corp",
+  "tools/br-us-tax",
   "immigration-live",
   "blog",
   "disclaimer",
