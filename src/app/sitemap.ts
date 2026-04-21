@@ -34,6 +34,7 @@ const topPages = [
   "tools/br-us-tax",
   "immigration-live",
   "blog",
+  "blog/trump-gold-card-vs-eb2-niw-2026",
   "disclaimer",
   "privacy",
   "terms",

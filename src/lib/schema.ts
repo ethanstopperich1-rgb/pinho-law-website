@@ -295,6 +295,34 @@ export function iziScholarlyArticleSchema() {
   };
 }
 
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  locale: string;
+  image?: string;
+  keywords?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified ?? opts.datePublished,
+    inLanguage: opts.locale,
+    image: opts.image ?? `${SITE.url}/images/og/default.jpg`,
+    keywords: opts.keywords?.join(", "),
+    author: { "@id": `${SITE.url}/#izi-pinho` },
+    reviewedBy: { "@id": `${SITE.url}/#izi-pinho` },
+    publisher: { "@id": `${SITE.url}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
+  };
+}
+
 export function serviceSchema(opts: {
   name: string;
   description: string;
