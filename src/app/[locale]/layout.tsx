@@ -10,7 +10,7 @@ import {
   webSiteSchema,
 } from "@/lib/schema";
 import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/ui/footer-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import "@/styles/globals.css";
 

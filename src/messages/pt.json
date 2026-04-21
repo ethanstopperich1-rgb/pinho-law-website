@@ -156,6 +156,31 @@
     "cta": "Agendar uma Consulta",
     "ctaWhatsApp": "Fale pelo WhatsApp"
   },
+  "footerSection": {
+    "immigrationLabel": "Imigração",
+    "firmLabel": "O Escritório",
+    "resourcesLabel": "Recursos",
+    "socialLabel": "Redes Sociais",
+    "allRights": "Todos os direitos reservados.",
+    "disclaimer": "Pinho Law, PLLC",
+    "links": {
+      "immigration": "Imigração (visão geral)",
+      "business": "Direito Empresarial",
+      "realEstate": "Direito Imobiliário",
+      "attorney": "Dra. Izi Pinho",
+      "team": "Nossa Equipe",
+      "reviews": "Avaliações",
+      "tools": "Ferramentas",
+      "blog": "Blog",
+      "faqs": "Perguntas Frequentes",
+      "results": "Resultados",
+      "immigrationLive": "Imigração ao Vivo",
+      "contact": "Contato",
+      "disclaimer": "Aviso Legal",
+      "privacy": "Privacidade",
+      "terms": "Termos"
+    }
+  },
   "footer": {
     "description": "Assessoria jurídica confiável em imigração e direito empresarial na Flórida.",
     "immigrationLinks": "Imigração",

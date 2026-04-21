@@ -156,6 +156,31 @@
     "cta": "Schedule a Consultation",
     "ctaWhatsApp": "WhatsApp Us"
   },
+  "footerSection": {
+    "immigrationLabel": "Immigration",
+    "firmLabel": "The Firm",
+    "resourcesLabel": "Resources",
+    "socialLabel": "Social",
+    "allRights": "All rights reserved.",
+    "disclaimer": "Pinho Law, PLLC",
+    "links": {
+      "immigration": "Immigration (overview)",
+      "business": "Business Law",
+      "realEstate": "Real Estate Law",
+      "attorney": "Attorney Izi Pinho",
+      "team": "Our Team",
+      "reviews": "Reviews",
+      "tools": "Tools",
+      "blog": "Blog",
+      "faqs": "FAQs",
+      "results": "Results",
+      "immigrationLive": "Immigration Live",
+      "contact": "Contact",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
   "footer": {
     "description": "Trusted immigration and business law counsel in Florida.",
     "immigrationLinks": "Immigration",

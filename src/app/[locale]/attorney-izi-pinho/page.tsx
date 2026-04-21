@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { createPageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
+import { HeroPill, StarIcon } from "@/components/ui/hero-pill";
 import { CtaSection } from "@/components/sections/cta-section";
 import Image from "next/image";
 import type { Locale } from "@/i18n/routing";
@@ -132,6 +133,19 @@ export default async function AttorneyPage({
                   </div>
                 </div>
               </div>
+
+              {/* AILA membership feature pill */}
+              <HeroPill
+                icon={<StarIcon />}
+                text={
+                  locale.startsWith("pt")
+                    ? "Membro AILA desde 2019 — American Immigration Lawyers Association"
+                    : locale.startsWith("es")
+                      ? "Miembro AILA desde 2019 — American Immigration Lawyers Association"
+                      : "AILA Member since 2019 — American Immigration Lawyers Association"
+                }
+                className="group mt-4"
+              />
 
               {/* Credentials */}
               <div className="space-y-4 border-t border-border pt-8">

@@ -111,3 +111,11 @@ body::after {
 .animate-slide-up-fade {
   animation: slide-up-fade 0.4s ease-out;
 }
+
+/* --- Border-beam traveling edge (from 21st.dev/border-beam) --- */
+@keyframes border-beam {
+  100% { offset-distance: 100%; }
+}
+.animate-border-beam {
+  animation: border-beam calc(var(--duration) * 1s) infinite linear;
+}

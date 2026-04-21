@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { BorderBeam } from "@/components/ui/border-beam";
 import { FIRM } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -15,27 +16,40 @@ export function CtaSection() {
 
       <Container className="relative z-10">
         <FadeIn>
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[var(--radius-lg)] border border-cream/10 bg-navy-light/30 px-6 py-12 text-center backdrop-blur-sm md:px-12 md:py-16">
+            {/* 21st.dev BorderBeam — traces the CTA frame on every page */}
+            <BorderBeam size={220} duration={14} colorFrom="#C9A961" colorTo="#F5F1E8" />
+            <BorderBeam
+              size={180}
+              duration={14}
+              delay={7}
+              colorFrom="#F5F1E8"
+              colorTo="#C9A961"
+            />
+
             <span className="gold-rule mx-auto" />
             <h2 className="mt-6 font-heading text-3xl font-semibold text-cream md:text-4xl lg:text-5xl">
               {t("headline")}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-cream/60">
+            <p className="mt-5 text-base leading-relaxed text-cream/60 md:text-lg">
               {t("description")}
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/consultation">
-                <Button size="lg">{t("cta")}</Button>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+              <Link href="/consultation" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto">
+                  {t("cta")}
+                </Button>
               </Link>
               <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="border-cream/20 text-cream hover:bg-cream hover:text-navy"
+                  className="w-full border-cream/20 text-cream hover:bg-cream hover:text-navy sm:w-auto"
                 >
                   {t("ctaWhatsApp")}
                 </Button>
