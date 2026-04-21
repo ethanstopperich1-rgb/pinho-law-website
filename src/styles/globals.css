@@ -119,3 +119,19 @@ body::after {
 .animate-border-beam {
   animation: border-beam calc(var(--duration) * 1s) infinite linear;
 }
+
+/* --- Spinning logos orbit (from 21st.dev/spinning-logos) --- */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-spin-reverse {
+  animation: spin-reverse 40s linear infinite;
+}
