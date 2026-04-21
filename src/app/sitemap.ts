@@ -40,6 +40,7 @@ const topPages = [
   "blog/abrir-empresa-eua-sendo-brasileiro",
   "blog/eb-5-brasileiros-2026-sem-fila",
   "blog/naturalizacao-americana-quando-como",
+  "blog/l-1a-executivos-brasileiros-guia",
   "disclaimer",
   "privacy",
   "terms",
