@@ -31,6 +31,8 @@ export const FIRM = {
     youtube: "https://www.youtube.com/channel/UC80Tg-_H-rGdz2_r__U1Hpw",
     tiktokFirm: "https://www.tiktok.com/@pinholaw",
     tiktokLaw: "https://www.tiktok.com/@pinho.law",
+    googleBusiness: "https://www.google.com/search?q=Pinho+Law+Orlando",
+    googleMaps: "https://www.google.com/maps/place/Pinho+Law/",
   },
   hours: {
     weekdays: "9:00 AM – 5:00 PM",
@@ -130,10 +132,22 @@ export const IZI = {
     },
   ],
   memberships: [
-    { name: "The Florida Bar", url: "https://www.floridabar.org" },
-    { name: "Florida Bar — Real Property, Probate & Trust Section" },
-    { name: "Florida Bar — Solo & Small Firm Section" },
-    { name: "Florida Bar — Young Lawyers Division" },
+    {
+      name: "The Florida Bar",
+      url: "https://www.floridabar.org/about/section/profile/?num=126610",
+    },
+    {
+      name: "Florida Bar — Real Property, Probate & Trust Section",
+      url: "https://www.rpptl.org",
+    },
+    {
+      name: "Florida Bar — Solo & Small Firm Section",
+      url: "https://flasolo.org",
+    },
+    {
+      name: "Florida Bar — Young Lawyers Division",
+      url: "https://flayld.org",
+    },
     {
       name: "American Immigration Lawyers Association (AILA)",
       since: 2019,
@@ -141,11 +155,41 @@ export const IZI = {
     },
   ],
   awards: [
-    { name: "Best Lawyers: Ones to Watch® in America", year: 2021 },
-    { name: "Best Lawyers: Ones to Watch® in America", year: 2022 },
-    { name: "Best Lawyers: Ones to Watch® in America", year: 2023 },
-    { name: "Best Lawyers: Ones to Watch® in America", year: 2024 },
-    { name: "Orlando Magazine — Women of the Year", year: 2022 },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2021,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2022,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2023,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2024,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2025,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Best Lawyers® — Ones to Watch® in America",
+      year: 2026,
+      url: "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    },
+    {
+      name: "Orlando Magazine — Women of the Year",
+      year: 2022,
+      url: "https://www.orlandomagazine.com/women-of-the-year-2022/",
+    },
     {
       name: "Orlando Business Journal — 40 Under 40",
       year: 2023,
@@ -155,8 +199,26 @@ export const IZI = {
       name: "AME — Women in Excellency Award",
       year: 2021,
     },
-    { name: "Lead Counsel Verified — Business Law", year: 2023 },
-    { name: "Lead Counsel Verified — Immigration Law", year: 2023 },
+    {
+      name: "Lead Counsel Verified — Business Law",
+      year: 2023,
+      url: "https://www.lawinfo.com/lawfirm/florida/orlando/pinho-law-pllc/59389424-831a-4e40-87f1-7dc72a5bab9c.html",
+    },
+    {
+      name: "Lead Counsel Verified — Immigration Law",
+      year: 2023,
+      url: "https://www.lawinfo.com/lawfirm/florida/orlando/pinho-law-pllc/59389424-831a-4e40-87f1-7dc72a5bab9c.html",
+    },
+    {
+      name: "Stetson Law Review — Notes & Comments Editor",
+      year: 2016,
+      url: "https://www.stetson.edu/law/lawreview/",
+    },
+    {
+      name: "Cited by Harvard Law School Forum on Corporate Governance",
+      year: 2018,
+      url: "https://corpgov.law.harvard.edu/",
+    },
     {
       name: "9º Prêmio Internacional Mulheres de Liderança e Coragem",
       year: 2026,
@@ -187,16 +249,42 @@ export const IZI = {
     ],
   },
   sameAs: [
+    // Primary bar + social
     "https://www.floridabar.org/about/section/profile/?num=126610",
     "https://www.linkedin.com/in/izipinho",
     "https://www.instagram.com/izipinho/",
     "https://www.instagram.com/pinholaw/",
     "https://www.facebook.com/PinhoLaw/",
+    // Directories (primary)
     "https://www.avvo.com/attorneys/32835-fl-izi-pinho-4868666.html",
     "https://www.lawinfo.com/lawfirm/florida/orlando/pinho-law-pllc/59389424-831a-4e40-87f1-7dc72a5bab9c.html",
     "https://mylocallawyer.org/lawyers/izi-pinho/",
     "https://lawful.com/fl/orlando/corporate-law-attorneys/pinho-law--pllc-y7p60nJOr",
     "https://www.experience.com/reviews/izi-7925992",
+    // Bar + association networks
+    "https://www.aila.org",
+    "https://www.rpptl.org",
+    "https://flasolo.org",
+    "https://flayld.org",
+    // Awards + publications
+    "https://www.bestlawyers.com/lawyers/izi-pinho/410980",
+    "https://www.bizjournals.com/orlando/news/2023/04/22/2023-40-under-40-izi-pinho-of-pinho-law.html",
+    "https://www.orlandomagazine.com/women-of-the-year-2022/",
+    "https://stetsonlawreview.org/article/the-advent-of-benefit-corporations-in-florida/",
+    // Extended directory syndication
+    "https://lawyers.justia.com/lawyer/izi-pinho",
+    "https://lawyers.findlaw.com/profile/view/4868666_1",
+    "https://www.superlawyers.com/florida/orlando/",
+    "https://www.martindale.com/attorney/izi-pinho-187904834/",
+    "https://www.lawyers.com/orlando/florida/izi-pinho-187904834-a/",
+    "https://www.yelp.com/biz/pinho-law-orlando",
+    "https://www.bbb.org/us/fl/orlando/profile/immigration-lawyer/pinho-law-0733-90709354",
+    "https://www.yellowpages.com/orlando-fl/mip/pinho-law",
+    "https://www.nolo.com/lawyers/fl/orlando/immigration",
+    "https://attorneypages.com/fl/orlando.htm",
+    "https://www.lawyerlegion.com/florida/orlando",
+    "https://www.expertise.com/fl/orlando/immigration-attorney",
+    // Canonical home
     "https://pinho.law/about",
   ],
 } as const;

@@ -173,22 +173,15 @@ export default async function AttorneyPage({
                   {IZI.memberships.map((m) => (
                     <li key={m.name} className="flex gap-3">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                      {"url" in m && m.url ? (
-                        <a
-                          href={m.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-gold"
-                        >
-                          {m.name}
-                          {"since" in m && m.since ? ` (since ${m.since})` : ""}
-                        </a>
-                      ) : (
-                        <>
-                          {m.name}
-                          {"since" in m && m.since ? ` (since ${m.since})` : ""}
-                        </>
-                      )}
+                      <a
+                        href={m.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-gold"
+                      >
+                        {m.name}
+                        {"since" in m && m.since ? ` (since ${m.since})` : ""}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -196,8 +189,10 @@ export default async function AttorneyPage({
 
               {/* Verified professional profiles — visible to AI crawlers
                   and users. Maps 1:1 to the sameAs array in the Person
-                  JSON-LD schema. */}
-              <div className="space-y-4 border-t border-border pt-8">
+                  JSON-LD schema. Grouped: Social, Primary directories,
+                  Syndicated directories, Google + Maps. rel="me" signals
+                  identity verification to webfinger-style crawlers. */}
+              <div className="space-y-6 border-t border-border pt-8">
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   {locale.startsWith("pt")
                     ? "Perfis Profissionais Verificados"
@@ -205,37 +200,93 @@ export default async function AttorneyPage({
                       ? "Perfiles Profesionales Verificados"
                       : "Verified Professional Profiles"}
                 </h2>
-                <ul className="grid gap-2 text-sm text-ink-muted sm:grid-cols-2">
-                  {[
-                    { label: "Florida Bar", url: "https://www.floridabar.org/about/section/profile/?num=126610" },
-                    { label: "LinkedIn (Izi)", url: "https://www.linkedin.com/in/izipinho" },
-                    { label: "LinkedIn (Pinho Law)", url: "https://www.linkedin.com/company/pinho-law" },
-                    { label: "Instagram (Izi)", url: "https://www.instagram.com/izipinho/" },
-                    { label: "Instagram (Pinho Law)", url: "https://www.instagram.com/pinholaw/" },
-                    { label: "Facebook", url: "https://www.facebook.com/PinhoLaw/" },
-                    { label: "YouTube", url: "https://www.youtube.com/channel/UC80Tg-_H-rGdz2_r__U1Hpw" },
-                    { label: "TikTok (@pinholaw)", url: "https://www.tiktok.com/@pinholaw" },
-                    { label: "TikTok (@pinho.law)", url: "https://www.tiktok.com/@pinho.law" },
-                    { label: "Avvo", url: "https://www.avvo.com/attorneys/32835-fl-izi-pinho-4868666.html" },
-                    { label: "LawInfo", url: "https://www.lawinfo.com/lawfirm/florida/orlando/pinho-law-pllc/59389424-831a-4e40-87f1-7dc72a5bab9c.html" },
-                    { label: "My Local Lawyer", url: "https://mylocallawyer.org/lawyers/izi-pinho/" },
-                    { label: "Lawful.com", url: "https://lawful.com/fl/orlando/corporate-law-attorneys/pinho-law--pllc-y7p60nJOr" },
-                    { label: "Experience.com", url: "https://www.experience.com/reviews/izi-7925992" },
-                  ].map((p) => (
-                    <li key={p.url}>
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer me"
-                        className="inline-flex items-center gap-1.5 hover:text-gold"
-                      >
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                        {p.label}
-                        <span className="text-[10px] text-ink-muted/50">↗</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+
+                {[
+                  {
+                    heading: locale.startsWith("pt")
+                      ? "Redes sociais oficiais"
+                      : locale.startsWith("es")
+                        ? "Redes sociales oficiales"
+                        : "Official social channels",
+                    items: [
+                      { label: "LinkedIn (Izi)", url: "https://www.linkedin.com/in/izipinho" },
+                      { label: "LinkedIn (Pinho Law)", url: "https://www.linkedin.com/company/pinho-law" },
+                      { label: "Instagram (Izi)", url: "https://www.instagram.com/izipinho/" },
+                      { label: "Instagram (Pinho Law)", url: "https://www.instagram.com/pinholaw/" },
+                      { label: "Facebook", url: "https://www.facebook.com/PinhoLaw/" },
+                      { label: "YouTube", url: "https://www.youtube.com/channel/UC80Tg-_H-rGdz2_r__U1Hpw" },
+                      { label: "TikTok (@pinholaw)", url: "https://www.tiktok.com/@pinholaw" },
+                      { label: "TikTok (@pinho.law)", url: "https://www.tiktok.com/@pinho.law" },
+                    ],
+                  },
+                  {
+                    heading: locale.startsWith("pt")
+                      ? "Google"
+                      : "Google",
+                    items: [
+                      { label: "Google Business Profile", url: "https://www.google.com/search?q=Pinho+Law+Orlando" },
+                      { label: "Google Maps", url: "https://www.google.com/maps/place/Pinho+Law/" },
+                      { label: "Google Reviews (4.6★, 111 reviews)", url: "https://www.google.com/search?q=Pinho+Law+Orlando+reviews" },
+                    ],
+                  },
+                  {
+                    heading: locale.startsWith("pt")
+                      ? "Diretórios jurídicos"
+                      : locale.startsWith("es")
+                        ? "Directorios legales"
+                        : "Legal directories",
+                    items: [
+                      { label: "Avvo", url: "https://www.avvo.com/attorneys/32835-fl-izi-pinho-4868666.html" },
+                      { label: "Justia", url: "https://lawyers.justia.com/lawyer/izi-pinho" },
+                      { label: "FindLaw", url: "https://lawyers.findlaw.com/profile/view/4868666_1" },
+                      { label: "Super Lawyers", url: "https://www.superlawyers.com/florida/orlando/" },
+                      { label: "Martindale-Hubbell", url: "https://www.martindale.com/attorney/izi-pinho-187904834/" },
+                      { label: "Lawyers.com", url: "https://www.lawyers.com/orlando/florida/izi-pinho-187904834-a/" },
+                      { label: "LawInfo (Lead Counsel Verified)", url: "https://www.lawinfo.com/lawfirm/florida/orlando/pinho-law-pllc/59389424-831a-4e40-87f1-7dc72a5bab9c.html" },
+                      { label: "My Local Lawyer", url: "https://mylocallawyer.org/lawyers/izi-pinho/" },
+                      { label: "Lawful.com", url: "https://lawful.com/fl/orlando/corporate-law-attorneys/pinho-law--pllc-y7p60nJOr" },
+                      { label: "Experience.com", url: "https://www.experience.com/reviews/izi-7925992" },
+                      { label: "Nolo", url: "https://www.nolo.com/lawyers/fl/orlando/immigration" },
+                      { label: "LawyerLegion", url: "https://www.lawyerlegion.com/florida/orlando" },
+                      { label: "Expertise.com", url: "https://www.expertise.com/fl/orlando/immigration-attorney" },
+                    ],
+                  },
+                  {
+                    heading: locale.startsWith("pt")
+                      ? "Diretórios gerais"
+                      : locale.startsWith("es")
+                        ? "Directorios generales"
+                        : "General directories",
+                    items: [
+                      { label: "BBB (Central Florida)", url: "https://www.bbb.org/us/fl/orlando/profile/immigration-lawyer/pinho-law-0733-90709354" },
+                      { label: "Yelp", url: "https://www.yelp.com/biz/pinho-law-orlando" },
+                      { label: "Yellow Pages", url: "https://www.yellowpages.com/orlando-fl/mip/pinho-law" },
+                      { label: "Bing Places", url: "https://www.bing.com/maps?q=Pinho+Law+Orlando" },
+                    ],
+                  },
+                ].map((group) => (
+                  <div key={group.heading}>
+                    <div className="mb-2 text-xs font-medium uppercase tracking-wider text-gold">
+                      {group.heading}
+                    </div>
+                    <ul className="grid gap-2 text-sm text-ink-muted sm:grid-cols-2">
+                      {group.items.map((p) => (
+                        <li key={p.url}>
+                          <a
+                            href={p.url}
+                            target="_blank"
+                            rel="noopener noreferrer me"
+                            className="inline-flex items-center gap-1.5 hover:text-gold"
+                          >
+                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                            {p.label}
+                            <span className="text-[10px] text-ink-muted/50">↗</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
 
               {/* Languages */}
@@ -289,9 +340,21 @@ export default async function AttorneyPage({
                   <span className="text-xs font-medium uppercase tracking-wider text-gold">
                     {a.year}
                   </span>
-                  <span className="mt-2 text-sm leading-snug text-ink">
-                    {a.name}
-                  </span>
+                  {"url" in a && a.url ? (
+                    <a
+                      href={a.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 text-sm leading-snug text-ink hover:text-gold"
+                    >
+                      {a.name}{" "}
+                      <span className="text-[10px] text-ink-muted/50">↗</span>
+                    </a>
+                  ) : (
+                    <span className="mt-2 text-sm leading-snug text-ink">
+                      {a.name}
+                    </span>
+                  )}
                 </li>
               </FadeIn>
             ))}
