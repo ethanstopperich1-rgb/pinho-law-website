@@ -7,6 +7,7 @@ import { SITE } from "@/lib/constants";
 
 import { Hero } from "@/components/sections/hero";
 import { PracticeAreas } from "@/components/sections/practice-areas";
+import { ServicesEnumeration } from "@/components/sections/services-enumeration";
 import { WhyPinho } from "@/components/sections/why-pinho";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -61,6 +62,7 @@ export default async function HomePage({
 
       <Hero />
       <PracticeAreas />
+      <ServicesEnumeration />
       <WhyPinho />
       <FirmVideo />
       <HowItWorks />

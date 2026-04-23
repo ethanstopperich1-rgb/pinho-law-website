@@ -7,7 +7,6 @@ import { CASE_STATS, FIRM, REVIEWS } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarIcon } from "@/components/ui/hero-pill";
 import { MagneticButton } from "@/components/ui/magnetic-button";
-import { Award, Scale, Globe2 } from "lucide-react";
 
 // Premium glassmorphism hero — layered backgrounds, scholarly pill,
 // Dra. Izi portrait with floating glass credential cards, trust marquee.
@@ -77,7 +76,7 @@ export function Hero() {
 
 
             <FadeIn delay={0.1}>
-              <h1 className="font-heading text-5xl font-semibold leading-[1.05] text-cream md:text-6xl lg:text-7xl">
+              <h1 className="font-heading text-5xl font-bold leading-[1.02] tracking-tight text-cream md:text-6xl lg:text-7xl xl:text-8xl">
                 {t("headline")}
               </h1>
             </FadeIn>
@@ -135,73 +134,50 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          {/* --- RIGHT: Portrait + floating glass credential cards --- */}
+          {/* --- RIGHT: Portrait — cleaner composition per client ref.
+              Full-bleed to the right edge, no floating cards cluttering
+              the frame, subtle gothic-arch backdrop via CSS. --- */}
           <FadeIn delay={0.2} className="hidden lg:col-span-5 lg:block">
             <div className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] bg-gradient-to-br from-navy via-navy-light to-navy">
+              {/* Gothic-arch / cathedral-column atmospheric backdrop */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10"
+                style={{
+                  backgroundImage: `
+                    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(201,169,97,0.12) 0%, transparent 60%),
+                    repeating-linear-gradient(90deg,
+                      transparent 0,
+                      transparent 48px,
+                      rgba(201,169,97,0.06) 48px,
+                      rgba(201,169,97,0.06) 49px,
+                      transparent 49px,
+                      transparent 96px
+                    )
+                  `,
+                  maskImage:
+                    "radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 80%)",
+                }}
+              />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] bg-gradient-to-br from-navy via-navy-light to-navy shadow-2xl">
                 <Image
                   src="/images/izi-pinho.jpg"
-                  alt="Dra. Izi Pinho, Esq. — Founder of Pinho Law"
+                  alt="Dra. Izi Pinho, Esq. — Florida Bar #126610, AILA since 2019, Stetson Law magna cum laude (2016). Founder of Pinho Law."
                   fill
                   className="object-cover object-top mix-blend-luminosity"
                   sizes="(min-width: 1024px) 40vw, 0vw"
                   priority
                 />
-                {/* Multi-layer tone so the photo's studio white blends
-                    into the navy hero instead of popping out as a
-                    bright rectangle. */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-navy/40 mix-blend-multiply" />
+                {/* Tone layers to blend studio white into navy hero */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-navy/30 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.85)_100%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.18)_0%,_transparent_60%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.14)_0%,_transparent_60%)]" />
               </div>
 
-              {/* Outline shadow for the "premium" floated frame */}
-              <div className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-[var(--radius-lg)] border border-gold/20" />
-
-              {/* Floating credential glass card — sits ABOVE the portrait
-                  entirely so it never crosses Dra. Izi's face/head. */}
-              <div className="absolute bottom-full right-0 mb-3 w-60 rounded-[var(--radius-md)] border border-cream/15 bg-navy/80 p-4 backdrop-blur-xl shadow-2xl xl:-right-12">
-                <div className="mb-2 flex items-center gap-2">
-                  <Scale className="h-4 w-4 text-gold" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
-                    {t("credentials.label")}
-                  </span>
-                </div>
-                <div className="space-y-2 text-xs leading-relaxed text-cream/80">
-                  <div>
-                    Florida Bar <span className="text-cream">#126610</span>
-                  </div>
-                  <div>
-                    AILA <span className="text-cream">{t("credentials.ailaSince")}</span>
-                  </div>
-                  <div>
-                    Stetson Law Review{" "}
-                    <span className="text-cream">{t("credentials.stetsonEditor")}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Harvard citation card — bottom left */}
-              <div className="absolute -bottom-6 -left-4 w-[18rem] rounded-[var(--radius-md)] border border-gold/25 bg-navy/70 p-4 backdrop-blur-xl shadow-2xl">
-                <div className="mb-1.5 flex items-center gap-2">
-                  <Award className="h-4 w-4 text-gold" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
-                    {t("credentials.citedBy")}
-                  </span>
-                </div>
-                <p className="text-sm leading-snug text-cream">
-                  Harvard Law School Forum on Corporate Governance
-                </p>
-                <p className="mt-1 text-[11px] text-cream/55">
-                  47 Stetson L. Rev. 333 (2018) — Benefit Corporations
-                </p>
-              </div>
-
-              {/* Languages micro-pill — bottom right */}
-              <div className="absolute -bottom-3 right-4 flex items-center gap-2 rounded-full border border-cream/15 bg-navy/60 px-3 py-1.5 text-[11px] font-medium text-cream/80 backdrop-blur-xl shadow-xl">
-                <Globe2 className="h-3.5 w-3.5 text-gold" />
-                PT · EN · ES
-              </div>
+              {/* Subtle gold frame offset — kept (minimal, premium) */}
+              <div className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-[var(--radius-lg)] border border-gold/25" />
             </div>
           </FadeIn>
         </div>
