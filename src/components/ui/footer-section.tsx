@@ -8,6 +8,7 @@ import {
   InstagramIcon,
   LinkedinIcon,
   YoutubeIcon,
+  MusicIcon,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -91,6 +92,18 @@ function useSections(): FooterSection[] {
           href: FIRM.social.youtube,
           external: true,
           icon: YoutubeIcon,
+        },
+        {
+          title: "TikTok @pinholaw",
+          href: FIRM.social.tiktokFirm,
+          external: true,
+          icon: MusicIcon,
+        },
+        {
+          title: "TikTok @pinho.law",
+          href: FIRM.social.tiktokLaw,
+          external: true,
+          icon: MusicIcon,
         },
       ],
     },
