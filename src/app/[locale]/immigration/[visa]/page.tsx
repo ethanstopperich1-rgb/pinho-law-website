@@ -9,6 +9,7 @@ import { VisaTimeline } from "@/components/sections/VisaTimeline";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { AlternativesGrid } from "@/components/sections/AlternativesGrid";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { createPageMetadata } from "@/lib/metadata";
@@ -225,6 +226,19 @@ export default async function VisaHubPage({
       <section className="bg-cream py-8">
         <Container>
           <VisaPropertiesBar visa={visa} locale={l} />
+        </Container>
+      </section>
+
+      {/* Author byline + freshness (AEO E-E-A-T) */}
+      <section className="border-y border-border/40 bg-cream pb-6">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <AuthorByline
+              locale={l as Locale}
+              role="reviewer"
+              reviewedAt={visa.lastReviewedAt}
+            />
+          </div>
         </Container>
       </section>
 

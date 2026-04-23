@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
 import { CtaSection } from "@/components/sections/cta-section";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { createPageMetadata } from "@/lib/metadata";
@@ -243,6 +244,15 @@ export default async function CityAttorneyPage({
               </a>
             </div>
           </FadeIn>
+        </Container>
+      </section>
+
+      {/* Author byline + freshness (AEO E-E-A-T) */}
+      <section className="border-b border-border/40 bg-cream pt-6">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <AuthorByline locale={l as Locale} role="author" />
+          </div>
         </Container>
       </section>
 

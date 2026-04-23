@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { CtaSection } from "@/components/sections/cta-section";
 import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
+import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
@@ -95,6 +96,15 @@ export function ServiceHubTemplate({
               </div>
             </FadeIn>
           )}
+        </Container>
+      </section>
+
+      {/* Author byline + freshness (AEO E-E-A-T) */}
+      <section className="border-b border-border/40 bg-cream py-6">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <AuthorByline locale={content.locale} role="reviewer" />
+          </div>
         </Container>
       </section>
 
