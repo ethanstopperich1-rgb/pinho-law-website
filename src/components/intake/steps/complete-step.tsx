@@ -1,19 +1,54 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import type { StepProps } from "../types";
 import type { IntakeData } from "../types";
 import { StepHeading, StepSubtitle } from "./step-shared";
 import { FIRM } from "@/lib/constants";
 import { motion } from "framer-motion";
-import { CheckCircle, Phone, MessageCircle, Mail, RotateCcw } from "lucide-react";
+import {
+  CheckCircle,
+  Phone,
+  MessageCircle,
+  Mail,
+  RotateCcw,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
+type SubmitState = "idle" | "sending" | "sent" | "failed";
+
 export function CompleteStep({ t, intake }: StepProps) {
+  const locale = useLocale() as "pt" | "en" | "es";
   const whatsappUrl = useMemo(
     () => buildWhatsAppUrl(intake.data, t),
-    [intake.data, t]
+    [intake.data, t],
   );
+
+  // Fire the intake submission exactly once when this step mounts.
+  // StrictMode-safe via the ref guard.
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const firedRef = useRef(false);
+  useEffect(() => {
+    if (firedRef.current) return;
+    firedRef.current = true;
+    setSubmitState("sending");
+    fetch("/api/intake/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...intake.data,
+        locale,
+        source: typeof window !== "undefined" ? window.location.pathname : "",
+      }),
+    })
+      .then((r) => r.json().catch(() => null))
+      .then((data) => {
+        if (data?.ok) setSubmitState("sent");
+        else setSubmitState("failed");
+      })
+      .catch(() => setSubmitState("failed"));
+  }, [intake.data, locale]);
 
   return (
     <div className="w-full">
@@ -31,12 +66,30 @@ export function CompleteStep({ t, intake }: StepProps) {
         <StepHeading>{t("complete.heading")}</StepHeading>
         <StepSubtitle>{t("complete.subtitle")}</StepSubtitle>
 
+        {/* Submission status strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15 }}
+          className={cn(
+            "mt-4 w-full rounded-[var(--radius-sm)] px-3 py-2 text-center text-xs font-medium transition-colors",
+            submitState === "sending" && "border border-gold/30 bg-gold/5 text-gold",
+            submitState === "sent" && "border border-emerald-500/30 bg-emerald-500/5 text-emerald-700",
+            submitState === "failed" && "border border-amber-500/30 bg-amber-500/5 text-amber-700",
+            submitState === "idle" && "hidden",
+          )}
+        >
+          {submitState === "sending" && (locale === "pt" ? "Enviando suas informações à equipe…" : locale === "es" ? "Enviando tu información…" : "Sending your intake…")}
+          {submitState === "sent" && (locale === "pt" ? "✓ Enviado. Verifique sua caixa de entrada em 1–2 minutos." : locale === "es" ? "✓ Enviado. Revisa tu bandeja en 1–2 minutos." : "✓ Sent. Check your inbox in 1–2 minutes.")}
+          {submitState === "failed" && (locale === "pt" ? "⚠️ Email falhou. Use WhatsApp ou telefone abaixo." : locale === "es" ? "⚠️ Falló el envío. Usa WhatsApp o teléfono abajo." : "⚠️ Email failed. Use WhatsApp or phone below.")}
+        </motion.div>
+
         {/* Summary card */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mt-6 w-full rounded-[var(--radius-md)] border border-border-light bg-cream p-4"
+          className="mt-4 w-full rounded-[var(--radius-md)] border border-border-light bg-cream p-4"
         >
           <p className="text-xs font-medium uppercase tracking-wider text-ink-muted">
             {t("complete.summaryLabel")}

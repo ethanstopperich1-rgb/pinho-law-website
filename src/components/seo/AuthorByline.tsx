@@ -69,10 +69,9 @@ export function AuthorByline({
           src="/images/izi-pinho.jpg"
           alt="Dra. Izi Pinho, Esq."
           fill
-          className="object-cover object-top mix-blend-luminosity"
+          className="object-cover object-top"
           sizes="48px"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(14,27,46,0.7)_100%)]" />
       </div>
       <div className="min-w-0 flex-1">
         <div className="text-xs uppercase tracking-wider text-gold">

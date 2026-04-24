@@ -166,14 +166,16 @@ export function Hero() {
                   src="/images/izi-pinho.jpg"
                   alt="Dra. Izi Pinho, Esq. — Florida Bar #126610, AILA since 2019, Stetson Law magna cum laude (2016). Founder of Pinho Law."
                   fill
-                  className="object-cover object-top mix-blend-luminosity"
+                  className="object-cover object-top"
                   sizes="(min-width: 1024px) 40vw, 0vw"
                   priority
                 />
-                {/* Tone layers to blend studio white into navy hero */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-navy/30 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.85)_100%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.14)_0%,_transparent_60%)]" />
+                {/* Edge-only vignette — hides the studio-white around the
+                    subject while keeping her in full color. The center
+                    55% is transparent; only the outer ring fades to navy. */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_45%,_transparent_0%,_transparent_55%,_rgba(14,27,46,0.88)_100%)]" />
+                {/* Soft gold glow on top-right — doesn't desaturate */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.14)_0%,_transparent_60%)] mix-blend-screen" />
               </div>
 
               {/* Subtle gold frame offset — kept (minimal, premium) */}

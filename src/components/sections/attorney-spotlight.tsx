@@ -22,15 +22,13 @@ export function AttorneySpotlight() {
                   src="/images/izi-pinho.jpg"
                   alt="Izi Pinho, Esq."
                   fill
-                  className="object-cover object-top mix-blend-luminosity"
+                  className="object-cover object-top"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
-                {/* Navy wash to unify photo background with page */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-navy/40 mix-blend-multiply" />
-                {/* Gold-tinted edge vignette */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.75)_100%)]" />
-                {/* Soft gold grain on top */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)]" />
+                {/* Edge-only vignette — keeps the subject in full color;
+                    only the outer ring of studio-white fades to navy. */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_45%,_transparent_0%,_transparent_55%,_rgba(14,27,46,0.85)_100%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)] mix-blend-screen" />
               </div>
               <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/30 lg:aspect-[4/5]" />
             </div>

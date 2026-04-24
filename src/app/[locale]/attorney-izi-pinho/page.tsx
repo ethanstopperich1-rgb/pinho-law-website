@@ -66,13 +66,12 @@ export default async function AttorneyPage({
                     src="/images/izi-pinho.jpg"
                     alt={t("name")}
                     fill
-                    className="object-cover object-top mix-blend-luminosity"
+                    className="object-cover object-top"
                     sizes="(min-width: 1024px) 40vw, 100vw"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/20 to-navy/40 mix-blend-multiply" />
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_55%,_rgba(14,27,46,0.75)_100%)]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)]" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_45%,_transparent_0%,_transparent_55%,_rgba(14,27,46,0.85)_100%)]" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,97,0.12)_0%,_transparent_60%)] mix-blend-screen" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 -z-10 aspect-[3/4] w-full rounded-[var(--radius-lg)] border border-gold/30" />
               </div>
