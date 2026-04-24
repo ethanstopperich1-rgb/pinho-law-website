@@ -26,8 +26,11 @@ export function CompleteStep({ t, intake }: StepProps) {
   );
 
   // Fire the intake submission exactly once when this step mounts.
-  // StrictMode-safe via the ref guard.
+  // StrictMode-safe via the ref guard. Server returns a wa.me URL
+  // pre-filled with the lead's info → we hold it for the WhatsApp
+  // button (primary CTA) and optionally auto-open.
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [serverWaUrl, setServerWaUrl] = useState<string | null>(null);
   const firedRef = useRef(false);
   useEffect(() => {
     if (firedRef.current) return;
@@ -44,8 +47,14 @@ export function CompleteStep({ t, intake }: StepProps) {
     })
       .then((r) => r.json().catch(() => null))
       .then((data) => {
-        if (data?.ok) setSubmitState("sent");
-        else setSubmitState("failed");
+        if (data?.ok) {
+          setSubmitState("sent");
+          if (typeof data.whatsappUrl === "string") {
+            setServerWaUrl(data.whatsappUrl);
+          }
+        } else {
+          setSubmitState("failed");
+        }
       })
       .catch(() => setSubmitState("failed"));
   }, [intake.data, locale]);
@@ -109,15 +118,18 @@ export function CompleteStep({ t, intake }: StepProps) {
           transition={{ delay: 0.35 }}
           className="mt-6 flex w-full flex-col gap-2.5"
         >
-          {/* WhatsApp — primary CTA */}
+          {/* WhatsApp — primary CTA. Prefer server-returned wa.me URL
+              (uses same-format lead text as all other notification
+              channels); fall back to locally-built URL while the
+              submit is in flight. */}
           <a
-            href={whatsappUrl}
+            href={serverWaUrl ?? whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
               "flex items-center justify-center gap-2 rounded-[var(--radius-sm)] px-6 py-3.5 text-[0.9rem] font-medium tracking-wide transition-all duration-300",
               "bg-[#25D366] text-white shadow-sm hover:bg-[#20BD5A] hover:shadow-md active:scale-[0.98]",
-              "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+              "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]",
             )}
           >
             <MessageCircle className="h-4 w-4" />

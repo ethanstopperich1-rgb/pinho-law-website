@@ -56,80 +56,14 @@ function buildLeadText(d: IntakeSubmission): string {
     .join("\n");
 }
 
-// ── WhatsApp notification (Meta Cloud API, free, direct) ─────────
-// When a lead submits, Meta's Graph API sends a WhatsApp message from
-// the firm's registered WhatsApp Business number to FIRM_WHATSAPP_TO.
-//
-// Setup (free):
-//   1. developers.facebook.com → create app → add WhatsApp product
-//   2. Get: WHATSAPP_PHONE_NUMBER_ID + WHATSAPP_ACCESS_TOKEN
-//   3. Add FIRM_WHATSAPP_TO as a test recipient (during dev) OR
-//      submit for production — then any number works as recipient.
-//
-// For outbound messages to a number that has NOT initiated contact
-// in the last 24h, Meta requires a pre-approved template. This code
-// prefers a template when WHATSAPP_TEMPLATE_NAME is set; otherwise
-// sends a plain text body (works if the firm's phone has messaged
-// the business number in the last 24h, which is true for the
-// firm's own inbox monitoring flow).
-async function notifyFirmWhatsApp(
-  d: IntakeSubmission,
-): Promise<"sent" | "skipped" | "failed"> {
-  const token = process.env.WHATSAPP_ACCESS_TOKEN;
-  const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
-  const to = process.env.FIRM_WHATSAPP_TO; // digits only, e.g. "14073854144"
-  if (!token || !phoneId || !to) return "skipped";
-
+// ── WhatsApp click-to-chat URL ────────────────────────────────────
+// No API, no keys. Server returns a pre-filled wa.me URL; the client
+// opens it, which launches WhatsApp with the lead's info already in
+// the draft. The user taps send → it lands in the firm's main number
+// inbox. Simplest integration; zero config.
+function buildWhatsAppDeepLink(d: IntakeSubmission): string {
   const text = buildLeadText(d);
-  const templateName = process.env.WHATSAPP_TEMPLATE_NAME;
-
-  // Template (for fresh conversations / 24h+ gaps). Template must
-  // be pre-approved in Meta Business Manager with variable for body.
-  const payload = templateName
-    ? {
-        messaging_product: "whatsapp",
-        to,
-        type: "template",
-        template: {
-          name: templateName,
-          language: { code: "pt_BR" },
-          components: [
-            {
-              type: "body",
-              parameters: [{ type: "text", text: text.slice(0, 1024) }],
-            },
-          ],
-        },
-      }
-    : {
-        messaging_product: "whatsapp",
-        to,
-        type: "text",
-        text: { body: text.slice(0, 4096) },
-      };
-
-  try {
-    const res = await fetch(
-      `https://graph.facebook.com/v20.0/${phoneId}/messages`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      },
-    );
-    if (!res.ok) {
-      const err = await res.text().catch(() => "");
-      console.error("[intake] WhatsApp Cloud API failed:", res.status, err);
-      return "failed";
-    }
-    return "sent";
-  } catch (err) {
-    console.error("[intake] WhatsApp Cloud API error:", err);
-    return "failed";
-  }
+  return `https://wa.me/${FIRM.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
 // ── Slack notification (incoming webhook) ────────────────────────
@@ -385,20 +319,18 @@ export async function POST(req: Request) {
     }
   })();
 
-  const [emailResult, waResult, slackResult] = await Promise.all([
+  const [emailResult, slackResult] = await Promise.all([
     emailPromise,
-    notifyFirmWhatsApp(body),
     notifyFirmSlack(body),
   ]);
 
-  // At least one "sent" = success. All failed (not skipped) = log the
-  // full lead payload for manual recovery via Vercel Function logs.
-  const anySent =
-    emailResult === "sent" || waResult === "sent" || slackResult === "sent";
-  const anyConfigured =
-    emailResult !== "skipped" ||
-    waResult !== "skipped" ||
-    slackResult !== "skipped";
+  // Build the wa.me click-to-chat URL — the client redirects the user
+  // to this after the "sent" confirmation, opening WhatsApp with the
+  // lead's info prefilled to the firm's main number.
+  const whatsappUrl = buildWhatsAppDeepLink(body);
+
+  const anySent = emailResult === "sent" || slackResult === "sent";
+  const anyConfigured = emailResult !== "skipped" || slackResult !== "skipped";
   if (!anySent && anyConfigured) {
     console.log(
       "[intake] ALL NOTIFICATION CHANNELS FAILED — manual follow-up needed:",
@@ -416,8 +348,8 @@ export async function POST(req: Request) {
     ok: true,
     channels: {
       email: emailResult,
-      whatsapp: waResult,
       slack: slackResult,
     },
+    whatsappUrl,
   });
 }
