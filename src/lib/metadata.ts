@@ -18,7 +18,7 @@ const localeToHreflang: Record<Locale, string> = {
   es: "es",
 };
 
-const DEFAULT_OG_IMAGE = `${SITE.url}/images/og/default.jpg`;
+const DEFAULT_OG_IMAGE = `${SITE.url}/opengraph-image`;
 
 /** Standard OG image array — 1200×630 branded image. */
 function ogImages(imageUrl?: string) {

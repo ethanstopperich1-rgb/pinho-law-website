@@ -135,3 +135,42 @@ body::after {
 .animate-spin-reverse {
   animation: spin-reverse 40s linear infinite;
 }
+
+/* --- Skip to content link (a11y) --- */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 16px;
+  background: #0E1B2E;
+  color: #F5F1E8;
+  border-bottom-right-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 100;
+  transition: top 0.15s ease-out;
+}
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid #C9A961;
+  outline-offset: 2px;
+}
+
+/* --- Respect prefers-reduced-motion (WCAG 2.3.3) --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-border-beam,
+  .animate-spin-slow,
+  .animate-spin-reverse,
+  .animate-pinho-marquee,
+  .animate-slide-up-fade {
+    animation: none !important;
+  }
+}

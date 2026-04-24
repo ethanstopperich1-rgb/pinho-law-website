@@ -7,6 +7,7 @@ import { SITE } from "@/lib/constants";
 
 import { Hero } from "@/components/sections/hero";
 import { PracticeAreas } from "@/components/sections/practice-areas";
+import { IntentPicker } from "@/components/sections/intent-picker";
 import { ServicesEnumeration } from "@/components/sections/services-enumeration";
 import { WhyPinho } from "@/components/sections/why-pinho";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -61,6 +62,7 @@ export default async function HomePage({
       <JsonLd data={faqSchema(faqItems)} />
 
       <Hero />
+      <IntentPicker />
       <PracticeAreas />
       <ServicesEnumeration />
       <WhyPinho />

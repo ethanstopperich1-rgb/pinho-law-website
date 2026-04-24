@@ -45,6 +45,13 @@ export default async function LocaleLayout({
           <JsonLd data={organizationSchema()} />
           <JsonLd data={webSiteSchema()} />
           <JsonLd data={iziPersonSchema()} />
+          <a href="#main-content" className="skip-to-content">
+            {locale === "pt"
+              ? "Pular para o conteúdo"
+              : locale === "es"
+                ? "Saltar al contenido"
+                : "Skip to content"}
+          </a>
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
