@@ -11,7 +11,7 @@ export function organizationSchema() {
     alternateName: ["Pinho Law", "Escritório de Advocacia Pinho Law"],
     legalName: FIRM.legalName,
     url: SITE.url,
-    logo: `${SITE.url}/images/logo.png`,
+    logo: `${SITE.url}/images/logo.svg`,
     image: `${SITE.url}/images/og/default.jpg`,
     telephone: FIRM.phone,
     email: FIRM.email,

@@ -124,17 +124,14 @@ export function Footer() {
         <div className="grid w-full gap-10 xl:grid-cols-3 xl:gap-8">
           {/* Brand column */}
           <AnimatedContainer className="space-y-5">
-            <Link href="/" className="inline-flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center">
               <Image
-                src="/images/logo-icon.png"
+                src="/images/logo.svg"
                 alt="Pinho Law"
-                width={40}
-                height={40}
-                className="rounded-md"
+                width={200}
+                height={50}
+                className="h-10 w-auto md:h-12"
               />
-              <span className="font-heading text-lg font-semibold text-white">
-                Pinho Law
-              </span>
             </Link>
             <address className="not-italic text-sm leading-relaxed text-white/70">
               {FIRM.address.street}

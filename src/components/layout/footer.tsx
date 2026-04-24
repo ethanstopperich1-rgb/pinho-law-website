@@ -35,7 +35,7 @@ export function Footer() {
           {/* Firm Identity */}
           <div className="space-y-5">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="Pinho Law"
               width={160}
               height={40}

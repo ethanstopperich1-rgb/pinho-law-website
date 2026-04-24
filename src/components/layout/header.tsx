@@ -18,7 +18,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="shrink-0">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.svg"
             alt="Pinho Law"
             width={180}
             height={45}
