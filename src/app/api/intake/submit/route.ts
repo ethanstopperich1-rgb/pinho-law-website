@@ -38,25 +38,11 @@ function validateEmail(e: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 }
 
-// ── WhatsApp notification (Twilio) ───────────────────────────────
-// Sends a brief ping to the firm's WhatsApp when a new intake arrives.
-// Uses Twilio's WhatsApp API. Configure env:
-//   TWILIO_ACCOUNT_SID=ACxxxxxxxx
-//   TWILIO_AUTH_TOKEN=xxxxxxxx
-//   TWILIO_WHATSAPP_FROM=whatsapp:+14155238886   (Twilio Sandbox or approved sender)
-//   FIRM_WHATSAPP_TO=whatsapp:+14073854144       (where Izi wants the ping)
-// Gracefully no-op if any is missing.
-async function notifyFirmWhatsApp(d: IntakeSubmission): Promise<"sent" | "skipped" | "failed"> {
-  const sid = process.env.TWILIO_ACCOUNT_SID;
-  const token = process.env.TWILIO_AUTH_TOKEN;
-  const from = process.env.TWILIO_WHATSAPP_FROM;
-  const to = process.env.FIRM_WHATSAPP_TO;
-  if (!sid || !token || !from || !to) return "skipped";
-
-  const lines = [
-    "🔔 *Novo lead — Pinho Law*",
+function buildLeadText(d: IntakeSubmission): string {
+  return [
+    "🔔 Novo lead — Pinho Law",
     "",
-    `*${sanitize(d.firstName)} ${sanitize(d.lastName)}*`,
+    `${sanitize(d.firstName)} ${sanitize(d.lastName)}`,
     `📧 ${sanitize(d.email)}`,
     d.phone ? `📱 ${sanitize(d.phone)}` : "",
     d.service ? `⚖️ Serviço: ${sanitize(d.service)}` : "",
@@ -68,33 +54,172 @@ async function notifyFirmWhatsApp(d: IntakeSubmission): Promise<"sent" | "skippe
   ]
     .filter(Boolean)
     .join("\n");
+}
 
-  const params = new URLSearchParams();
-  params.append("From", from);
-  params.append("To", to);
-  params.append("Body", lines);
+// ── WhatsApp notification (Meta Cloud API, free, direct) ─────────
+// When a lead submits, Meta's Graph API sends a WhatsApp message from
+// the firm's registered WhatsApp Business number to FIRM_WHATSAPP_TO.
+//
+// Setup (free):
+//   1. developers.facebook.com → create app → add WhatsApp product
+//   2. Get: WHATSAPP_PHONE_NUMBER_ID + WHATSAPP_ACCESS_TOKEN
+//   3. Add FIRM_WHATSAPP_TO as a test recipient (during dev) OR
+//      submit for production — then any number works as recipient.
+//
+// For outbound messages to a number that has NOT initiated contact
+// in the last 24h, Meta requires a pre-approved template. This code
+// prefers a template when WHATSAPP_TEMPLATE_NAME is set; otherwise
+// sends a plain text body (works if the firm's phone has messaged
+// the business number in the last 24h, which is true for the
+// firm's own inbox monitoring flow).
+async function notifyFirmWhatsApp(
+  d: IntakeSubmission,
+): Promise<"sent" | "skipped" | "failed"> {
+  const token = process.env.WHATSAPP_ACCESS_TOKEN;
+  const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
+  const to = process.env.FIRM_WHATSAPP_TO; // digits only, e.g. "14073854144"
+  if (!token || !phoneId || !to) return "skipped";
+
+  const text = buildLeadText(d);
+  const templateName = process.env.WHATSAPP_TEMPLATE_NAME;
+
+  // Template (for fresh conversations / 24h+ gaps). Template must
+  // be pre-approved in Meta Business Manager with variable for body.
+  const payload = templateName
+    ? {
+        messaging_product: "whatsapp",
+        to,
+        type: "template",
+        template: {
+          name: templateName,
+          language: { code: "pt_BR" },
+          components: [
+            {
+              type: "body",
+              parameters: [{ type: "text", text: text.slice(0, 1024) }],
+            },
+          ],
+        },
+      }
+    : {
+        messaging_product: "whatsapp",
+        to,
+        type: "text",
+        text: { body: text.slice(0, 4096) },
+      };
 
   try {
     const res = await fetch(
-      `https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`,
+      `https://graph.facebook.com/v20.0/${phoneId}/messages`,
       {
         method: "POST",
         headers: {
-          Authorization:
-            "Basic " + Buffer.from(`${sid}:${token}`).toString("base64"),
-          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
-        body: params.toString(),
+        body: JSON.stringify(payload),
       },
     );
     if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      console.error("[intake] Twilio WhatsApp failed:", res.status, text);
+      const err = await res.text().catch(() => "");
+      console.error("[intake] WhatsApp Cloud API failed:", res.status, err);
       return "failed";
     }
     return "sent";
   } catch (err) {
-    console.error("[intake] Twilio WhatsApp error:", err);
+    console.error("[intake] WhatsApp Cloud API error:", err);
+    return "failed";
+  }
+}
+
+// ── Slack notification (incoming webhook) ────────────────────────
+// Simple: single SLACK_WEBHOOK_URL env var, POST JSON. Posts to the
+// channel the webhook was created for (typically #leads or #pinho-inbox).
+async function notifyFirmSlack(
+  d: IntakeSubmission,
+): Promise<"sent" | "skipped" | "failed"> {
+  const webhook = process.env.SLACK_WEBHOOK_URL;
+  if (!webhook) return "skipped";
+
+  const body = {
+    text: `🔔 New lead: ${sanitize(d.firstName)} ${sanitize(d.lastName)}`,
+    blocks: [
+      {
+        type: "header",
+        text: {
+          type: "plain_text",
+          text: `🔔 New lead — Pinho Law`,
+          emoji: true,
+        },
+      },
+      {
+        type: "section",
+        fields: [
+          { type: "mrkdwn", text: `*Name:*\n${sanitize(d.firstName)} ${sanitize(d.lastName)}` },
+          { type: "mrkdwn", text: `*Email:*\n${sanitize(d.email)}` },
+          ...(d.phone ? [{ type: "mrkdwn", text: `*Phone:*\n${sanitize(d.phone)}` }] : []),
+          ...(d.service ? [{ type: "mrkdwn", text: `*Service:*\n${sanitize(d.service)}` }] : []),
+          ...(d.immigrationCategory
+            ? [{ type: "mrkdwn", text: `*Immigration:*\n${sanitize(d.immigrationCategory)}` }]
+            : []),
+          ...(d.businessCategory
+            ? [{ type: "mrkdwn", text: `*Business:*\n${sanitize(d.businessCategory)}` }]
+            : []),
+          ...(d.preferredContact
+            ? [{ type: "mrkdwn", text: `*Preferred:*\n${sanitize(d.preferredContact)}` }]
+            : []),
+          ...(d.locale ? [{ type: "mrkdwn", text: `*Locale:*\n${sanitize(d.locale)}` }] : []),
+        ],
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `*Message:*\n>${sanitize(d.message, 2000).replace(/\n/g, "\n>")}`,
+        },
+      },
+      {
+        type: "actions",
+        elements: [
+          {
+            type: "button",
+            text: { type: "plain_text", text: "📱 WhatsApp", emoji: true },
+            url: `https://wa.me/${sanitize(d.phone).replace(/\D/g, "") || FIRM.whatsapp}`,
+            style: "primary",
+          },
+          {
+            type: "button",
+            text: { type: "plain_text", text: "📧 Reply", emoji: true },
+            url: `mailto:${sanitize(d.email)}`,
+          },
+          ...(d.phone
+            ? [
+                {
+                  type: "button",
+                  text: { type: "plain_text", text: "☎️ Call", emoji: true },
+                  url: `tel:${sanitize(d.phone).replace(/\D/g, "")}`,
+                },
+              ]
+            : []),
+        ],
+      },
+      { type: "context", elements: [{ type: "mrkdwn", text: `_Source: ${sanitize(d.source) || "site"} · ${new Date().toISOString()}_` }] },
+    ],
+  };
+
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) {
+      console.error("[intake] Slack webhook failed:", res.status);
+      return "failed";
+    }
+    return "sent";
+  } catch (err) {
+    console.error("[intake] Slack webhook error:", err);
     return "failed";
   }
 }
@@ -260,26 +385,39 @@ export async function POST(req: Request) {
     }
   })();
 
-  const [emailResult, waResult] = await Promise.all([
+  const [emailResult, waResult, slackResult] = await Promise.all([
     emailPromise,
     notifyFirmWhatsApp(body),
+    notifyFirmSlack(body),
   ]);
 
-  // At least one succeeded = ok. Both failed = still ok to the UI
-  // (lead is in Vercel logs), but flag for follow-up.
-  const anySuccess = emailResult === "sent" || waResult === "sent";
-  if (!anySuccess && emailResult !== "skipped") {
-    console.log("[intake] ALL NOTIFICATION CHANNELS FAILED — manual follow-up needed:", {
-      firstName: body.firstName,
-      email: body.email,
-      phone: body.phone,
-      service: body.service,
-      message: body.message.slice(0, 200),
-    });
+  // At least one "sent" = success. All failed (not skipped) = log the
+  // full lead payload for manual recovery via Vercel Function logs.
+  const anySent =
+    emailResult === "sent" || waResult === "sent" || slackResult === "sent";
+  const anyConfigured =
+    emailResult !== "skipped" ||
+    waResult !== "skipped" ||
+    slackResult !== "skipped";
+  if (!anySent && anyConfigured) {
+    console.log(
+      "[intake] ALL NOTIFICATION CHANNELS FAILED — manual follow-up needed:",
+      {
+        firstName: body.firstName,
+        email: body.email,
+        phone: body.phone,
+        service: body.service,
+        message: body.message.slice(0, 200),
+      },
+    );
   }
 
   return NextResponse.json({
     ok: true,
-    channels: { email: emailResult, whatsapp: waResult },
+    channels: {
+      email: emailResult,
+      whatsapp: waResult,
+      slack: slackResult,
+    },
   });
 }
