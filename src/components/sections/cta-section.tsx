@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { FIRM } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -43,20 +44,9 @@ export function CtaSection() {
                   </Button>
                 </Link>
               </MagneticButton>
-              <a
-                href={`https://wa.me/${FIRM.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto"
-              >
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="w-full border-cream/20 text-cream hover:bg-cream hover:text-navy sm:w-auto"
-                >
-                  {t("ctaWhatsApp")}
-                </Button>
-              </a>
+              <WhatsAppButton size="lg" className="w-full sm:w-auto">
+                {t("ctaWhatsApp")}
+              </WhatsAppButton>
             </div>
           </div>
         </FadeIn>

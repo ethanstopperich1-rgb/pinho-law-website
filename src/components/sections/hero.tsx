@@ -7,6 +7,7 @@ import { CASE_STATS, FIRM, REVIEWS } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarIcon } from "@/components/ui/hero-pill";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 
 // Premium glassmorphism hero — layered backgrounds, scholarly pill,
 // Dra. Izi portrait with floating glass credential cards, trust marquee.
@@ -95,19 +96,7 @@ export function Hero() {
                     <Button size="lg">{t("cta")}</Button>
                   </Link>
                 </MagneticButton>
-                <a
-                  href={`https://wa.me/${FIRM.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    className="border-cream/20 text-cream hover:bg-cream hover:text-navy"
-                  >
-                    {t("ctaSecondary", { phone: FIRM.phone })}
-                  </Button>
-                </a>
+                <WhatsAppButton size="lg">WhatsApp</WhatsAppButton>
               </div>
             </FadeIn>
 

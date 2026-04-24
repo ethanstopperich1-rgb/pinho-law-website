@@ -9,6 +9,7 @@ import { VisaTimeline } from "@/components/sections/VisaTimeline";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { AlternativesGrid } from "@/components/sections/AlternativesGrid";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -206,14 +207,7 @@ export default async function VisaHubPage({
                   {h.bookCta}
                 </Link>
               </MagneticButton>
-              <a
-                href={`https://wa.me/${FIRM.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-[var(--radius-md)] border border-[#C9A961] px-6 py-3 font-semibold text-[#C9A961] hover:bg-[#C9A961]/10"
-              >
-                WhatsApp
-              </a>
+              <WhatsAppButton size="lg">WhatsApp</WhatsAppButton>
             </div>
             <p className="mt-6 text-xs italic text-white/55">
               {h.reviewedBy} {formatDate(visa.lastReviewedAt, l)}

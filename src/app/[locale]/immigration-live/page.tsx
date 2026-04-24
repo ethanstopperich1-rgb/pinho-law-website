@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Link } from "@/i18n/navigation";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { FIRM } from "@/lib/constants";
 import type { Locale } from "@/i18n/routing";
 
@@ -118,14 +119,7 @@ export default async function ImmigrationLivePage({
                   {h.cta}
                 </Link>
               </MagneticButton>
-              <a
-                href={`https://wa.me/${FIRM.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-[var(--radius-md)] border border-[#C9A961] px-6 py-3 text-sm font-semibold text-[#C9A961] transition-colors hover:bg-[#C9A961]/10 sm:w-auto md:text-base"
-              >
-                {h.wa}
-              </a>
+              <WhatsAppButton size="lg">WhatsApp</WhatsAppButton>
             </div>
 
             <p className="mt-10 text-sm leading-relaxed text-white/55 md:text-base">
