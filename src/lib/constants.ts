@@ -290,8 +290,7 @@ export const IZI = {
 } as const;
 
 export const SITE = {
-  url: "https://pinholaw.com",
-  alternateDomain: "https://pinho.law",
+  url: "https://pinho.law",
   name: "Pinho Law",
   description:
     "Trusted immigration and business law counsel in Florida — in English, Portuguese, and Spanish.",

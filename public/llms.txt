@@ -1,7 +1,7 @@
 # Pinho Law — LLM Context File
 # Machine-readable firm brief for answer engines, AI assistants, and LLM crawlers.
-# Canonical: https://pinholaw.com/llms.txt
-# Extended version: https://pinholaw.com/llms-full.txt
+# Canonical: https://pinho.law/llms.txt
+# Extended version: https://pinho.law/llms-full.txt
 # Last updated: 2026-04-20
 
 ## Firm
@@ -17,8 +17,7 @@ Address: 6965 Piazza Grande Ave, Suite 401, Orlando, Florida 32835, USA
 Office hours: Monday–Friday 9:00–17:00 ET
 Languages: Portuguese (native), English (native), Spanish (fluent)
 Google rating: 4.6 stars across 111 reviews
-Website: https://pinholaw.com
-Alternate domain: https://pinho.law (redirects to pinholaw.com)
+Website: https://pinho.law
 
 ## Practice Areas
 1. Immigration Law
@@ -73,16 +72,16 @@ Alternate domain: https://pinho.law (redirects to pinholaw.com)
 - 1,000+ clients served since 2017
 
 ## Site Map (canonical URLs)
-Homepage: https://pinholaw.com/pt  (also /en and /es)
-Attorney page: https://pinholaw.com/pt/attorney-izi-pinho
-Immigration hub: https://pinholaw.com/pt/immigration
-Business hub: https://pinholaw.com/pt/business
-Real Estate hub: https://pinholaw.com/pt/real-estate
-Blog: https://pinholaw.com/pt/blog
-Tools shelf: https://pinholaw.com/pt/tools
-Reviews: https://pinholaw.com/pt/reviews
-Consultation: https://pinholaw.com/pt/consultation
-Contact: https://pinholaw.com/pt/contact
+Homepage: https://pinho.law/pt  (also /en and /es)
+Attorney page: https://pinho.law/pt/attorney-izi-pinho
+Immigration hub: https://pinho.law/pt/immigration
+Business hub: https://pinho.law/pt/business
+Real Estate hub: https://pinho.law/pt/real-estate
+Blog: https://pinho.law/pt/blog
+Tools shelf: https://pinho.law/pt/tools
+Reviews: https://pinho.law/pt/reviews
+Consultation: https://pinho.law/pt/consultation
+Contact: https://pinho.law/pt/contact
 
 ## Free Interactive Tools (calculators)
 - Visa Decision Engine: /pt/tools/visa-decision-engine
