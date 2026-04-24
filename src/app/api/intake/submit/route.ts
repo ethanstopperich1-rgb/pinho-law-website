@@ -38,6 +38,67 @@ function validateEmail(e: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 }
 
+// ── WhatsApp notification (Twilio) ───────────────────────────────
+// Sends a brief ping to the firm's WhatsApp when a new intake arrives.
+// Uses Twilio's WhatsApp API. Configure env:
+//   TWILIO_ACCOUNT_SID=ACxxxxxxxx
+//   TWILIO_AUTH_TOKEN=xxxxxxxx
+//   TWILIO_WHATSAPP_FROM=whatsapp:+14155238886   (Twilio Sandbox or approved sender)
+//   FIRM_WHATSAPP_TO=whatsapp:+14073854144       (where Izi wants the ping)
+// Gracefully no-op if any is missing.
+async function notifyFirmWhatsApp(d: IntakeSubmission): Promise<"sent" | "skipped" | "failed"> {
+  const sid = process.env.TWILIO_ACCOUNT_SID;
+  const token = process.env.TWILIO_AUTH_TOKEN;
+  const from = process.env.TWILIO_WHATSAPP_FROM;
+  const to = process.env.FIRM_WHATSAPP_TO;
+  if (!sid || !token || !from || !to) return "skipped";
+
+  const lines = [
+    "🔔 *Novo lead — Pinho Law*",
+    "",
+    `*${sanitize(d.firstName)} ${sanitize(d.lastName)}*`,
+    `📧 ${sanitize(d.email)}`,
+    d.phone ? `📱 ${sanitize(d.phone)}` : "",
+    d.service ? `⚖️ Serviço: ${sanitize(d.service)}` : "",
+    d.immigrationCategory ? `🌍 Categoria: ${sanitize(d.immigrationCategory)}` : "",
+    d.businessCategory ? `💼 Categoria: ${sanitize(d.businessCategory)}` : "",
+    d.preferredContact ? `📞 Contato preferido: ${sanitize(d.preferredContact)}` : "",
+    "",
+    `💬 ${sanitize(d.message, 500)}`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const params = new URLSearchParams();
+  params.append("From", from);
+  params.append("To", to);
+  params.append("Body", lines);
+
+  try {
+    const res = await fetch(
+      `https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`,
+      {
+        method: "POST",
+        headers: {
+          Authorization:
+            "Basic " + Buffer.from(`${sid}:${token}`).toString("base64"),
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params.toString(),
+      },
+    );
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      console.error("[intake] Twilio WhatsApp failed:", res.status, text);
+      return "failed";
+    }
+    return "sent";
+  } catch (err) {
+    console.error("[intake] Twilio WhatsApp error:", err);
+    return "failed";
+  }
+}
+
 function formatFirmEmailHtml(d: IntakeSubmission): string {
   const row = (k: string, v: string) =>
     `<tr><td style="padding:8px 12px;background:#f6f3ec;font-weight:600;color:#1A1A2E;border-bottom:1px solid #e5e1d6">${k}</td><td style="padding:8px 12px;color:#1A1A2E;border-bottom:1px solid #e5e1d6">${v || "—"}</td></tr>`;
@@ -158,51 +219,67 @@ export async function POST(req: Request) {
     );
   }
 
+  // Fire WhatsApp notification + emails in parallel. Each channel fails
+  // independently — a WhatsApp failure does not block email, and vice
+  // versa. At least one channel succeeds = lead is captured.
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    // Graceful degradation — accept the lead but log it; UI continues.
-    console.log("[intake] RESEND_API_KEY unset — lead accepted but not emailed:", {
-      firstName: body.firstName,
-      email: body.email,
-      service: body.service,
-    });
-    return NextResponse.json({ ok: true, channel: "logged_only" });
-  }
-
-  const resend = new Resend(apiKey);
   const fromDomain =
     process.env.RESEND_FROM_DOMAIN ?? "notifications@pinho.law";
   const firmEmail = FIRM.email;
 
-  try {
-    // 1. Firm notification
-    await resend.emails.send({
-      from: `Pinho Law Intake <${fromDomain}>`,
-      to: [firmEmail],
-      replyTo: body.email,
-      subject: `New lead: ${sanitize(body.firstName)} ${sanitize(body.lastName)} — ${sanitize(body.service) || "general"}`,
-      html: formatFirmEmailHtml(body),
+  const emailPromise: Promise<"sent" | "skipped" | "failed"> = (async () => {
+    if (!apiKey) return "skipped";
+    try {
+      const resend = new Resend(apiKey);
+      await resend.emails.send({
+        from: `Pinho Law Intake <${fromDomain}>`,
+        to: [firmEmail],
+        replyTo: body.email,
+        subject: `New lead: ${sanitize(body.firstName)} ${sanitize(body.lastName)} — ${sanitize(body.service) || "general"}`,
+        html: formatFirmEmailHtml(body),
+      });
+      await resend.emails.send({
+        from: `Pinho Law <${fromDomain}>`,
+        to: [body.email],
+        replyTo: firmEmail,
+        subject:
+          body.locale === "en"
+            ? "We've received your intake — next steps"
+            : body.locale === "es"
+              ? "Recibimos tu información — próximos pasos"
+              : "Recebemos seu contato — próximos passos",
+        html: formatClientEmailHtml(body),
+      });
+      return "sent";
+    } catch (err) {
+      console.error(
+        "[intake] email send failed:",
+        err instanceof Error ? err.message : err,
+      );
+      return "failed";
+    }
+  })();
+
+  const [emailResult, waResult] = await Promise.all([
+    emailPromise,
+    notifyFirmWhatsApp(body),
+  ]);
+
+  // At least one succeeded = ok. Both failed = still ok to the UI
+  // (lead is in Vercel logs), but flag for follow-up.
+  const anySuccess = emailResult === "sent" || waResult === "sent";
+  if (!anySuccess && emailResult !== "skipped") {
+    console.log("[intake] ALL NOTIFICATION CHANNELS FAILED — manual follow-up needed:", {
+      firstName: body.firstName,
+      email: body.email,
+      phone: body.phone,
+      service: body.service,
+      message: body.message.slice(0, 200),
     });
-    // 2. Client confirmation
-    await resend.emails.send({
-      from: `Pinho Law <${fromDomain}>`,
-      to: [body.email],
-      replyTo: firmEmail,
-      subject:
-        body.locale === "en"
-          ? "We've received your intake — next steps"
-          : body.locale === "es"
-            ? "Recibimos tu información — próximos pasos"
-            : "Recebemos seu contato — próximos passos",
-      html: formatClientEmailHtml(body),
-    });
-    return NextResponse.json({ ok: true, channel: "email" });
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : "unknown";
-    console.error("[intake] email send failed:", msg);
-    return NextResponse.json(
-      { ok: true, channel: "logged_only", warning: "email_failed" },
-      { status: 200 },
-    );
   }
+
+  return NextResponse.json({
+    ok: true,
+    channels: { email: emailResult, whatsapp: waResult },
+  });
 }
