@@ -53,6 +53,15 @@ export const CASE_STATS = {
   casesApproved: "500+",
   successRate: "90%",
   clientsServed: "1000+",
+  // Freshness signal — AI engines distrust undated claims. This date is
+  // surfaced in the hero stat row ("Stats current as of …") and embedded
+  // into Organization/WebPage JSON-LD via `dateModified`.
+  asOf: "2026-04-01",
+  asOfLabel: {
+    pt: "Estatísticas atualizadas em abril de 2026",
+    en: "Stats current as of April 2026",
+    es: "Estadísticas actualizadas en abril de 2026",
+  },
 } as const;
 
 // Alias matching the build-spec import pattern used by future prompts.

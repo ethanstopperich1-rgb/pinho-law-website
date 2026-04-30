@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "next-intl";
 import { CASE_STATS, FIRM, REVIEWS } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/fade-in";
 import { StarIcon } from "@/components/ui/hero-pill";
@@ -25,6 +26,9 @@ const CREDIBILITY_ITEMS = [
 
 export function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale() as "pt" | "en" | "es";
+  const asOfLabel =
+    CASE_STATS.asOfLabel[locale] ?? CASE_STATS.asOfLabel.en;
 
   return (
     <section className="relative overflow-hidden bg-navy pt-24 pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-24">
@@ -120,6 +124,11 @@ export function Hero() {
                   label={`${REVIEWS.totalReviews} ${t("stats.googleReviews")}`}
                 />
               </div>
+              {/* Freshness signal — dated stat claims rank higher in AI
+                  answer engines (per AEO audit, Apr 2026). */}
+              <p className="mt-3 text-[10px] uppercase tracking-wider text-cream/40">
+                <time dateTime={CASE_STATS.asOf}>{asOfLabel}</time>
+              </p>
             </FadeIn>
           </div>
 

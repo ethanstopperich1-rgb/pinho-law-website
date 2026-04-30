@@ -57,6 +57,7 @@ export default async function HomePage({
           description: SITE.description,
           url: `${SITE.url}/${locale}`,
           locale,
+          dateModified: "2026-04-30",
         })}
       />
       <JsonLd data={faqSchema(faqItems)} />

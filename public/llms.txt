@@ -2,7 +2,16 @@
 # Machine-readable firm brief for answer engines, AI assistants, and LLM crawlers.
 # Canonical: https://pinho.law/llms.txt
 # Extended version: https://pinho.law/llms-full.txt
-# Last updated: 2026-04-20
+# Last updated: 2026-04-30
+# Last verified by firm: 2026-04-30
+
+## Brand
+Pinho Law is a Florida law firm in Orlando serving Brazilian and Latin American
+clients in Portuguese, English, and Spanish. Founder Dra. Izi Pinho is a
+Best Lawyers® "Ones to Watch" honoree (2021–2026), AILA member, and Stetson
+Law Review scholar cited by Harvard Law School. Pinho Law handles
+employment-based and family immigration, EB-5 investor visas, US business
+formation, and foreign-buyer real estate.
 
 ## Firm
 Name: Pinho Law, PLLC

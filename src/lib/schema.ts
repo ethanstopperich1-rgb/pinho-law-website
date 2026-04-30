@@ -55,7 +55,39 @@ export function organizationSchema() {
       { "@type": "Country", name: "Brazil" },
     ],
     knowsLanguage: ["pt-BR", "en-US", "es"],
-    priceRange: "$$$",
+    // Aligned with rendered content (consultations from $250 / flat fees by matter).
+    priceRange: "$$",
+    slogan: "Trusted legal counsel for Brazilians, in Portuguese.",
+    brand: {
+      "@type": "Brand",
+      name: "Pinho Law",
+      logo: `${SITE.url}/images/logo.svg`,
+    },
+    knowsAbout: [
+      "EB-1A Extraordinary Ability Visa",
+      "EB-2 NIW National Interest Waiver",
+      "EB-3 Skilled Worker Visa",
+      "EB-5 Immigrant Investor Visa",
+      "E-2 Treaty Investor Visa",
+      "L-1A Intracompany Manager Visa",
+      "O-1 Extraordinary Ability Nonimmigrant Visa",
+      "H-1B Specialty Occupation Visa",
+      "K-1 Fiancé Visa",
+      "F-1 Student Visa",
+      "Marriage-Based Green Card (CR-1/IR-1)",
+      "US Naturalization (N-400)",
+      "LLC Formation Florida",
+      "Benefit Corporation Florida",
+      "Will and Trust Estate Planning for Non-Residents",
+      "Asset Protection",
+      "Brazil-United States Taxation",
+      "FIRPTA Withholding for Foreign Real Estate Buyers",
+      "Residential Real Estate Closing Florida",
+      "Commercial Real Estate Closing Florida",
+      "1031 Exchange Investment Structuring",
+      "Beneficial Ownership Information (BOI) Filing",
+      "Brazilian Foreign Buyer Real Estate Florida",
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: REVIEWS.googleRating,
@@ -130,7 +162,10 @@ export function webPageSchema(opts: {
   description: string;
   url: string;
   locale: string;
+  dateModified?: string;
 }) {
+  // ISO-8601 date — defaults to today so AI engines see fresh content.
+  const today = new Date().toISOString().slice(0, 10);
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -139,12 +174,16 @@ export function webPageSchema(opts: {
     description: opts.description,
     url: opts.url,
     inLanguage: opts.locale,
+    datePublished: "2024-09-01",
+    dateModified: opts.dateModified ?? today,
     isPartOf: {
       "@id": `${SITE.url}/#website`,
     },
     about: {
       "@id": `${SITE.url}/#organization`,
     },
+    primaryImageOfPage: `${SITE.url}/images/og/default.jpg`,
+    reviewedBy: { "@id": `${SITE.url}/#izi-pinho` },
   };
 }
 
