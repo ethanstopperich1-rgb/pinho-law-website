@@ -53,6 +53,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "Quanto tempo leva um green card por casamento (CR-1/IR-1) com cidadão americano?",
+        a: "Para casamento com cidadão americano via Adjustment of Status (já dentro dos EUA), tipicamente 10 a 13 meses do filing à aprovação. A data de prioridade é sempre CURRENT — não há fila no Visa Bulletin para essa categoria. Casos com RFE bem respondidos costumam aprovar em até 5 meses adicionais.",
+      },
+      {
+        q: "Brasileiros estão na fila do EB-2 NIW em 2026?",
+        a: "Não. Brasileiros estão CURRENT (sem fila) em EB-1, EB-2 NIW, EB-2 PERM e EB-3 no Visa Bulletin de abril de 2026. EB-5 também está CURRENT em todas as categorias Reservadas (Rural/TEA, Urbana/TEA, Infraestrutura). Esta janela é a melhor combinação de prazos para brasileiros desde 2018.",
+      },
+      {
+        q: "Brasileiros podem aplicar para visto E-2 (Treaty Investor)?",
+        a: "Não diretamente — Brasil NÃO é país signatário do tratado E-2. Brasileiros só qualificam com segunda cidadania de um país signatário (Portugal, Itália, Granada, Turquia, Espanha, etc.). Quem não tem segunda cidadania normalmente migra via L-1A, EB-5 ou EB-2 NIW.",
+      },
+      {
+        q: "EB-2 NIW vs Trump Gold Card — qual escolher em 2026?",
+        a: "EB-2 NIW continua sendo a rota mais sólida para profissionais brasileiros: auto-petição, sem oferta de emprego, sem PERM, baseada em mérito (Dhanasar 3-prong). O Trump Gold Card (proposto US$ 5M) ainda não tem regulamentação final em abril de 2026 e não substitui EB-2 NIW para a maioria dos casos. Avaliamos os dois caminhos na consulta.",
+      },
+      {
+        q: "Naturalização americana — quando posso aplicar?",
+        a: "5 anos como green card holder (residência contínua + presença física), ou 3 anos se casado(a) com cidadão americano. O Brasil permite dupla cidadania (Constituição Art. 12 §4 II) — você não perde a brasileira ao naturalizar como americano. Tempo médio do filing N-400 à juramentação: 6 a 12 meses.",
+      },
+      {
+        q: "Como funciona a primeira consulta de imigração?",
+        a: "Consulta com tarifa fixa de US$ 250, creditada ao caso se você prosseguir. Em 60 minutos a Dra. Izi avalia sua situação, mapeia caminhos viáveis (visto adequado, prazos, riscos) e você sai com plano por escrito + orçamento por matéria. Atendemos em PT/EN/ES — agende em pinho.law/consultation ou WhatsApp (407) 385-4144.",
+      },
+    ],
+    faqTitle: "Perguntas Frequentes — Imigração",
     ctaLabel: "Agendar Avaliação Gratuita",
     ctaHref: "/consultation",
   },
@@ -98,6 +125,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "How long does a marriage-based green card (CR-1/IR-1) to a US citizen take?",
+        a: "For marriage to a US citizen via Adjustment of Status (already inside the US), typically 10 to 13 months from filing to approval. Priority date is always CURRENT — there is no Visa Bulletin queue for this category. Cases with well-responded RFEs usually approve within 5 additional months.",
+      },
+      {
+        q: "Are Brazilians on a queue for EB-2 NIW in 2026?",
+        a: "No. Brazilians are CURRENT (no queue) for EB-1, EB-2 NIW, EB-2 PERM, and EB-3 in the April 2026 Visa Bulletin. EB-5 is also CURRENT across all Reserved categories (Rural/TEA, Urban/TEA, Infrastructure). This window is the best combined timeline for Brazilians since 2018.",
+      },
+      {
+        q: "Can Brazilians apply for an E-2 Treaty Investor visa?",
+        a: "Not directly — Brazil is NOT an E-2 treaty country. Brazilians only qualify with second citizenship from a treaty country (Portugal, Italy, Grenada, Turkey, Spain, etc.). Without second citizenship, the typical paths are L-1A, EB-5, or EB-2 NIW.",
+      },
+      {
+        q: "EB-2 NIW vs Trump Gold Card — which to choose in 2026?",
+        a: "EB-2 NIW remains the most solid path for Brazilian professionals: self-petition, no job offer, no PERM, merit-based (Dhanasar 3-prong test). The proposed Trump Gold Card ($5M) does not have final regulations as of April 2026 and does not replace EB-2 NIW for most cases. We assess both paths during the consultation.",
+      },
+      {
+        q: "US Naturalization — when can I apply?",
+        a: "5 years as a green card holder (continuous residence + physical presence), or 3 years if married to a US citizen. Brazil allows dual citizenship (Constitution Art. 12 §4 II) — you do not lose Brazilian citizenship when naturalizing as American. Average N-400 filing-to-oath: 6 to 12 months.",
+      },
+      {
+        q: "How does the first immigration consultation work?",
+        a: "Consultation flat fee $250, credited to the case if you proceed. In 60 minutes Dra. Izi assesses your situation, maps viable paths (correct visa, timelines, risks), and you leave with a written plan + per-matter quote. We work in PT/EN/ES — book at pinho.law/consultation or WhatsApp (407) 385-4144.",
+      },
+    ],
+    faqTitle: "Frequently Asked Questions — Immigration",
     ctaLabel: "Book Free Evaluation",
     ctaHref: "/consultation",
   },
@@ -137,6 +191,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "¿Cuánto tarda un green card por matrimonio (CR-1/IR-1) con ciudadano estadounidense?",
+        a: "Para matrimonio con ciudadano estadounidense vía Ajuste de Estatus (ya dentro de EE.UU.), típicamente 10 a 13 meses desde el filing hasta la aprobación. La fecha de prioridad siempre es CURRENT — no hay fila en el Visa Bulletin para esta categoría.",
+      },
+      {
+        q: "¿Los brasileños están en cola para EB-2 NIW en 2026?",
+        a: "No. Los brasileños están CURRENT (sin fila) en EB-1, EB-2 NIW, EB-2 PERM y EB-3 en el Visa Bulletin de abril 2026. EB-5 también está CURRENT en todas las categorías Reservadas (Rural/TEA, Urbana/TEA, Infraestructura).",
+      },
+      {
+        q: "¿Pueden los brasileños aplicar a la visa E-2?",
+        a: "No directamente — Brasil NO es país signatario del tratado E-2. Los brasileños solo califican con segunda ciudadanía de un país signatario (Portugal, Italia, Granada, Turquía, España, etc.). Sin segunda ciudadanía, las rutas típicas son L-1A, EB-5 o EB-2 NIW.",
+      },
+      {
+        q: "EB-2 NIW vs Trump Gold Card — ¿cuál elegir en 2026?",
+        a: "EB-2 NIW sigue siendo la ruta más sólida para profesionales brasileños: auto-petición, sin oferta de empleo, sin PERM, basada en mérito (Dhanasar 3-prong). El Trump Gold Card propuesto ($5M) no tiene regulaciones finales en abril 2026 y no reemplaza al EB-2 NIW para la mayoría de los casos.",
+      },
+      {
+        q: "Naturalización americana — ¿cuándo puedo aplicar?",
+        a: "5 años como residente permanente, o 3 años si está casado(a) con ciudadano estadounidense. Brasil permite doble ciudadanía — usted no pierde la brasileña al naturalizar como americano.",
+      },
+      {
+        q: "¿Cómo funciona la primera consulta?",
+        a: "Tarifa fija de US$ 250, acreditada al caso si decide continuar. En 60 minutos la Abogada Izi evalúa su situación y entrega un plan escrito con presupuesto por asunto. Atendemos en PT/EN/ES — reserve en pinho.law/consultation o WhatsApp (407) 385-4144.",
+      },
+    ],
+    faqTitle: "Preguntas Frecuentes — Inmigración",
     ctaLabel: "Agendar Evaluación Gratuita",
     ctaHref: "/consultation",
   },

@@ -48,6 +48,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "Brasileiro pode abrir LLC nos EUA sem morar no país?",
+        a: "Sim. Estrangeiros não-residentes podem abrir LLC na Flórida ou em Delaware sem visto, sem SSN e sem endereço americano. A LLC é pass-through por padrão; imposto federal americano só incide se houver Effectively Connected Income (ECI). Importante: desde janeiro de 2024, toda LLC deve registrar Beneficial Ownership Information (BOI) no FinCEN em até 90 dias da formação — multa de US$ 500/dia até US$ 10.000.",
+      },
+      {
+        q: "Qual estrutura escolher: LLC, S-Corp ou C-Corp?",
+        a: "S-Corp NÃO está disponível quando qualquer sócio é estrangeiro não-residente — eliminada para a maioria dos brasileiros. LLC é flexível para imobiliário e operações pequenas. C-Corp é exigida para captar investimento institucional e atende cenários E-2/L-1/EB-5. Avaliamos os 3 com simulação tributária na consulta.",
+      },
+      {
+        q: "Existe tratado tributário Brasil–EUA?",
+        a: "Não. O tratado foi NEGOCIADO em 1967 mas NUNCA RATIFICADO pelo Senado americano. Existe apenas o Acordo de Totalização Previdenciária (2018). Brasileiros usam crédito tributário unilateral (foreign tax credit) para evitar bitributação — a estrutura correta da LLC/Corp impacta diretamente esse cálculo.",
+      },
+      {
+        q: "Benefit Corporation na Flórida — vale a pena?",
+        a: "Para empresas de impacto (ESG, social enterprise), sim — Flórida codificou Benefit Corporations no §607.501+. Dra. Izi é autoridade publicada nesse tema (47 Stetson L. Rev. 333, citada por Harvard Law School Forum on Corporate Governance). Para negócios convencionais, LLC ou C-Corp comum é suficiente.",
+      },
+      {
+        q: "Preciso de Will & Trust como brasileiro com bens nos EUA?",
+        a: "Sim, especialmente com imóvel ou conta bancária. A isenção de imposto sobre herança (estate tax) para não-residentes é apenas US$ 60.000 — acima disso, taxação até 40% federal. Estrutura via LLC com §871(d) election + Trust offshore é a combinação padrão.",
+      },
+      {
+        q: "Vocês registram a empresa E cuidam do visto E-2/L-1/EB-5 juntos?",
+        a: "Sim. Em imigração baseada em investimento, a estrutura societária PRECISA sustentar a petição — escritórios separados nas duas áreas frequentemente criam conflitos (ex.: estrutura errada inviabiliza o L-1 ou EB-5). Trabalhamos as duas frentes em paralelo desde o primeiro dia.",
+      },
+    ],
+    faqTitle: "Perguntas Frequentes — Direito Empresarial",
     ctaLabel: "Agendar Consulta Estratégica",
     ctaHref: "/consultation",
   },
@@ -89,6 +116,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "Can a Brazilian open a US LLC without living in the country?",
+        a: "Yes. Non-resident foreigners can form a Florida or Delaware LLC without a visa, SSN, or US address. LLCs are pass-through by default; US federal tax only applies if the LLC has Effectively Connected Income (ECI). Important: since January 2024, every LLC must file a Beneficial Ownership Information (BOI) report with FinCEN within 90 days of formation — penalty $500/day up to $10,000.",
+      },
+      {
+        q: "Which structure should I pick: LLC, S-Corp, or C-Corp?",
+        a: "S-Corp is NOT available when any owner is a non-resident foreigner — ruled out for most Brazilians. LLC is flexible for real estate and small operations. C-Corp is required for institutional fundraising and works for E-2/L-1/EB-5 visa cases. We model all three with a tax simulation during the consultation.",
+      },
+      {
+        q: "Is there a Brazil–US tax treaty?",
+        a: "No comprehensive treaty in force. The bilateral treaty was NEGOTIATED in 1967 but NEVER RATIFIED by the US Senate. Only the 2018 Social Security Totalization Agreement exists. Brazilians use unilateral foreign tax credits to avoid double taxation — correct LLC/Corp structuring directly impacts that calculation.",
+      },
+      {
+        q: "Florida Benefit Corporation — worth it?",
+        a: "For impact-driven companies (ESG, social enterprise), yes — Florida codified Benefit Corporations at §607.501+. Dra. Izi is a published authority on this topic (47 Stetson L. Rev. 333, cited by Harvard Law School Forum on Corporate Governance). For conventional businesses, an LLC or standard C-Corp is sufficient.",
+      },
+      {
+        q: "Do I need a Will & Trust as a Brazilian with US assets?",
+        a: "Yes, especially with US real estate or a US bank account. The estate tax exemption for non-resident aliens is only $60,000 — anything above is taxed up to 40% federally. The standard combination is an LLC with §871(d) election + offshore Trust.",
+      },
+      {
+        q: "Do you handle the company formation AND the E-2/L-1/EB-5 visa together?",
+        a: "Yes. In investment-based immigration, the corporate structure MUST support the petition — separate firms on each side often create conflicts (e.g., the wrong LLC structure invalidates the L-1 or EB-5). We work both fronts in parallel from day one.",
+      },
+    ],
+    faqTitle: "Frequently Asked Questions — Business Law",
     ctaLabel: "Book Strategic Consultation",
     ctaHref: "/consultation",
   },
@@ -126,6 +180,33 @@ const DATA: Record<L, ServiceHubContent> = {
         ],
       },
     ],
+    faq: [
+      {
+        q: "¿Puede un brasileño abrir LLC en EE.UU. sin vivir allí?",
+        a: "Sí. Extranjeros no residentes pueden formar LLC en Florida o Delaware sin visa, sin SSN y sin dirección estadounidense. La LLC es pass-through por defecto. Importante: desde enero 2024 toda LLC debe registrar BOI con FinCEN en 90 días — multa US$ 500/día hasta US$ 10.000.",
+      },
+      {
+        q: "¿Qué estructura elegir: LLC, S-Corp o C-Corp?",
+        a: "S-Corp NO está disponible cuando cualquier socio es extranjero no residente — descartada para la mayoría. LLC es flexible para inmobiliario; C-Corp es necesaria para captar inversión institucional y para casos de visa E-2/L-1/EB-5.",
+      },
+      {
+        q: "¿Existe tratado tributario Brasil–EE.UU.?",
+        a: "No hay tratado comprehensivo vigente. Fue negociado en 1967 pero nunca ratificado por el Senado estadounidense. Solo existe el Acuerdo de Totalización de Seguridad Social (2018). Brasileños usan crédito fiscal unilateral para evitar doble tributación.",
+      },
+      {
+        q: "Benefit Corporation en Florida — ¿vale la pena?",
+        a: "Para empresas de impacto (ESG, empresa social), sí — Florida codificó Benefit Corporations en §607.501+. La Abogada Izi es autoridad publicada en el tema (47 Stetson L. Rev. 333, citada por Harvard Law).",
+      },
+      {
+        q: "¿Necesito Will & Trust como brasileño con bienes en EE.UU.?",
+        a: "Sí, especialmente con inmueble o cuenta bancaria. La exención del impuesto de herencia para no residentes es solo US$ 60.000 — sobre eso, taxación hasta 40% federal. La estructura estándar combina LLC con §871(d) election + Trust offshore.",
+      },
+      {
+        q: "¿Manejan la formación de la empresa Y la visa E-2/L-1/EB-5 juntas?",
+        a: "Sí. En inmigración basada en inversión, la estructura societaria DEBE sostener la petición. Trabajamos ambos frentes en paralelo desde el primer día.",
+      },
+    ],
+    faqTitle: "Preguntas Frecuentes — Derecho Empresarial",
     ctaLabel: "Agendar Consulta Estratégica",
     ctaHref: "/consultation",
   },

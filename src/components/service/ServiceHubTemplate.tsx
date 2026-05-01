@@ -4,7 +4,7 @@ import { CtaSection } from "@/components/sections/cta-section";
 import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
 import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { CASE_STATS, SITE } from "@/lib/constants";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
@@ -34,6 +34,11 @@ export interface HubStat {
   label: string;
 }
 
+export interface ServiceHubFaq {
+  q: string;
+  a: string;
+}
+
 export interface ServiceHubContent {
   locale: L;
   slug: string;
@@ -43,6 +48,11 @@ export interface ServiceHubContent {
   lede: string;
   stats?: readonly HubStat[];
   groups: readonly HubCardGroup[];
+  /** Optional hub-level FAQ. When set, emits FAQPage JSON-LD AND renders
+   *  a visible <dl> Q/A section above the CTA. AEO win — gives every hub
+   *  page its own extractable Q&A surface for ChatGPT/Perplexity. */
+  faq?: readonly ServiceHubFaq[];
+  faqTitle?: string;
   ctaLabel: string;
   ctaHref: string;
 }
@@ -111,6 +121,13 @@ export function ServiceHubTemplate({
       <JsonLd data={breadcrumbLd} />
       <JsonLd data={serviceLd} />
       <JsonLd data={itemListLd} />
+      {content.faq && content.faq.length > 0 && (
+        <JsonLd
+          data={faqSchema(
+            content.faq.map(({ q, a }) => ({ question: q, answer: a })),
+          )}
+        />
+      )}
 
       {/* Hero */}
       <section className="bg-navy py-20 md:py-28">
@@ -227,6 +244,37 @@ export function ServiceHubTemplate({
           </section>
         );
       })}
+
+      {/* Hub FAQ — semantic <dl> matches faqSchema cssSelector ["dt","dd"]
+          for SpeakableSpecification. Only renders when content.faq is set. */}
+      {content.faq && content.faq.length > 0 && (
+        <section className="border-t border-border bg-cream py-20">
+          <Container>
+            <FadeIn className="mx-auto max-w-3xl">
+              <h2 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
+                {content.faqTitle ??
+                  (key === "pt"
+                    ? "Perguntas Frequentes"
+                    : key === "es"
+                      ? "Preguntas Frecuentes"
+                      : "Frequently Asked Questions")}
+              </h2>
+              <dl className="mt-10 divide-y divide-border">
+                {content.faq.map((item, i) => (
+                  <div key={i} className="py-6">
+                    <dt className="font-heading text-base font-semibold text-ink md:text-lg">
+                      {item.q}
+                    </dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-ink-muted md:text-base">
+                      {item.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </FadeIn>
+          </Container>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="border-t border-border bg-ink py-16 text-cream">

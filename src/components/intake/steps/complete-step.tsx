@@ -52,6 +52,38 @@ export function CompleteStep({ t, intake }: StepProps) {
           if (typeof data.whatsappUrl === "string") {
             setServerWaUrl(data.whatsappUrl);
           }
+          // GA4 conversion event — fires once per successful submission.
+          // Tracks form_submit + lead category (service tag) + locale so
+          // downstream funnels can segment Brazilian PT immigration leads
+          // from US-EN business-only leads in GA4 explore reports.
+          if (
+            typeof window !== "undefined" &&
+            typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function"
+          ) {
+            const gtag = (window as unknown as {
+              gtag: (...args: unknown[]) => void;
+            }).gtag;
+            gtag("event", "form_submit", {
+              form_name: "intake",
+              form_destination: "/api/intake/submit",
+              service: intake.data.service ?? "unspecified",
+              immigration_category:
+                intake.data.immigrationCategory ?? null,
+              business_category: intake.data.businessCategory ?? null,
+              preferred_contact:
+                intake.data.preferredContact ?? "unspecified",
+              locale,
+            });
+            // Generate_lead is the GA4-recommended canonical conversion
+            // for B2C lead-gen forms — wire both so either can be marked
+            // as the primary conversion in GA4 admin without code change.
+            gtag("event", "generate_lead", {
+              currency: "USD",
+              value: 250,
+              service: intake.data.service ?? "unspecified",
+              locale,
+            });
+          }
         } else {
           setSubmitState("failed");
         }
