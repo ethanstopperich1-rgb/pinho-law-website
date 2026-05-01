@@ -44,7 +44,10 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "faq" });
-  const faqItems = [0, 1, 2, 3].map((i) => ({
+  // Emit all 8 FAQ Q/A pairs into FAQPage JSON-LD even though the homepage
+  // accordion shows the top 6 — gives AI engines (ChatGPT, Perplexity,
+  // Gemini, AIO) the full extractable Q&A surface in one place.
+  const faqItems = [0, 1, 2, 3, 4, 5, 6, 7].map((i) => ({
     question: t(`items.${i}.question`),
     answer: t(`items.${i}.answer`),
   }));

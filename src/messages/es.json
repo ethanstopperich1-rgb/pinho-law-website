@@ -133,20 +133,36 @@
     "cta": "Ver Todas las Preguntas",
     "items": [
       {
-        "question": "¿Cuánto cuesta una consulta?",
-        "answer": "Ofrecemos una consulta inicial para discutir su caso y evaluar sus opciones. Contáctenos para conocer nuestras tarifas de consulta y qué esperar durante su primera reunión."
+        "question": "¿Atienden en español? ¿Y en portugués?",
+        "answer": "Sí. Cada consulta, contrato y comunicación se realiza en español, portugués o inglés — el idioma en que usted se sienta más cómodo. El equipo de Pinho Law es trilingüe desde la primera llamada hasta la aprobación. Es la razón más mencionada en las reseñas de Google de nuestros clientes."
       },
       {
-        "question": "¿Cuánto tiempo toma el proceso de inmigración?",
-        "answer": "Los plazos varían según el tipo de caso, sus circunstancias individuales y los tiempos de procesamiento actuales del USCIS. Durante su consulta, proporcionamos estimaciones realistas basadas en su situación específica."
+        "question": "¿Cuánto tarda un cambio de estatus o un green card por matrimonio?",
+        "answer": "Los cambios de estatus (F-1 estudiante, matrimonio con ciudadano estadounidense) que hemos presentado se han aprobado en 3 a 5 meses en los casos de 2023–2025. Tras un RFE (Request for Evidence) preparamos la respuesta en 30 días cuando los hechos del caso lo permiten. Los plazos de USCIS varían — damos una estimación realista en la consulta inicial."
       },
       {
-        "question": "¿Manejan derecho empresarial para inmigrantes?",
-        "answer": "Por supuesto. Ayudamos a emprendedores y empresarios inmigrantes con constitución de empresas, contratos, estructuración y apoyo legal continuo — combinando nuestra experiencia en inmigración y derecho empresarial para una experiencia integral."
+        "question": "Tuve una negación o un RFE con otra firma — ¿toman el caso?",
+        "answer": "Sí. Recibimos con frecuencia casos con I-140 negado por otra firma — incluido un EB-2 NIW reabierto tras 2,5 años parado, que aprobamos en revisión. Re-analizamos la petición, identificamos lo que faltó y la presentamos de nuevo con el expediente completo. Los RFE en curso se tratan como prioridad."
       },
       {
-        "question": "¿Qué documentos debo llevar a mi primera reunión?",
-        "answer": "Traiga cualquier documento de inmigración relevante, identificación y papeles relacionados con su caso. Después de reservar su consulta, le enviaremos una lista de preparación detallada para que llegue completamente preparado."
+        "question": "¿Manejan la inmigración Y la formación de la empresa juntas?",
+        "answer": "Sí. Muchos clientes tramitan con nosotros el green card y la LLC/Corp en Florida al mismo tiempo. Tener la misma firma en ambos frentes evita conflictos entre la estructura societaria y la estrategia migratoria — especialmente en casos EB-5, E-2 y L-1A, donde la estructura de la empresa debe sostener la petición de visa."
+      },
+      {
+        "question": "¿Atienden familias, cónyuges de ciudadanos americanos y veteranos militares?",
+        "answer": "Sí. Cónyuge de ciudadano estadounidense (incluidos veteranos del USMC, Ejército, Marina y Fuerza Aérea), green card para padres e hijos, y visas K-1 de prometido(a) están entre los asuntos más frecuentes de la firma. Explicamos cada paso en lenguaje claro, sin jerga jurídica."
+      },
+      {
+        "question": "¿Cómo es la primera consulta? ¿Es pagada?",
+        "answer": "La consulta es estructurada: usted plantea su situación, la Abogada Izi Pinho evalúa los caminos viables y usted sale con un plan y un presupuesto por escrito. Cobramos una tarifa fija por la consulta inicial — y se acredita al caso si decide continuar. Reserve en pinho.law/consultation o por WhatsApp (407) 385-4144."
+      },
+      {
+        "question": "¿Cuánto cuesta el caso? ¿Cobran por hora?",
+        "answer": "Trabajamos con tarifa fija por asunto — no por hora — informada por escrito antes de comenzar. El monto depende del tipo de visa y la complejidad: EB-2 NIW, EB-5, L-1A, green card por matrimonio y cambios de estatus tienen tarifas distintas. Sin sorpresas a mitad del proceso."
+      },
+      {
+        "question": "¿Dónde está la oficina? ¿Atienden a clientes fuera de Orlando?",
+        "answer": "Estamos en 6965 Piazza Grande Ave, Suite 401, Orlando, FL 32835. La inmigración es jurisdicción federal — atendemos a clientes brasileños y latinoamericanos en Miami, Boston, Houston y directamente desde Brasil por videollamada y WhatsApp, sin necesidad de visitar la oficina. Los asuntos inmobiliarios en Florida requieren presencia local; los coordinamos en la consulta."
       }
     ]
   },

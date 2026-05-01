@@ -133,20 +133,36 @@
     "cta": "See All FAQs",
     "items": [
       {
-        "question": "How much does a consultation cost?",
-        "answer": "We offer an initial consultation to discuss your case and evaluate your options. Contact us to learn about our current consultation fees and what to expect during your first meeting."
+        "question": "Do you speak Portuguese? And Spanish?",
+        "answer": "Yes. Every consultation, contract, and piece of correspondence is handled in Portuguese, English, or Spanish — whichever language you are most comfortable in. Pinho Law is trilingual from the first call through approval. This is the most-cited reason in our Brazilian clients' Google reviews."
       },
       {
-        "question": "How long does the immigration process take?",
-        "answer": "Timelines vary depending on the type of case, your individual circumstances, and current USCIS processing times. During your consultation, we provide realistic timeline estimates based on your specific situation."
+        "question": "How long does a status change or marriage-based green card take?",
+        "answer": "Status changes (F-1 student, marriage to a US citizen) we have filed have approved in 3 to 5 months across 2023–2025 cases. After an RFE (Request for Evidence), we typically prepare the response within 30 days when the case facts allow. USCIS timelines vary — we give a realistic estimate at the consultation."
       },
       {
-        "question": "Do you handle business law for immigrants?",
-        "answer": "Absolutely. We help immigrant entrepreneurs and business owners with formation, contracts, structuring, and ongoing legal support — combining our immigration and business expertise for a seamless experience."
+        "question": "I had a denial or an RFE with another firm — will you take the case?",
+        "answer": "Yes. We regularly take over cases where another firm received an I-140 denial — including an EB-2 NIW we reopened after 2.5 years stalled, which we got approved on review. We re-analyze the petition, identify what was missing, and refile with a complete record. Live RFE cases are treated as priority."
       },
       {
-        "question": "What documents should I bring to my first meeting?",
-        "answer": "Bring any relevant immigration documents, identification, and paperwork related to your case. After booking your consultation, we will send you a detailed preparation checklist so you arrive fully prepared."
+        "question": "Can you handle the immigration and the business formation together?",
+        "answer": "Yes. Many clients run their green card and a Florida LLC/Corp formation through us simultaneously. Having the same firm on both sides avoids conflicts between corporate structure and immigration strategy — especially in EB-5, E-2, and L-1A cases where the company structure has to support the visa petition."
+      },
+      {
+        "question": "Do you serve families, US-citizen spouses, and military veterans?",
+        "answer": "Yes. Spouse of US citizen (including USMC, Army, Navy, and Air Force veterans), green card for parents and children, and K-1 fiancé visas are among the firm's most frequent matters. We explain every step in plain language without legal jargon."
+      },
+      {
+        "question": "What happens at the first consultation? Is it paid?",
+        "answer": "The consultation is structured: you describe your situation, Dra. Izi Pinho assesses viable paths, and you leave with a written plan and quote. We charge a flat fee for the initial consultation — credited toward the case if you proceed. Book at pinho.law/consultation or via WhatsApp (407) 385-4144."
+      },
+      {
+        "question": "How much does the case cost? Do you bill hourly?",
+        "answer": "We work on a flat fee per matter — not hourly — disclosed in writing before we start. The amount depends on visa type and complexity: EB-2 NIW, EB-5, L-1A, marriage GC, and status changes each have their own scope. No surprise bills mid-case."
+      },
+      {
+        "question": "Where is the office? Do you serve clients outside Orlando?",
+        "answer": "We are at 6965 Piazza Grande Ave, Suite 401, Orlando, FL 32835. Immigration is federal — we serve Brazilian and Latin American clients in Miami, Boston, Houston, and directly from Brazil via video and WhatsApp, no in-office visit required. Florida real-estate matters require local presence; we schedule those at the consultation."
       }
     ]
   },

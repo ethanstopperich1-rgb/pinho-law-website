@@ -11,7 +11,12 @@ import { cn } from "@/lib/utils";
 export function FaqPreview() {
   const t = useTranslations("faq");
 
-  const items = [0, 1, 2, 3].map((i) => ({
+  // Surface 6 of 8 high-intent questions on the homepage; full set lives at
+  // /resources/faq. Order is review-driven: language first, timelines next,
+  // RFE recovery, the business+immigration combo, family/veterans, then
+  // consultation logistics. Pricing and "where is the office" are saved
+  // for the dedicated FAQ page.
+  const items = [0, 1, 2, 3, 4, 5].map((i) => ({
     question: t(`items.${i}.question`),
     answer: t(`items.${i}.answer`),
   }));
