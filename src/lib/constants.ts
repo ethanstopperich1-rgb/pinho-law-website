@@ -62,7 +62,52 @@ export const FIRM = {
   },
   googleMapsLink: "https://maps.app.goo.gl/pinho-law-orlando",
   youtubeVideoId: "oh_qDA_gDhw",
+  // Canonical Google Maps CID (verified by BrightLocal audit Apr 2026) —
+  // emitted into Organization schema as `hasMap` so AI engines cross-link
+  // the firm to its GMB knowledge-graph node.
+  googleMapsCid: "https://www.google.com/maps?cid=8797182666672318380",
+  appleMapsId:
+    "https://maps.apple.com/place?auid=10278991457541102351",
 } as const;
+
+// 28 verified-live citation URLs from the BrightLocal directory submission
+// run (audited Apr 2026). Maintained separately from IZI.sameAs because
+// these are firm-entity profiles (NAP-consistent: 6965 Piazza Grande Ave
+// + 407-385-4144) — not personal attorney listings. All flow into
+// Organization.sameAs via the schema generator, deduped against
+// FIRM.social + IZI.sameAs.
+export const FIRM_DIRECTORIES = [
+  // General business directories — verified live
+  "https://www.manta.com/c/m1hr1k4/pinho-law",
+  "https://www.merchantcircle.com/pinho-law-orlando-fl",
+  "https://www.storeboard.com/pinholaw",
+  "https://www.brownbook.net/business/55044613/pinho-law",
+  "https://tupalo.com/en/orlando-florida/pinho-law",
+  "https://www.callupcontact.com/b/businessprofile/Pinho_Law/10064671",
+  "https://www.trepup.com/store/pinholaw/profile",
+  "https://ezlocal.com/fl/orlando/lawyer/0919633782",
+  "https://us.enrollbusiness.com/BusinessProfile/7786262/Pinho-Law-Orlando-FL-32835/Home",
+  "http://pinho-law.hub.biz/",
+  "https://agreatertown.com/orlando-fl/pinho-law-0002300352887",
+  "https://www.linkcentre.com/profile/pinholawfl/",
+  "https://citysquares.com/b/pinho-law-27116288",
+  "https://www.find-us-here.com/businesses/Pinho-Law-Orlando-Florida-USA/34503163/",
+  "https://www.n49.com/biz/7170586/pinho-law-fl-orlando-6965-piazza-grande-avenue/",
+  "https://www.freelistingusa.com/listings/pinho-law",
+  "https://www.a-zbusinessfinder.com/business-directory/Pinho-Law-Orlando-Florida-USA/34503163/",
+  "https://www.anibookmark.com/business/pinho-law-bs474274.html",
+  "https://www.cityfos.com/company/Pinho-Law-in-Orlando-FL-23182142.htm",
+  "https://www.trustlink.org/Reviews/Pinho-Law-207656296",
+  // Niche legal directory — verified live
+  "https://www.lawyerland.com/lawyers/profiles/pinho-law-/",
+  // Updated existing listing
+  "https://www.hotfrog.com/company/f443abf0361eccc2fc9bea49b6a377cc/pinho-law/orlando/specialized-legal-services",
+  // Verified through audit (already had public URLs)
+  "https://www.google.com/maps?cid=8797182666672318380",
+  "https://maps.apple.com/place?auid=10278991457541102351",
+  "https://www.cybo.com/US-biz/pinho-law",
+  "https://www.cylex.us.com/company/pinho-law-38226357.html",
+] as const;
 
 export const REVIEWS = {
   googleRating: "4.6",

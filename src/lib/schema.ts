@@ -1,4 +1,4 @@
-import { FIRM, IZI, REVIEWS, SITE } from "./constants";
+import { FIRM, FIRM_DIRECTORIES, IZI, REVIEWS, SITE } from "./constants";
 
 // JSON-LD schema generators for SEO/AEO
 
@@ -83,10 +83,18 @@ export function organizationSchema() {
         closes: "17:00",
       },
     ],
-    // Merge firm social URLs with Izi's authoritative directory presence
-    // so the org entity graph connects to her verified profiles.
+    // Canonical Google Maps + Apple Maps records — anchors the firm to
+    // the .google.com/.apple.com knowledge-graph nodes for local search.
+    hasMap: FIRM.googleMapsCid,
+    // Entity graph: merges firm social URLs + Izi's authoritative profiles
+    // + 26 BrightLocal-verified directory citations (Apr 2026). Deduped
+    // via Set so overlap (Yelp, ProvenExpert) collapses cleanly.
     sameAs: Array.from(
-      new Set([...Object.values(FIRM.social), ...IZI.sameAs]),
+      new Set([
+        ...Object.values(FIRM.social),
+        ...IZI.sameAs,
+        ...FIRM_DIRECTORIES,
+      ]),
     ),
     areaServed: [
       { "@type": "State", name: "Florida" },
