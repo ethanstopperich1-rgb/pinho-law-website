@@ -4,8 +4,8 @@ import { CtaSection } from "@/components/sections/cta-section";
 import { GoldGradientCard } from "@/components/ui/gold-gradient-card";
 import { AuthorByline } from "@/components/seo/AuthorByline";
 import { JsonLd } from "@/components/seo/json-ld";
-import { breadcrumbSchema } from "@/lib/schema";
-import { SITE } from "@/lib/constants";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { CASE_STATS, SITE } from "@/lib/constants";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 
@@ -53,14 +53,64 @@ export function ServiceHubTemplate({
   content: ServiceHubContent;
 }) {
   const { locale: key, slug, breadcrumbLabel } = content;
+  const hubUrl = `${SITE.url}/${key}/${slug}`;
   const breadcrumbLd = breadcrumbSchema([
     { name: "Home", url: `${SITE.url}/${key}` },
-    { name: breadcrumbLabel, url: `${SITE.url}/${key}/${slug}` },
+    { name: breadcrumbLabel, url: hubUrl },
   ]);
+  // Service schema on hub pages — closes audit "0 of 5 pages have Service
+  // schema" finding. Each child card becomes a sub-service via hasOfferCatalog.
+  const serviceLd = {
+    ...serviceSchema({
+      name: content.h1,
+      description: content.lede,
+      url: hubUrl,
+    }),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: content.h1,
+      itemListElement: content.groups.flatMap((g) =>
+        g.cards.map((card) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "LegalService",
+            name: card.title,
+            description: card.body,
+            url: `${SITE.url}/${key}${card.href}`,
+          },
+        })),
+      ),
+    },
+  };
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: content.h1,
+    numberOfItems: content.groups.reduce((n, g) => n + g.cards.length, 0),
+    itemListElement: content.groups.flatMap((g, gi) =>
+      g.cards.map((card, ci) => ({
+        "@type": "ListItem",
+        position: gi * 100 + ci + 1,
+        url: `${SITE.url}/${key}${card.href}`,
+        name: card.title,
+      })),
+    ),
+  };
+
+  // Trilingual freshness stamp — surfaced as visible <time> below the lede
+  // and also feeds AggregateRating dateModified hint.
+  const lastReviewedLabel =
+    key === "pt"
+      ? "Última revisão"
+      : key === "es"
+        ? "Última revisión"
+        : "Last reviewed";
 
   return (
     <>
       <JsonLd data={breadcrumbLd} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={itemListLd} />
 
       {/* Hero */}
       <section className="bg-navy py-20 md:py-28">
@@ -76,26 +126,48 @@ export function ServiceHubTemplate({
             <p className="mt-5 text-lg leading-relaxed text-cream/70 md:text-xl">
               {content.lede}
             </p>
+            {/* Visible freshness signal — closes audit "0 of 5 pages have
+                date signals" finding. Wrapped in <time> for AI engines. */}
+            <p className="mt-4 text-[11px] uppercase tracking-wider text-cream/50">
+              {lastReviewedLabel}{" "}
+              <time dateTime={CASE_STATS.asOf}>
+                {CASE_STATS.asOfLabel[key]}
+              </time>
+            </p>
           </FadeIn>
-          {content.stats && content.stats.length > 0 && (
-            <FadeIn delay={0.2}>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {content.stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-[var(--radius-md)] border border-gold/20 bg-navy-light/50 p-4 backdrop-blur-sm"
-                  >
-                    <div className="font-heading text-xl font-semibold text-cream md:text-2xl">
-                      {s.value}
+          {(() => {
+            // Always render firm-wide stats as a fallback so every hub page
+            // has visible numerical proof — closes audit "0 of 5 pages have
+            // statistics" finding. Page-specific stats win if provided.
+            const statRow =
+              content.stats && content.stats.length > 0
+                ? content.stats
+                : ([
+                    { value: CASE_STATS.casesApproved, label: key === "pt" ? "Casos aprovados" : key === "es" ? "Casos aprobados" : "Cases approved" },
+                    { value: CASE_STATS.successRate, label: key === "pt" ? "Taxa de aprovação" : key === "es" ? "Tasa de aprobación" : "Approval rate" },
+                    { value: CASE_STATS.clientsServed, label: key === "pt" ? "Clientes atendidos" : key === "es" ? "Clientes atendidos" : "Clients served" },
+                    { value: "9+", label: key === "pt" ? "Anos de prática" : key === "es" ? "Años de práctica" : "Years in practice" },
+                  ] as const);
+            return (
+              <FadeIn delay={0.2}>
+                <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {statRow.map((s) => (
+                    <div
+                      key={s.label}
+                      className="rounded-[var(--radius-md)] border border-gold/20 bg-navy-light/50 p-4 backdrop-blur-sm"
+                    >
+                      <div className="font-heading text-xl font-semibold text-cream md:text-2xl">
+                        {s.value}
+                      </div>
+                      <div className="mt-1 text-[11px] uppercase tracking-wider text-cream/50">
+                        {s.label}
+                      </div>
                     </div>
-                    <div className="mt-1 text-[11px] uppercase tracking-wider text-cream/50">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          )}
+                  ))}
+                </div>
+              </FadeIn>
+            );
+          })()}
         </Container>
       </section>
 

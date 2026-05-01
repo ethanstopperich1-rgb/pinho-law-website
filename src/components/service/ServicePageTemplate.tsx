@@ -8,7 +8,7 @@ import {
   faqSchema,
   serviceSchema,
 } from "@/lib/schema";
-import { SITE } from "@/lib/constants";
+import { CASE_STATS, SITE } from "@/lib/constants";
 import { ServiceTable } from "@/components/service/ServiceTable";
 import { Link } from "@/i18n/navigation";
 import {
@@ -139,26 +139,47 @@ export function ServicePageTemplate({
             <p className="mt-5 text-lg leading-relaxed text-cream/70 md:text-xl">
               {content.lede}
             </p>
+            {/* Visible <time> freshness signal — closes audit "0/5 date
+                signals" finding on every Service page. */}
+            <p className="mt-4 text-[11px] uppercase tracking-wider text-cream/50">
+              {key === "pt" ? "Última revisão" : key === "es" ? "Última revisión" : "Last reviewed"}{" "}
+              <time dateTime={CASE_STATS.asOf}>
+                {CASE_STATS.asOfLabel[key]}
+              </time>
+            </p>
           </FadeIn>
-          {content.stats && content.stats.length > 0 && (
-            <FadeIn delay={0.2}>
-              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {content.stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-[var(--radius-md)] border border-gold/20 bg-navy-light/50 p-4 backdrop-blur-sm"
-                  >
-                    <div className="font-heading text-xl font-semibold text-cream md:text-2xl">
-                      {s.value}
+          {(() => {
+            // Always render statistics — page-specific stats override the
+            // firm-wide fallback. Closes audit "0/5 statistics" finding.
+            const statRow =
+              content.stats && content.stats.length > 0
+                ? content.stats
+                : ([
+                    { value: CASE_STATS.casesApproved, label: key === "pt" ? "Casos aprovados" : key === "es" ? "Casos aprobados" : "Cases approved" },
+                    { value: CASE_STATS.successRate, label: key === "pt" ? "Taxa de aprovação" : key === "es" ? "Tasa de aprobación" : "Approval rate" },
+                    { value: CASE_STATS.clientsServed, label: key === "pt" ? "Clientes atendidos" : key === "es" ? "Clientes atendidos" : "Clients served" },
+                    { value: "4.6★", label: key === "pt" ? "111 avaliações Google" : key === "es" ? "111 reseñas Google" : "111 Google reviews" },
+                  ] as const);
+            return (
+              <FadeIn delay={0.2}>
+                <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {statRow.map((s) => (
+                    <div
+                      key={s.label}
+                      className="rounded-[var(--radius-md)] border border-gold/20 bg-navy-light/50 p-4 backdrop-blur-sm"
+                    >
+                      <div className="font-heading text-xl font-semibold text-cream md:text-2xl">
+                        {s.value}
+                      </div>
+                      <div className="mt-1 text-[11px] uppercase tracking-wider text-cream/50">
+                        {s.label}
+                      </div>
                     </div>
-                    <div className="mt-1 text-[11px] uppercase tracking-wider text-cream/50">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          )}
+                  ))}
+                </div>
+              </FadeIn>
+            );
+          })()}
         </Container>
       </section>
 

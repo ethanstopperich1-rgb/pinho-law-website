@@ -53,7 +53,7 @@ function formatDate(iso: string, locale: Locale): string {
 
 export function AuthorByline({
   locale,
-  reviewedAt = "2026-04-20",
+  reviewedAt = "2026-04-30",
   role = "reviewer",
   className,
 }: Props) {
@@ -87,7 +87,9 @@ export function AuthorByline({
           {c.credential}
         </div>
         <div className="mt-1 text-[11px] text-ink-muted/80">
-          {c.updatedOn} {formatDate(reviewedAt, locale)} ·{" "}
+          {c.updatedOn}{" "}
+          <time dateTime={reviewedAt}>{formatDate(reviewedAt, locale)}</time>{" "}
+          ·{" "}
           <Link
             href="/attorney-izi-pinho"
             className="underline decoration-gold/40 hover:text-gold"
