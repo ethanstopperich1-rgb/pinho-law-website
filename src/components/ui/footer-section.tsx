@@ -148,6 +148,12 @@ export function Footer() {
                 {FIRM.phone}
               </a>
               <a
+                href={`tel:${FIRM.secondaryPhoneRaw}`}
+                className="block text-white/80 hover:text-[#C9A961]"
+              >
+                {FIRM.secondaryPhone}
+              </a>
+              <a
                 href={`https://wa.me/${FIRM.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -156,10 +162,10 @@ export function Footer() {
                 WhatsApp
               </a>
               <a
-                href={`mailto:${FIRM.email}`}
+                href={`mailto:${FIRM.infoEmail}`}
                 className="block text-white/80 hover:text-[#C9A961]"
               >
-                {FIRM.email}
+                {FIRM.infoEmail}
               </a>
             </div>
             <p className="text-xs text-white/50">

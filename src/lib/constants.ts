@@ -6,10 +6,21 @@ export const FIRM = {
   legalName: "Pinho Law, PLLC",
   founder: "Dra. Izi Pinho, Esq.",
   barNumber: "126610",
+  // Verified business identifiers (per citation framework, Apr 2026).
+  // EIN + FL Entity # ground the Org entity in .gov + tax records — both
+  // emit into Organization JSON-LD as `identifier` properties so AI
+  // engines can disambiguate the firm from same-name competitors.
+  ein: "83-1153597",
+  flEntityId: "L18000162219",
   // Canonical NAP (confirmed by firm — use everywhere, propagate to all directories)
   phone: "(407) 385-4144",
   phoneRaw: "+14073854144",
+  // Verified secondary line — surface alongside primary on contact + footer.
+  secondaryPhone: "(321) 209-8282",
+  secondaryPhoneRaw: "+13212098282",
   email: "izi@pinholaw.com",
+  // Generic intake mailbox routed by the firm's marketing/intake team.
+  infoEmail: "info@pinholaw.com",
   marketingEmail: "marketing@pinholaw.com",
   whatsapp: "14073854144",
   address: {
@@ -33,6 +44,16 @@ export const FIRM = {
     tiktokLaw: "https://www.tiktok.com/@pinho.law",
     googleBusiness: "https://www.google.com/search?q=Pinho+Law+Orlando",
     googleMaps: "https://www.google.com/maps/place/Pinho+Law/",
+    // Verified citation/review profiles (per citation framework Apr 2026).
+    birdeye:
+      "https://reviews.birdeye.com/pinho-law-p-169730091063860",
+    provenexpert: "https://www.provenexpert.com/en-us/pinholaw/",
+    justGreatLawyers:
+      "https://justgreatlawyers.com/lawyer/izi-pinho/102845",
+    zoominfo:
+      "https://www.zoominfo.com/c/pinho-law---pllc/473486693",
+    sunbiz:
+      "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=PINHOLAW%20L180001622190&aggregateId=flal-l18000162219-3a2c0b4b",
   },
   hours: {
     weekdays: "9:00 AM – 5:00 PM",
@@ -293,6 +314,13 @@ export const IZI = {
     "https://attorneypages.com/fl/orlando.htm",
     "https://www.lawyerlegion.com/florida/orlando",
     "https://www.expertise.com/fl/orlando/immigration-attorney",
+    // Verified by citation framework (Apr 2026)
+    "https://reviews.birdeye.com/pinho-law-p-169730091063860",
+    "https://www.provenexpert.com/en-us/pinholaw/",
+    "https://justgreatlawyers.com/lawyer/izi-pinho/102845",
+    "https://www.zoominfo.com/c/pinho-law---pllc/473486693",
+    "https://www.tudoparabrasileiros.com/empresas/pinho-law-advocacia/",
+    "https://www.hipaaspace.com/ein/ein.lookup/831153597",
     // Canonical home
     "https://pinho.law/about",
   ],

@@ -13,10 +13,49 @@ export function organizationSchema() {
     url: SITE.url,
     logo: `${SITE.url}/images/logo.svg`,
     image: `${SITE.url}/images/og/default.jpg`,
+    // Primary line; secondary surfaces below in `contactPoint` so AI engines
+    // see both numbers in one entity. Generic `info@` mailbox feeds intake.
     telephone: FIRM.phone,
-    email: FIRM.email,
+    email: FIRM.infoEmail,
+    // Verified business identifiers (per Apr 2026 citation framework).
+    // .gov-grade entity-graph anchors that disambiguate Pinho Law from
+    // same-name competitors.
+    taxID: FIRM.ein,
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "EIN",
+        value: FIRM.ein,
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "Florida Division of Corporations Entity ID",
+        value: FIRM.flEntityId,
+      },
+    ],
     foundingDate: "2017-08",
     founder: { "@id": `${SITE.url}/#izi-pinho` },
+    foundingLocation: {
+      "@type": "City",
+      name: "Orlando",
+      containedInPlace: { "@type": "State", name: "Florida" },
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        telephone: FIRM.phoneRaw,
+        email: FIRM.infoEmail,
+        availableLanguage: ["Portuguese", "English", "Spanish"],
+        areaServed: ["US", "BR"],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "intake",
+        telephone: FIRM.secondaryPhoneRaw,
+        availableLanguage: ["Portuguese", "English", "Spanish"],
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: `${FIRM.address.street}, ${FIRM.address.suite}`,
