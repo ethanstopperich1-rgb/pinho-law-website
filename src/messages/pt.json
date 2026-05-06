@@ -1,23 +1,23 @@
 {
   "meta": {
-    "siteTitle": "Advogados de Imigração em Orlando, FL",
-    "siteDescription": "Escritório de advocacia em Orlando especializado em imigração e direito empresarial. Atendimento em português, inglês e espanhol."
+    "siteTitle": "Advogados de Imigração & Direito Empresarial em Orlando, FL",
+    "siteDescription": "500+ casos aprovados. Escritório em Orlando especializado em imigração e direito empresarial para brasileiros nos EUA. Best Lawyers® 2021–2026. Falamos português."
   },
   "nav": {
     "immigration": "Imigração",
     "business": "Direito Empresarial",
     "about": "Sobre",
+    "attorney": "A Advogada",
     "resources": "Recursos",
     "reviews": "Avaliações",
     "contact": "Contato",
     "consultation": "Agendar Consulta",
-    "attorney": "Advogada",
     "firm": "Nosso Escritório",
     "faq": "Perguntas Frequentes"
   },
   "hero": {
-    "headline": "Seu Sonho Americano Merece Uma Equipe Que Entende Você",
-    "subheadline": "O Pinho Law oferece assessoria jurídica confiável em imigração e direito empresarial para indivíduos e famílias em toda a Flórida — com a clareza, dedicação e suporte multilíngue que você merece.",
+    "headline": "Seu Sonho Americano Merece Uma Equipe Que Realmente Entende Você",
+    "subheadline": "O Pinho Law oferece assessoria jurídica especializada em imigração, direito empresarial e estruturação de negócios para brasileiros e latinos em toda a Flórida — com a clareza, dedicação e atendimento em português que você merece.",
     "cta": "Agendar uma Consulta",
     "ctaSecondary": "WhatsApp",
     "trustBar": "Membro da Florida Bar · Avaliações 5 Estrelas · Atendimento em 3 Idiomas",
@@ -38,13 +38,13 @@
     "headline": "Como Podemos Ajudar",
     "immigration": {
       "title": "Direito Imigratório",
-      "description": "De petições familiares e green cards a vistos de trabalho e cidadania — guiamos você em cada passo com clareza e cuidado. Seu caso é pessoal para nós.",
-      "cta": "Conheça Nossos Serviços de Imigração"
+      "description": "De petições familiares e green cards a vistos de trabalho, vistos de investimento e cidadania — guiamos você em cada passo com clareza e cuidado. Seu caso é pessoal para nós.",
+      "cta": "Avaliar Meu Perfil de Imigração"
     },
     "business": {
       "title": "Direito Empresarial",
-      "description": "Abrir um negócio nos EUA é um ato de coragem. Cuidamos da abertura, contratos, disputas e conformidade para que você possa focar em construir sua visão.",
-      "cta": "Conheça Nossos Serviços Empresariais"
+      "description": "Abrir e operar um negócio nos EUA exige coragem. Cuidamos da abertura, contratos, estruturação societária, tributação Brasil-EUA e compliance para que você possa focar em construir sua visão.",
+      "cta": "Consulta Empresarial Estratégica"
     }
   },
   "whyPinho": {
@@ -133,36 +133,36 @@
     "cta": "Ver Todas as Perguntas",
     "items": [
       {
-        "question": "Vocês atendem em português? E em espanhol?",
-        "answer": "Sim. Toda consulta, contrato e correspondência é conduzida em português, inglês ou espanhol — no idioma em que você se sente mais confortável. A equipe da Pinho Law é trilíngue desde a primeira ligação até a aprovação. Esta é a razão mais citada nas avaliações de clientes brasileiros no Google."
+        "question": "Quanto custa uma consulta?",
+        "answer": "A consulta inicial tem taxa fixa, comunicada no momento do agendamento. Durante a ligação, a Dra. Izi Pinho avalia seu caso, explica as opções jurídicas e apresenta um plano estratégico claro — sem compromisso de contratação após a consulta."
       },
       {
-        "question": "Quanto tempo leva uma mudança de status ou green card por casamento?",
-        "answer": "Mudanças de status (F-1 estudante, casamento com cidadão americano) que apresentamos têm sido aprovadas em 3 a 5 meses nos casos de 2023–2025. Após um RFE (Request for Evidence), preparamos a resposta em 30 dias quando os fatos do caso permitem. Prazos do USCIS variam — damos uma estimativa realista na consulta inicial."
+        "question": "Quanto tempo leva o processo de imigração?",
+        "answer": "Depende do tipo de caso. O EB-2 NIW para brasileiros está CURRENT em 2026, com aprovações entre 8 e 18 meses. Green card por casamento com cidadão americano leva em média 10 a 13 meses. O visto E-2 pode ser aprovado em 3 a 6 meses. Damos prazos realistas específicos para sua situação na consulta."
       },
       {
-        "question": "Já tive uma negação ou um RFE com outro escritório — vocês pegam o caso?",
-        "answer": "Sim. Recebemos regularmente casos com I-140 negado por outro escritório — incluindo um EB-2 NIW reaberto após 2 anos e meio parado, que aprovamos na revisão. Reanalisamos a petição, identificamos o que faltou e reapresentamos com a documentação completa. Casos com RFE em andamento são tratados como prioridade."
+        "question": "Vocês atendem direito empresarial para imigrantes?",
+        "answer": "Sim — e este é um dos nossos maiores diferenciais. Atendemos empreendedores e executivos imigrantes com abertura de empresa, contratos, estruturação societária e tributação Brasil-EUA, integrando imigração e direito empresarial sob o mesmo teto."
       },
       {
-        "question": "Vocês cuidam da imigração E da abertura da empresa juntas?",
-        "answer": "Sim. Muitos clientes fazem com a gente o green card e a LLC/Corp na Flórida ao mesmo tempo. Ter o mesmo escritório nas duas frentes evita conflito entre estrutura societária e estratégia migratória — especialmente em casos EB-5, E-2 e L-1A, onde a estrutura da empresa precisa sustentar o pedido de visto."
+        "question": "Que documentos devo levar para minha primeira reunião?",
+        "answer": "Traga quaisquer documentos de imigração relevantes (passaporte, visto atual, notificações do USCIS), identificação e papéis relacionados ao seu caso. Após o agendamento, enviamos uma checklist detalhada de preparação para que você chegue totalmente pronto."
       },
       {
-        "question": "Atendem famílias, cônjuges de americanos e veteranos das Forças Armadas?",
-        "answer": "Sim. Cônjuge de cidadão americano (incluindo veteranos do USMC, Exército, Marinha e Air Force), green card para pais e filhos, e visto K-1 de noivo(a) estão entre as áreas mais frequentes do escritório. Explicamos cada etapa em linguagem clara, sem jargão jurídico."
+        "question": "Posso abrir empresa nos EUA sem visto de residência?",
+        "answer": "Sim. Estrangeiros não-residentes podem abrir uma LLC nos EUA sem visto de trabalho ou Green Card. O processo é 100% remoto. Na Pinho Law cuidamos de tudo: Articles of Organization, EIN da Receita Federal Americana (IRS), Operating Agreement e abertura de conta bancária."
       },
       {
-        "question": "Como é a primeira consulta? É paga?",
-        "answer": "A consulta é estruturada: você apresenta sua situação, a Dra. Izi Pinho avalia caminhos viáveis e você sai com um plano e um orçamento por escrito. Cobramos taxa fixa pela consulta inicial — e o valor é creditado se você prosseguir com o caso. Agende em pinho.law/consultation ou pelo WhatsApp (407) 385-4144."
+        "question": "Brasileiro pode tirar visto E-2?",
+        "answer": "Brasil não é signatário do tratado E-2. Porém, brasileiros com dupla cidadania — italiana, portuguesa, espanhola, entre outras — podem qualificar. Se você tem dupla cidadania, agende uma avaliação para analisarmos seu perfil."
       },
       {
-        "question": "Quanto custa o processo? Vocês cobram por hora?",
-        "answer": "Trabalhamos com taxa fixa por matéria — não por hora — informada por escrito antes do início. O valor depende do tipo de visto e da complexidade: EB-2 NIW, EB-5, L-1A, green card por casamento e mudança de status têm tabelas distintas. Sem surpresas no meio do processo."
+        "question": "Qual a diferença entre EB-2 NIW e EB-1A?",
+        "answer": "Os dois são caminhos para Green Card sem necessidade de patrocinador empregador. O EB-2 NIW exige demonstrar que seu trabalho é de interesse nacional dos EUA. O EB-1A exige comprovar habilidade extraordinária com reconhecimento na sua área — prêmios, publicações, liderança notável. O melhor caminho depende do seu perfil e avaliamos isso na consulta."
       },
       {
-        "question": "Onde fica o escritório? Atendem clientes fora de Orlando?",
-        "answer": "Estamos no 6965 Piazza Grande Ave, Suite 401, Orlando, FL 32835. Imigração é jurisdição federal — atendemos clientes brasileiros em Miami, Boston, Houston e direto do Brasil por videochamada e WhatsApp, sem necessidade de comparecer ao escritório. Casos de imobiliário na Flórida exigem presença local; agendamos isso na consulta."
+        "question": "Meu testamento brasileiro vale para bens que tenho nos EUA?",
+        "answer": "Não necessariamente. Nos EUA, propriedade imóvel é regida pela lei do estado onde está localizada (lex situs). Um testamento feito no Brasil pode não ser reconhecido ou exigir homologação. O Revocable Living Trust é a estrutura mais recomendada para garantir que seus bens nos EUA sejam transferidos conforme sua vontade, sem passar pelo probate."
       }
     ]
   },
@@ -272,8 +272,8 @@
     "educationDescription": "Com uma trajetória enraizada na experiência brasileiro-americana e uma compreensão profunda dos desafios que imigrantes enfrentam, Izi traz tanto excelência profissional quanto empatia pessoal a cada caso que assume."
   },
   "consultationPage": {
-    "headline": "Dê o Primeiro Passo Rumo à Clareza",
-    "description": "Toda jornada começa com uma conversa. Agende uma consulta e deixe-nos entender sua situação — forneceremos orientação honesta e um caminho claro, no idioma em que você se sente mais confortável.",
+    "headline": "Agende uma Consulta — Imigração & Direito Empresarial",
+    "description": "Conte-nos sobre sua situação. Avaliamos seu caso e respondemos em até um dia útil — em português, inglês ou espanhol.",
     "expectTitle": "O Que Esperar",
     "step1Title": "Agende",
     "step1Description": "Escolha um horário conveniente — online, por telefone ou WhatsApp.",

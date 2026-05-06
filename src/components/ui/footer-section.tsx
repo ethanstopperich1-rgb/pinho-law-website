@@ -58,11 +58,10 @@ function useSections(): FooterSection[] {
     {
       label: t("resourcesLabel"),
       links: [
-        { title: t("links.tools"), href: "/tools" },
         { title: t("links.blog"), href: "/blog" },
+        { title: t("links.tools"), href: "/tools" },
         { title: t("links.faqs"), href: "/resources/faq" },
         { title: t("links.results"), href: "/results" },
-        { title: t("links.immigrationLive"), href: "/immigration-live" },
         { title: t("links.contact"), href: "/contact" },
       ],
     },
@@ -94,14 +93,8 @@ function useSections(): FooterSection[] {
           icon: YoutubeIcon,
         },
         {
-          title: "TikTok @pinholaw",
+          title: "TikTok",
           href: FIRM.social.tiktokFirm,
-          external: true,
-          icon: MusicIcon,
-        },
-        {
-          title: "TikTok @pinho.law",
-          href: FIRM.social.tiktokLaw,
           external: true,
           icon: MusicIcon,
         },

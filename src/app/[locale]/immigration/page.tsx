@@ -15,7 +15,7 @@ const DATA: Record<L, ServiceHubContent> = {
     slug: SLUG,
     breadcrumbLabel: "Imigração",
     eyebrow: "Prática",
-    h1: "Advocacia de Imigração nos EUA para Brasileiros",
+    h1: "Direito de Imigração nos EUA para Brasileiros",
     lede:
       "500+ casos aprovados, 90% de taxa de sucesso, 9 anos em Orlando. Atendemos em português, inglês e espanhol — do primeiro visto à cidadania.",
     stats: [
@@ -30,8 +30,9 @@ const DATA: Record<L, ServiceHubContent> = {
         intro:
           "Caminhos permanentes de residência: baseados em emprego, investimento, família, casamento ou cidadania.",
         cards: [
-          { title: "EB-2 NIW — National Interest Waiver", body: "Sem oferta de emprego, sem PERM, sem patrocinador. Brasileiros CURRENT em 2026.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-1 — Habilidade Extraordinária", body: "EB-1A (auto-petição), EB-1B (pesquisador), EB-1C (executivo multinacional).", href: "/immigration/immigrant-visas/eb-1" },
+          { title: "EB-2 — Profissional com Grau Avançado", body: "Mestrado ou superior, ou bacharelado + 5 anos de experiência. Com PERM e oferta de emprego.", href: "/immigration/immigrant-visas/eb-2" },
+          { title: "EB-2 NIW — National Interest Waiver", body: "Sem oferta de emprego, sem PERM, sem patrocinador. Brasileiros CURRENT em 2026.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-3 — Trabalhador Qualificado", body: "Com PERM e patrocínio de empregador.", href: "/immigration/immigrant-visas/eb-3" },
           { title: "EB-5 — Green Card por Investimento", body: "US$ 800K (Rural/TEA) ou US$ 1,05M. Brasileiros 1,4 anos em média.", href: "/immigration/immigrant-visas/eb-5" },
           { title: "Casamento com Cidadão Americano", body: "10–13 meses. Data de prioridade sempre CURRENT.", href: "/immigration/immigrant-visas/marriage-us-citizen" },
@@ -44,9 +45,9 @@ const DATA: Record<L, ServiceHubContent> = {
         title: "Vistos Não-Imigrantes",
         intro: "Vistos temporários de trabalho, investimento e estudo.",
         cards: [
-          { title: "L-1 — Transferência Intra-Empresa", body: "L-1A para executivo/gerente. Rota direta ao EB-1C (sem PERM).", href: "/immigration/non-immigrant-visas/l-1" },
-          { title: "E-2 — Investidor Tratado", body: "⚠️ Brasil NÃO é país signatário. Só com dupla cidadania.", href: "/immigration/non-immigrant-visas/e-2" },
+          { title: "L-1A — Transferência Executiva Intra-Empresa", body: "Para executivo/gerente. Rota direta ao EB-1C (sem PERM).", href: "/immigration/non-immigrant-visas/l-1" },
           { title: "O-1 — Habilidade Extraordinária", body: "Sem cap, sem loteria.", href: "/immigration/non-immigrant-visas/o-1" },
+          { title: "E-2 — Investidor Tratado", body: "⚠️ Brasil NÃO é signatário do tratado E-2. Brasileiros com dupla cidadania (italiana, portuguesa, espanhola, entre outras) podem qualificar. Entre em contato para avaliar seu perfil.", href: "/immigration/non-immigrant-visas/e-2" },
           { title: "H-1B — Ocupação Especializada (2026)", body: "Taxa US$ 100K + loteria. Considere O-1A como alternativa.", href: "/immigration/non-immigrant-visas/h-1b" },
           { title: "F-1 — Estudante", body: "SEVP + OPT + STEM OPT.", href: "/immigration/non-immigrant-visas/f-1" },
           { title: "Extensão e Mudança de Status", body: "I-539 / I-129.", href: "/immigration/non-immigrant-visas/visa-extension" },
@@ -88,7 +89,7 @@ const DATA: Record<L, ServiceHubContent> = {
     slug: SLUG,
     breadcrumbLabel: "Immigration",
     eyebrow: "Practice",
-    h1: "US Immigration Law for Brazilians",
+    h1: "Immigration Law in the USA for Brazilians",
     lede:
       "500+ cases approved, 90% success rate, 9 years in Orlando. Counsel in Portuguese, English, and Spanish — first visa to citizenship.",
     stats: [
@@ -102,8 +103,9 @@ const DATA: Record<L, ServiceHubContent> = {
         title: "Immigrant Visas (Green Cards)",
         intro: "Permanent residence paths.",
         cards: [
-          { title: "EB-2 NIW", body: "No job offer, no PERM, no sponsor. Brazilians CURRENT in 2026.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-1 — Extraordinary Ability", body: "EB-1A / EB-1B / EB-1C.", href: "/immigration/immigrant-visas/eb-1" },
+          { title: "EB-2 — Advanced Degree Professional", body: "Master's or bachelor's + 5 yrs experience. With PERM and employer sponsorship.", href: "/immigration/immigrant-visas/eb-2" },
+          { title: "EB-2 NIW", body: "No job offer, no PERM, no sponsor. Brazilians CURRENT in 2026.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-3 — Skilled Worker", body: "With PERM and employer sponsorship.", href: "/immigration/immigrant-visas/eb-3" },
           { title: "EB-5 — Investor Green Card", body: "$800K Rural/TEA or $1.05M. Brazilians 1.4-year avg.", href: "/immigration/immigrant-visas/eb-5" },
           { title: "Marriage to US Citizen", body: "10–13 months. Priority date CURRENT.", href: "/immigration/immigrant-visas/marriage-us-citizen" },
@@ -116,9 +118,9 @@ const DATA: Record<L, ServiceHubContent> = {
         title: "Non-Immigrant Visas",
         intro: "Temporary work, investment, and study visas.",
         cards: [
-          { title: "L-1 — Intracompany Transfer", body: "Direct EB-1C route (no PERM).", href: "/immigration/non-immigrant-visas/l-1" },
-          { title: "E-2 — Treaty Investor", body: "⚠️ Brazil NOT treaty country.", href: "/immigration/non-immigrant-visas/e-2" },
+          { title: "L-1A — Intracompany Executive Transfer", body: "Direct EB-1C route (no PERM).", href: "/immigration/non-immigrant-visas/l-1" },
           { title: "O-1 — Extraordinary Ability", body: "No cap, no lottery.", href: "/immigration/non-immigrant-visas/o-1" },
+          { title: "E-2 — Treaty Investor", body: "⚠️ Brazil is NOT a signatory to the E-2 treaty. However, Brazilians with dual citizenship — Italian, Portuguese, Spanish, among others — may qualify. Contact us to evaluate your profile.", href: "/immigration/non-immigrant-visas/e-2" },
           { title: "H-1B — Specialty Occupation 2026", body: "$100K fee + lottery.", href: "/immigration/non-immigrant-visas/h-1b" },
           { title: "F-1 — Student", body: "OPT + STEM OPT.", href: "/immigration/non-immigrant-visas/f-1" },
           { title: "Visa Extension + Change of Status", body: "I-539 / I-129.", href: "/immigration/non-immigrant-visas/visa-extension" },
@@ -172,8 +174,9 @@ const DATA: Record<L, ServiceHubContent> = {
       {
         title: "Visas de Inmigrante (Green Cards)",
         cards: [
-          { title: "EB-2 NIW", body: "Sin oferta, sin PERM.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-1", body: "EB-1A / EB-1B / EB-1C.", href: "/immigration/immigrant-visas/eb-1" },
+          { title: "EB-2 — Profesional con Grado Avanzado", body: "Maestría o licenciatura + 5 años. Con PERM y oferta de empleo.", href: "/immigration/immigrant-visas/eb-2" },
+          { title: "EB-2 NIW", body: "Sin oferta, sin PERM. Brasileños CURRENT en 2026.", href: "/immigration/immigrant-visas/eb-2-niw", featured: true },
           { title: "EB-3", body: "Con PERM.", href: "/immigration/immigrant-visas/eb-3" },
           { title: "EB-5", body: "US$ 800K Rural/TEA.", href: "/immigration/immigrant-visas/eb-5" },
           { title: "Matrimonio con USC", body: "10–13 meses.", href: "/immigration/immigrant-visas/marriage-us-citizen" },
@@ -183,9 +186,9 @@ const DATA: Record<L, ServiceHubContent> = {
       {
         title: "Visas No Inmigrantes",
         cards: [
-          { title: "L-1", body: "Ruta directa EB-1C.", href: "/immigration/non-immigrant-visas/l-1" },
-          { title: "E-2", body: "⚠️ Brasil NO signatario.", href: "/immigration/non-immigrant-visas/e-2" },
-          { title: "O-1", body: "Sin cupo, sin lotería.", href: "/immigration/non-immigrant-visas/o-1" },
+          { title: "L-1A — Transferencia Ejecutiva", body: "Ruta directa EB-1C (sin PERM).", href: "/immigration/non-immigrant-visas/l-1" },
+          { title: "O-1 — Habilidad Extraordinaria", body: "Sin cupo, sin lotería.", href: "/immigration/non-immigrant-visas/o-1" },
+          { title: "E-2 — Inversionista de Tratado", body: "⚠️ Brasil NO es signatario del tratado E-2. Brasileños con doble ciudadanía (italiana, portuguesa, española) pueden calificar. Contáctenos para evaluar su perfil.", href: "/immigration/non-immigrant-visas/e-2" },
           { title: "H-1B 2026", body: "Tarifa US$ 100K + lotería.", href: "/immigration/non-immigrant-visas/h-1b" },
           { title: "F-1", body: "OPT + STEM OPT.", href: "/immigration/non-immigrant-visas/f-1" },
         ],

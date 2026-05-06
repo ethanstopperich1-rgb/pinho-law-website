@@ -18,9 +18,12 @@ const CREDIBILITY_ITEMS = [
   "Best Lawyers®: Ones to Watch® (2021–2026)",
   "AILA Member since 2019",
   "Florida Bar #126610",
-  "Stetson Law Review — Notes & Comments Editor",
+  "Stetson Law Review — Editor and Author",
+  "Trust Award — Highest Grade in Trusts and Estates",
+  "Outstanding Associate — Stetson University College of Law",
   "Orlando Magazine — Woman of the Year 2022",
   "Orlando Business Journal — 40 Under 40",
+  "Stetson Law — magna cum laude",
   "Rollins College — summa cum laude",
 ];
 
@@ -122,6 +125,17 @@ export function Hero() {
                 <InlineStat
                   value={`${REVIEWS.googleRating}★`}
                   label={`${REVIEWS.totalReviews} ${t("stats.googleReviews")}`}
+                />
+                <span className="h-8 w-px bg-cream/10" />
+                <InlineStat
+                  value="2017"
+                  label={
+                    locale === "pt"
+                      ? "Atendendo desde"
+                      : locale === "es"
+                        ? "Atendiendo desde"
+                        : "Serving since"
+                  }
                 />
               </div>
               {/* Freshness signal — dated stat claims rank higher in AI

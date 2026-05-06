@@ -1,23 +1,23 @@
 {
   "meta": {
-    "siteTitle": "Abogados de Inmigración en Orlando, FL",
-    "siteDescription": "Firma de abogados en Orlando especializada en inmigración y derecho empresarial. Atención en inglés, portugués y español."
+    "siteTitle": "Abogados de Inmigración & Derecho Empresarial en Orlando, FL",
+    "siteDescription": "500+ casos aprobados. Firma en Orlando especializada en inmigración y derecho empresarial para brasileños en EE.UU. Best Lawyers® 2021–2026. Hablamos portugués."
   },
   "nav": {
     "immigration": "Inmigración",
     "business": "Derecho Empresarial",
     "about": "Acerca de",
+    "attorney": "La Abogada",
     "resources": "Recursos",
     "reviews": "Reseñas",
     "contact": "Contacto",
     "consultation": "Agendar Consulta",
-    "attorney": "Abogada",
     "firm": "Nuestra Firma",
     "faq": "Preguntas Frecuentes"
   },
   "hero": {
-    "headline": "Su Sueño Americano Merece Un Equipo Legal Que Lo Entienda",
-    "subheadline": "Pinho Law ofrece asesoría legal confiable en inmigración y derecho empresarial para individuos y familias en toda Florida — con la claridad, dedicación y apoyo multilingüe que usted merece.",
+    "headline": "Su Sueño Americano Merece Un Equipo Que Realmente Lo Entiende",
+    "subheadline": "Pinho Law ofrece asesoría legal especializada en inmigración, derecho empresarial y estructuración de negocios para brasileños y latinos en toda Florida — con la claridad, dedicación y atención en portugués que usted merece.",
     "cta": "Agendar una Consulta",
     "ctaSecondary": "Llamar {phone}",
     "trustBar": "Miembro del Florida Bar · Reseñas 5 Estrellas · Servicio en 3 Idiomas",
@@ -38,13 +38,13 @@
     "headline": "Cómo Ayudamos",
     "immigration": {
       "title": "Derecho Migratorio",
-      "description": "Desde peticiones familiares y green cards hasta visas de trabajo y ciudadanía — lo guiamos en cada paso con claridad y dedicación. Su caso es personal para nosotros.",
-      "cta": "Conozca Nuestros Servicios de Inmigración"
+      "description": "Desde peticiones familiares y green cards hasta visas de trabajo, visas de inversión y ciudadanía — lo guiamos en cada paso con claridad y dedicación. Su caso es personal para nosotros.",
+      "cta": "Evaluar Mi Perfil de Inmigración"
     },
     "business": {
       "title": "Derecho Empresarial",
-      "description": "Iniciar un negocio en los EE.UU. es un acto de valentía. Nos encargamos de la constitución, contratos, disputas y cumplimiento para que usted pueda enfocarse en construir su visión.",
-      "cta": "Conozca Nuestros Servicios Empresariales"
+      "description": "Iniciar y operar un negocio en EE.UU. requiere valentía. Nos encargamos de la constitución, contratos, estructuración corporativa, tributación Brasil-EE.UU. y cumplimiento para que usted pueda enfocarse en construir su visión.",
+      "cta": "Consulta Empresarial Estratégica"
     }
   },
   "whyPinho": {
@@ -133,36 +133,36 @@
     "cta": "Ver Todas las Preguntas",
     "items": [
       {
-        "question": "¿Atienden en español? ¿Y en portugués?",
-        "answer": "Sí. Cada consulta, contrato y comunicación se realiza en español, portugués o inglés — el idioma en que usted se sienta más cómodo. El equipo de Pinho Law es trilingüe desde la primera llamada hasta la aprobación. Es la razón más mencionada en las reseñas de Google de nuestros clientes."
+        "question": "¿Cuánto cuesta una consulta?",
+        "answer": "La consulta inicial tiene tarifa fija comunicada al momento de agendar. Durante la llamada, la Abogada Izi Pinho evalúa su caso, explica las opciones legales y presenta un plan estratégico claro — sin compromiso de contratación tras la consulta."
       },
       {
-        "question": "¿Cuánto tarda un cambio de estatus o un green card por matrimonio?",
-        "answer": "Los cambios de estatus (F-1 estudiante, matrimonio con ciudadano estadounidense) que hemos presentado se han aprobado en 3 a 5 meses en los casos de 2023–2025. Tras un RFE (Request for Evidence) preparamos la respuesta en 30 días cuando los hechos del caso lo permiten. Los plazos de USCIS varían — damos una estimación realista en la consulta inicial."
+        "question": "¿Cuánto tarda el proceso de inmigración?",
+        "answer": "Depende del tipo de caso. El EB-2 NIW para brasileños está CURRENT en 2026, con aprobaciones entre 8 y 18 meses. Un Green Card por matrimonio con ciudadano estadounidense tarda en promedio 10 a 13 meses. La visa E-2 puede aprobarse en 3 a 6 meses. Damos plazos realistas específicos en la consulta."
       },
       {
-        "question": "Tuve una negación o un RFE con otra firma — ¿toman el caso?",
-        "answer": "Sí. Recibimos con frecuencia casos con I-140 negado por otra firma — incluido un EB-2 NIW reabierto tras 2,5 años parado, que aprobamos en revisión. Re-analizamos la petición, identificamos lo que faltó y la presentamos de nuevo con el expediente completo. Los RFE en curso se tratan como prioridad."
+        "question": "¿Manejan derecho empresarial para inmigrantes?",
+        "answer": "Sí — y este es uno de nuestros mayores diferenciadores. Asistimos a empresarios y ejecutivos inmigrantes con formación de empresa, contratos, estructuración corporativa y tributación Brasil-EE.UU., integrando inmigración y derecho empresarial bajo el mismo techo."
       },
       {
-        "question": "¿Manejan la inmigración Y la formación de la empresa juntas?",
-        "answer": "Sí. Muchos clientes tramitan con nosotros el green card y la LLC/Corp en Florida al mismo tiempo. Tener la misma firma en ambos frentes evita conflictos entre la estructura societaria y la estrategia migratoria — especialmente en casos EB-5, E-2 y L-1A, donde la estructura de la empresa debe sostener la petición de visa."
+        "question": "¿Qué documentos debo llevar a mi primera reunión?",
+        "answer": "Traiga cualquier documento de inmigración relevante (pasaporte, visa actual, notificaciones de USCIS), identificación y papeles relacionados con su caso. Tras agendar, enviamos una checklist detallada de preparación para que llegue completamente listo."
       },
       {
-        "question": "¿Atienden familias, cónyuges de ciudadanos americanos y veteranos militares?",
-        "answer": "Sí. Cónyuge de ciudadano estadounidense (incluidos veteranos del USMC, Ejército, Marina y Fuerza Aérea), green card para padres e hijos, y visas K-1 de prometido(a) están entre los asuntos más frecuentes de la firma. Explicamos cada paso en lenguaje claro, sin jerga jurídica."
+        "question": "¿Puedo abrir una empresa en EE.UU. sin visa de residencia?",
+        "answer": "Sí. Extranjeros no residentes pueden abrir una LLC en EE.UU. sin visa de trabajo o Green Card. El proceso es 100% remoto. En Pinho Law manejamos todo: Articles of Organization, EIN del IRS, Operating Agreement y apertura de cuenta bancaria."
       },
       {
-        "question": "¿Cómo es la primera consulta? ¿Es pagada?",
-        "answer": "La consulta es estructurada: usted plantea su situación, la Abogada Izi Pinho evalúa los caminos viables y usted sale con un plan y un presupuesto por escrito. Cobramos una tarifa fija por la consulta inicial — y se acredita al caso si decide continuar. Reserve en pinho.law/consultation o por WhatsApp (407) 385-4144."
+        "question": "¿Puede un brasileño obtener visa E-2?",
+        "answer": "Brasil no es signatario del tratado E-2. Sin embargo, brasileños con doble ciudadanía — italiana, portuguesa, española, entre otras — pueden calificar. Si tiene doble ciudadanía, agende una evaluación para analizar su perfil."
       },
       {
-        "question": "¿Cuánto cuesta el caso? ¿Cobran por hora?",
-        "answer": "Trabajamos con tarifa fija por asunto — no por hora — informada por escrito antes de comenzar. El monto depende del tipo de visa y la complejidad: EB-2 NIW, EB-5, L-1A, green card por matrimonio y cambios de estatus tienen tarifas distintas. Sin sorpresas a mitad del proceso."
+        "question": "¿Cuál es la diferencia entre EB-2 NIW y EB-1A?",
+        "answer": "Ambos son caminos al Green Card sin necesidad de patrocinador empleador. El EB-2 NIW requiere demostrar que su trabajo es de interés nacional de EE.UU. El EB-1A requiere comprobar habilidad extraordinaria con reconocimiento en su área — premios, publicaciones, liderazgo notable. El mejor camino depende de su perfil y lo evaluamos en la consulta."
       },
       {
-        "question": "¿Dónde está la oficina? ¿Atienden a clientes fuera de Orlando?",
-        "answer": "Estamos en 6965 Piazza Grande Ave, Suite 401, Orlando, FL 32835. La inmigración es jurisdicción federal — atendemos a clientes brasileños y latinoamericanos en Miami, Boston, Houston y directamente desde Brasil por videollamada y WhatsApp, sin necesidad de visitar la oficina. Los asuntos inmobiliarios en Florida requieren presencia local; los coordinamos en la consulta."
+        "question": "¿Mi testamento brasileño es válido para bienes que tengo en EE.UU.?",
+        "answer": "No necesariamente. En EE.UU., la propiedad inmueble se rige por la ley del estado donde está ubicada (lex situs). Un testamento hecho en Brasil puede no ser reconocido o requerir homologación. Un Revocable Living Trust es la estructura más recomendada para garantizar que sus bienes en EE.UU. se transfieran según su voluntad, sin pasar por probate."
       }
     ]
   },
@@ -272,8 +272,8 @@
     "educationDescription": "Con una trayectoria enraizada en la experiencia brasileño-americana y una profunda comprensión de los desafíos que enfrentan los inmigrantes, Izi aporta tanto excelencia profesional como empatía personal a cada caso que maneja."
   },
   "consultationPage": {
-    "headline": "Dé el Primer Paso Hacia la Claridad",
-    "description": "Todo viaje comienza con una conversación. Agende una consulta y permítanos entender su situación — le brindaremos orientación honesta y un camino claro, en el idioma en que se sienta más cómodo.",
+    "headline": "Agendar una Consulta — Inmigración & Derecho Empresarial",
+    "description": "Cuéntenos sobre su situación. Evaluamos su caso y respondemos en un día hábil — en portugués, inglés o español.",
     "expectTitle": "Qué Esperar",
     "step1Title": "Agende",
     "step1Description": "Elija un horario conveniente — en línea, por teléfono o WhatsApp.",

@@ -9,6 +9,7 @@ import {
   Users,
   Building2,
   Scale,
+  Shield,
 } from "lucide-react";
 
 // Intent-based entry point. Users don't shop by legal category
@@ -20,8 +21,8 @@ type L = "pt" | "en" | "es";
 
 const COPY = {
   pt: {
-    eyebrow: "Onde começar",
-    heading: "O que você quer resolver?",
+    eyebrow: "Por onde começar",
+    heading: "Onde começar",
     sub: "Escolha o caminho que melhor descreve sua situação. Chegamos direto à resposta.",
     items: [
       {
@@ -38,19 +39,19 @@ const COPY = {
       },
       {
         icon: TrendingUp,
-        title: "Quero investir nos EUA",
-        body: "EB-5, E-2, estruturação de capital estrangeiro.",
-        href: "/immigration/eb-5",
-      },
-      {
-        icon: Briefcase,
-        title: "Quero abrir ou estruturar empresa",
-        body: "LLC, C-Corp, Benefit Corp, contratos, tributação.",
+        title: "Quero investir ou expandir nos EUA",
+        body: "E-2, EB-5, L-1A, abertura de empresa, estruturação de capital estrangeiro.",
         href: "/expand-business-usa",
       },
       {
+        icon: Briefcase,
+        title: "Quero abrir ou estruturar minha empresa",
+        body: "LLC, C-Corp, contratos, tributação Brasil-EUA, proteção patrimonial.",
+        href: "/business",
+      },
+      {
         icon: Building2,
-        title: "Quero comprar imóvel",
+        title: "Quero comprar imóvel nos EUA",
         body: "FIRPTA, LLC para imóvel, fechamento residencial/comercial.",
         href: "/real-estate",
       },
@@ -60,32 +61,40 @@ const COPY = {
         body: "Ajuste de status, renovação, fora de status.",
         href: "/already-in-usa",
       },
+      {
+        icon: Shield,
+        title: "Preciso de suporte jurídico para minha empresa",
+        body: "Contratos, disputas societárias, proteção patrimonial, tributação Brasil-EUA.",
+        href: "/business",
+      },
     ],
   },
   en: {
     eyebrow: "Where to start",
-    heading: "What do you want to solve?",
-    sub: "Pick the path that best describes your situation. We route you straight to the answer.",
+    heading: "Where to Start",
+    sub: "Pick the path that best describes your situation. We'll get you to the right answer fast.",
     items: [
       { icon: Users, title: "I want to immigrate", body: "Green card, work visa, naturalization.", href: "/american-dream" },
-      { icon: Home, title: "I want to reunite my family", body: "Marriage, fiancé, parents, minor children.", href: "/immigration/k-1" },
-      { icon: TrendingUp, title: "I want to invest in the US", body: "EB-5, E-2, foreign capital structuring.", href: "/immigration/eb-5" },
-      { icon: Briefcase, title: "I want to open or structure a company", body: "LLC, C-Corp, Benefit Corp, contracts, tax.", href: "/expand-business-usa" },
-      { icon: Building2, title: "I want to buy real estate", body: "FIRPTA, LLC-held property, closings.", href: "/real-estate" },
-      { icon: Scale, title: "I'm already in the US — need to regularize", body: "Status adjustment, renewal, out of status.", href: "/already-in-usa" },
+      { icon: Home, title: "I want to bring my family", body: "Marriage, fiancé(e), parents, minor children.", href: "/immigration/k-1" },
+      { icon: TrendingUp, title: "I want to invest or expand in the U.S.", body: "E-2, EB-5, L-1A, company formation, foreign capital structuring.", href: "/expand-business-usa" },
+      { icon: Briefcase, title: "I want to open or structure my business", body: "LLC, C-Corp, contracts, Brazil-U.S. taxation, asset protection.", href: "/business" },
+      { icon: Building2, title: "I want to buy real estate in the U.S.", body: "FIRPTA, LLC for property, residential/commercial closing.", href: "/real-estate" },
+      { icon: Scale, title: "I'm already in the U.S. — need to regularize", body: "Adjustment of status, renewal, out of status.", href: "/already-in-usa" },
+      { icon: Shield, title: "I need legal support for my business", body: "Contracts, shareholder disputes, asset protection, Brazil-U.S. taxation.", href: "/business" },
     ],
   },
   es: {
     eyebrow: "Por dónde empezar",
-    heading: "¿Qué quieres resolver?",
+    heading: "Por Dónde Empezar",
     sub: "Elige el camino que mejor describe tu situación.",
     items: [
       { icon: Users, title: "Quiero inmigrar", body: "Green card, visa de trabajo, naturalización.", href: "/american-dream" },
-      { icon: Home, title: "Quiero reunir a mi familia", body: "Matrimonio, prometido(a), padres, hijos.", href: "/immigration/k-1" },
-      { icon: TrendingUp, title: "Quiero invertir en EE.UU.", body: "EB-5, E-2, estructuración de capital.", href: "/immigration/eb-5" },
-      { icon: Briefcase, title: "Quiero abrir o estructurar empresa", body: "LLC, C-Corp, Benefit Corp, contratos.", href: "/expand-business-usa" },
-      { icon: Building2, title: "Quiero comprar inmueble", body: "FIRPTA, LLC, cierres residenciales.", href: "/real-estate" },
-      { icon: Scale, title: "Ya estoy en EE.UU. — regularizar", body: "Ajuste de estatus, renovación.", href: "/already-in-usa" },
+      { icon: Home, title: "Quiero traer a mi familia", body: "Matrimonio, prometido(a), padres, hijos.", href: "/immigration/k-1" },
+      { icon: TrendingUp, title: "Quiero invertir o expandir en EE.UU.", body: "E-2, EB-5, L-1A, formación de empresa, estructuración de capital.", href: "/expand-business-usa" },
+      { icon: Briefcase, title: "Quiero abrir o estructurar mi empresa", body: "LLC, C-Corp, contratos, tributación Brasil-EE.UU., protección patrimonial.", href: "/business" },
+      { icon: Building2, title: "Quiero comprar inmueble en EE.UU.", body: "FIRPTA, LLC, cierres residenciales/comerciales.", href: "/real-estate" },
+      { icon: Scale, title: "Ya estoy en EE.UU. — regularizar", body: "Ajuste de estatus, renovación, fuera de estatus.", href: "/already-in-usa" },
+      { icon: Shield, title: "Necesito soporte legal para mi empresa", body: "Contratos, disputas societarias, protección patrimonial, tributación Brasil-EE.UU.", href: "/business" },
     ],
   },
 } as const;

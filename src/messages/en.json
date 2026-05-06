@@ -1,23 +1,23 @@
 {
   "meta": {
-    "siteTitle": "Immigration Attorneys in Orlando, FL",
-    "siteDescription": "Orlando immigration and business law firm serving clients in English, Portuguese, and Spanish. Family petitions, green cards, business formation, and more."
+    "siteTitle": "Immigration & Business Law Attorneys in Orlando, FL",
+    "siteDescription": "500+ approved cases. Orlando law firm specializing in immigration and business law for Brazilians in the U.S. Best Lawyers® 2021–2026. We speak Portuguese."
   },
   "nav": {
     "immigration": "Immigration",
     "business": "Business Law",
     "about": "About",
+    "attorney": "The Attorney",
     "resources": "Resources",
     "reviews": "Reviews",
     "contact": "Contact",
     "consultation": "Schedule Consultation",
-    "attorney": "Attorney",
     "firm": "Our Firm",
     "faq": "FAQ"
   },
   "hero": {
-    "headline": "Your American Dream Deserves a Legal Team That Understands It",
-    "subheadline": "Pinho Law provides trusted immigration and business counsel for individuals and families across Florida — with the clarity, dedication, and multilingual support you deserve.",
+    "headline": "Your American Dream Deserves a Team That Truly Understands You",
+    "subheadline": "Pinho Law provides specialized legal counsel in immigration, business law and business structuring for Brazilians and Latinos across Florida — with the clarity, dedication and Portuguese-language service you deserve.",
     "cta": "Schedule a Consultation",
     "ctaSecondary": "Call {phone}",
     "trustBar": "Florida Bar Member · 5-Star Reviews · Serving Clients in 3 Languages",
@@ -35,16 +35,16 @@
     }
   },
   "practiceAreas": {
-    "headline": "How We Help",
+    "headline": "How We Can Help",
     "immigration": {
       "title": "Immigration Law",
-      "description": "From family petitions and green cards to work visas and citizenship — we guide you through every step with clarity and care. Your case is personal to us.",
-      "cta": "Explore Immigration Services"
+      "description": "From family petitions and green cards to work visas, investment visas and citizenship — we guide you through every step with clarity and care. Your case is personal to us.",
+      "cta": "Evaluate My Immigration Profile"
     },
     "business": {
       "title": "Business Law",
-      "description": "Starting a business in the U.S. is an act of courage. We handle formation, contracts, disputes, and compliance so you can focus on building your vision.",
-      "cta": "Explore Business Services"
+      "description": "Starting and operating a business in the U.S. takes courage. We handle formation, contracts, corporate structuring, Brazil-U.S. taxation and compliance so you can focus on building your vision.",
+      "cta": "Strategic Business Consultation"
     }
   },
   "whyPinho": {
@@ -133,36 +133,36 @@
     "cta": "See All FAQs",
     "items": [
       {
-        "question": "Do you speak Portuguese? And Spanish?",
-        "answer": "Yes. Every consultation, contract, and piece of correspondence is handled in Portuguese, English, or Spanish — whichever language you are most comfortable in. Pinho Law is trilingual from the first call through approval. This is the most-cited reason in our Brazilian clients' Google reviews."
+        "question": "How much does a consultation cost?",
+        "answer": "The initial consultation has a fixed fee communicated at the time of booking. During the call, Dra. Izi Pinho evaluates your case, explains your legal options and presents a clear strategic plan — with no commitment to hire after the consultation."
       },
       {
-        "question": "How long does a status change or marriage-based green card take?",
-        "answer": "Status changes (F-1 student, marriage to a US citizen) we have filed have approved in 3 to 5 months across 2023–2025 cases. After an RFE (Request for Evidence), we typically prepare the response within 30 days when the case facts allow. USCIS timelines vary — we give a realistic estimate at the consultation."
+        "question": "How long does the immigration process take?",
+        "answer": "It depends on the case type. The EB-2 NIW for Brazilians is CURRENT in 2026, with approvals ranging from 8 to 18 months. A marriage-based Green Card with a U.S. citizen averages 10 to 13 months. An E-2 visa can be approved in 3 to 6 months. We provide realistic timelines specific to your situation during the consultation."
       },
       {
-        "question": "I had a denial or an RFE with another firm — will you take the case?",
-        "answer": "Yes. We regularly take over cases where another firm received an I-140 denial — including an EB-2 NIW we reopened after 2.5 years stalled, which we got approved on review. We re-analyze the petition, identify what was missing, and refile with a complete record. Live RFE cases are treated as priority."
+        "question": "Do you handle business law for immigrants?",
+        "answer": "Yes — and that is one of our greatest differentiators. We assist immigrant entrepreneurs and executives with company formation, contracts, corporate structuring and Brazil-U.S. taxation, integrating immigration and business law under one roof."
       },
       {
-        "question": "Can you handle the immigration and the business formation together?",
-        "answer": "Yes. Many clients run their green card and a Florida LLC/Corp formation through us simultaneously. Having the same firm on both sides avoids conflicts between corporate structure and immigration strategy — especially in EB-5, E-2, and L-1A cases where the company structure has to support the visa petition."
+        "question": "What documents should I bring to my first meeting?",
+        "answer": "Bring any relevant immigration documents (passport, current visa, USCIS notices), identification and any paperwork related to your case. After scheduling, we send a detailed preparation checklist so you arrive fully ready."
       },
       {
-        "question": "Do you serve families, US-citizen spouses, and military veterans?",
-        "answer": "Yes. Spouse of US citizen (including USMC, Army, Navy, and Air Force veterans), green card for parents and children, and K-1 fiancé visas are among the firm's most frequent matters. We explain every step in plain language without legal jargon."
+        "question": "Can I open a company in the U.S. without a residency visa?",
+        "answer": "Yes. Foreign non-residents can open an LLC in the U.S. without a work visa or Green Card. The process is 100% remote. At Pinho Law, we handle everything: Articles of Organization, EIN from the IRS, Operating Agreement and bank account setup."
       },
       {
-        "question": "What happens at the first consultation? Is it paid?",
-        "answer": "The consultation is structured: you describe your situation, Dra. Izi Pinho assesses viable paths, and you leave with a written plan and quote. We charge a flat fee for the initial consultation — credited toward the case if you proceed. Book at pinho.law/consultation or via WhatsApp (407) 385-4144."
+        "question": "Can a Brazilian get an E-2 visa?",
+        "answer": "Brazil is not a signatory to the E-2 treaty. However, Brazilians with dual citizenship — Italian, Portuguese, Spanish, among others — may qualify. If you hold dual citizenship, schedule an evaluation so we can assess your profile."
       },
       {
-        "question": "How much does the case cost? Do you bill hourly?",
-        "answer": "We work on a flat fee per matter — not hourly — disclosed in writing before we start. The amount depends on visa type and complexity: EB-2 NIW, EB-5, L-1A, marriage GC, and status changes each have their own scope. No surprise bills mid-case."
+        "question": "What is the difference between EB-2 NIW and EB-1A?",
+        "answer": "Both are paths to a Green Card without needing an employer sponsor. The EB-2 NIW requires demonstrating that your work is in the national interest of the U.S. The EB-1A requires proving extraordinary ability with recognized standing in your field — awards, publications, notable leadership. The best path depends on your profile and we assess this during the consultation."
       },
       {
-        "question": "Where is the office? Do you serve clients outside Orlando?",
-        "answer": "We are at 6965 Piazza Grande Ave, Suite 401, Orlando, FL 32835. Immigration is federal — we serve Brazilian and Latin American clients in Miami, Boston, Houston, and directly from Brazil via video and WhatsApp, no in-office visit required. Florida real-estate matters require local presence; we schedule those at the consultation."
+        "question": "Is my Brazilian will valid for assets I own in the U.S.?",
+        "answer": "Not necessarily. In the U.S., real property is governed by the law of the state where it is located (lex situs). A will made in Brazil may not be recognized or may require a homologation process. A Revocable Living Trust is the most recommended structure to ensure your U.S. assets are transferred according to your wishes, without going through probate."
       }
     ]
   },
@@ -272,8 +272,8 @@
     "educationDescription": "With a background rooted in the Brazilian-American experience and a deep understanding of the challenges immigrants face, Izi brings both professional excellence and personal empathy to every case she handles."
   },
   "consultationPage": {
-    "headline": "Take the First Step Toward Clarity",
-    "description": "Every journey begins with a conversation. Schedule a consultation and let us understand your situation — we will provide honest guidance and a clear path forward, in the language you are most comfortable with.",
+    "headline": "Schedule a Consultation — Immigration & Business Law",
+    "description": "Tell us about your situation. We evaluate your case and respond within one business day — in Portuguese, English or Spanish.",
     "expectTitle": "What to Expect",
     "step1Title": "Book",
     "step1Description": "Choose a time that works for you — online, by phone, or WhatsApp.",

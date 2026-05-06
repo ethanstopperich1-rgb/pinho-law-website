@@ -35,6 +35,7 @@ export function Header() {
           <NavLink href="/immigration">{t("immigration")}</NavLink>
           <NavLink href="/business">{t("business")}</NavLink>
           <NavLink href="/about">{t("about")}</NavLink>
+          <NavLink href="/attorney-izi-pinho">{t("attorney")}</NavLink>
           <NavLink href="/resources">{t("resources")}</NavLink>
           <NavLink href="/reviews">{t("reviews")}</NavLink>
         </nav>
