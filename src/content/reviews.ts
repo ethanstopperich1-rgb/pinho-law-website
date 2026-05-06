@@ -241,4 +241,52 @@ export const REVIEWS: readonly PinhoReview[] = [
     tag: "immigration",
     body: "We've lived here in Orlando for 7 years, and my only regret is not having known Pinho Law sooner. Everything would have been much easier. Today, I know what a high-standard professional like Pinho means: high-quality immigration consulting.",
   },
+  // Legacy testimonials migrated from pinholaw.com (per May 2026 PLwebsite
+  // audit, Block 2.13 Step 1). These appeared on the old site but did not
+  // carry over to the rebuild — restoring them preserves social proof.
+  {
+    author: "Jully Lima",
+    rating: 5,
+    monthsAgo: 24,
+    lang: "pt",
+    tag: "immigration",
+    body: "I had a great experience with the firm. I applied for a change of status to a student visa and received approval in 5 months. Melqui was attentive and resolved every question before and during the process. Extremely satisfied and grateful.",
+    bodyPt: "Tive uma ótima experiência com o escritório. Apliquei para mudança de status para visto de estudante e recebi aprovação em 5 meses. Melqui foi atencioso e tirou todas as minhas dúvidas antes e durante o processo. Extremamente satisfeita e grata.",
+  },
+  {
+    author: "Letícia Marques",
+    rating: 5,
+    monthsAgo: 24,
+    lang: "pt",
+    tag: "immigration",
+    body: "Highly recommend! Very caring team, always available to answer every question. Extremely satisfied with my process from start to finish. Special thanks to Melqui, Greg, and Karina who always helped me and were patient with all my questions.",
+    bodyPt: "Recomendo muito! Equipe muito atenciosa, sempre disponível para responder a todas as perguntas. Extremamente satisfeita com meu processo do começo ao fim. Agradecimento especial ao Melqui, Greg e Karina, que sempre me ajudaram e foram pacientes com todas as minhas dúvidas.",
+  },
+  {
+    author: "Renan Rampinelli",
+    rating: 5,
+    monthsAgo: 24,
+    lang: "pt",
+    tag: "immigration",
+    body: "Great experience with the team, especially with Melqui. Everyone was very attentive and left me with zero doubts about my process. Highly recommended!",
+    bodyPt: "Ótima experiência com a equipe, especialmente com Melqui. Todos foram muito atenciosos e me deixaram sem nenhuma dúvida sobre o processo. Recomendo muito!",
+  },
+  {
+    author: "Naiara Filgueiras",
+    rating: 5,
+    monthsAgo: 24,
+    lang: "pt",
+    tag: "immigration",
+    body: "Attentive professionals — Melqui and Gabriel gave me all the support I needed. The human touch in the service made all the difference when I had to make my decision.",
+    bodyPt: "Profissionais atenciosos — Melqui e Gabriel me deram todo o suporte que precisei. O toque humano no atendimento fez toda a diferença na hora de tomar minha decisão.",
+  },
+  {
+    author: "Carla Letícia Nieves",
+    rating: 5,
+    monthsAgo: 24,
+    lang: "en",
+    tag: "business",
+    body: "Excellent experience with the Pinho Law team. From the very first moment, clear answers, good communication, and a favorable final result. I highly recommend them. Congratulations to the team and their professionalism.",
+    bodyPt: "Excelente experiência com a equipe da Pinho Law. Desde o primeiro momento, respostas claras, boa comunicação e um resultado final favorável. Recomendo demais! Parabéns à equipe e à sua profissionalidade.",
+  },
 ];
