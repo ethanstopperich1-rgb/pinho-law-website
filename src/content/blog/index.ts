@@ -9,9 +9,13 @@ import { h1b2026Taxa100milSelecaoPonderada } from "./h-1b-2026-taxa-100mil-selec
 import { greenCardCasamentoGuia2026 } from "./green-card-casamento-guia-2026";
 import { eb2NiwVsEb1a2026 } from "./eb-2-niw-vs-eb-1a-2026";
 import { fbarFatcaBrasileirosEua } from "./fbar-fatca-brasileiros-eua";
+import { duplaCidadaniaE2Brasileiros } from "./dupla-cidadania-e-2-brasileiros";
+import { fimExtensaoAutomaticaEad2026 } from "./fim-extensao-automatica-ead-2026";
 
 // Ordered by datePublished DESC — most recent first.
 export const ARTICLES: readonly Article[] = [
+  duplaCidadaniaE2Brasileiros,
+  fimExtensaoAutomaticaEad2026,
   eb2NiwVsEb1a2026,
   fbarFatcaBrasileirosEua,
   greenCardCasamentoGuia2026,
