@@ -13,6 +13,7 @@ import { WhyPinho } from "@/components/sections/why-pinho";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Testimonials } from "@/components/sections/testimonials";
 import { AttorneySpotlight } from "@/components/sections/attorney-spotlight";
+import { TeamStrip } from "@/components/sections/team-strip";
 import { MultilingualPromise } from "@/components/sections/multilingual-promise";
 import { FaqPreview } from "@/components/sections/faq-preview";
 import { FirmVideo } from "@/components/sections/firm-video";
@@ -74,6 +75,7 @@ export default async function HomePage({
       <HowItWorks />
       <Testimonials />
       <AttorneySpotlight />
+      <TeamStrip />
       <MultilingualPromise />
       <FaqPreview />
       <CtaSection />

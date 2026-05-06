@@ -7,9 +7,13 @@ import { naturalizacaoAmericanaQuandoComo } from "./naturalizacao-americana-quan
 import { l1aExecutivosBrasileirosGuia } from "./l-1a-executivos-brasileiros-guia";
 import { h1b2026Taxa100milSelecaoPonderada } from "./h-1b-2026-taxa-100mil-selecao-ponderada";
 import { greenCardCasamentoGuia2026 } from "./green-card-casamento-guia-2026";
+import { eb2NiwVsEb1a2026 } from "./eb-2-niw-vs-eb-1a-2026";
+import { fbarFatcaBrasileirosEua } from "./fbar-fatca-brasileiros-eua";
 
 // Ordered by datePublished DESC — most recent first.
 export const ARTICLES: readonly Article[] = [
+  eb2NiwVsEb1a2026,
+  fbarFatcaBrasileirosEua,
   greenCardCasamentoGuia2026,
   h1b2026Taxa100milSelecaoPonderada,
   l1aExecutivosBrasileirosGuia,
